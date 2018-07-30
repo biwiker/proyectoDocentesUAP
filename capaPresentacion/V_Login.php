@@ -31,11 +31,11 @@
                 <h6><strong>Sistema de Administraci&oacute;n UAP</strong></h6>
                 
                 <div class="form-group">
-                    <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuario" required="">
+                    <input type="text" id="usuario" name="txtUsuario" class="form-control" placeholder="Usuario" required="">
                 </div>
                 
                 <div class="form-group">
-                    <input type="password" id="clave" name="clave" class="form-control" placeholder="Clave" required="">
+                    <input type="password" id="clave" name="txtClave" class="form-control" placeholder="Clave" required="">
                 </div>
                 
                 <button type="button" name="btnIngreso" class="btn"  id="boton-login">Ingresar</button>            

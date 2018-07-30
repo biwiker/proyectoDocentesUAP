@@ -45,9 +45,4 @@ class CL_Conexion {
         return $this->_conexion;
     }
 
-    #cerrar la conexion 
-    function cerrarConexion() {
-        mysql_close($this->_conexion);
-    }
-
 }
