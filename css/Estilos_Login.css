@@ -29,11 +29,13 @@ div img{
 
 
 }
+/*linea amarilla divisoria*/
 hr{
     height: 7px;
     background-color:#FACC2E;
     margin-top: 0;
     margin-bottom: 60px;
+    box-shadow: 0 3px 3px #ccc;
 }
 
 #boton1{
