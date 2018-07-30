@@ -8,17 +8,40 @@
         <script src="../bootstrap 3/jquery-3.3.1.js"></script>
     </head>
     <body>
+        <!--cabecera-->
         <header class="principal">
-            <img src="../Imagenes/fondo-transparente_3.png"> 
+            <img src="../Imagenes/fondo-transparente_4.png"> 
         </header>
+        
+        <!--linea de división del header amarilla-->
         <hr>
+        
+        
+        <!--imágen central-->
         <div class="main">
-            <img src="../Imagenes/fondo-transparente_3.png" width="25%" height="40%">
+            <img src="../Imagenes/fondo-transparente_1.png">
         </div>
-        <div class="form">
-            <form method="" action="" class="form-group">
-                <input type="button" name="btnIngresoAdmin" class="btn  btn-lg " value="INGRESO COMO ADMINISTRADOR" id="boton">            
+        
+        <!--boton de login-->
+        
+        <div class="contenedor-login">
+            
+            <form id="formulario" class="form-group" method="post" action="">
+                
+                <div class="form-group">
+                    <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuario" required="">
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" id="clave" name="clave" class="form-control" placeholder="Clave" required="">
+                </div>
+                
+                <button type="button" name="btnIngreso" class="btn"  id="boton-login">Ingresar</button>            
+
             </form>
         </div>
+        
+        
+        
     </body>
 </html>
