@@ -9,10 +9,10 @@
 }
 .principal img{
     display: block; 
-    margin: 0 0 0 10px;
+    margin: 0 0 0 100px;
     max-width: 100%;
-    width: 150px;
-    height: 35px;
+    width: 111px;
+    height: 25px;
 }
 main{
     position: relative;
@@ -24,8 +24,8 @@ main{
 div img{
     display: block; 
     margin: 0 auto;
-    width: 40%;
-    height: 17.5%;
+    width: 400px;
+    height: 90px;
 
 
 }
@@ -33,7 +33,7 @@ hr{
     height: 7px;
     background-color:#FACC2E;
     margin-top: 0;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 #boton1{
@@ -43,11 +43,22 @@ hr{
     padding: 10px;
     size:10px;
 }
-.formulario{
+#formulario{
     position: relative;
     top: 1px;
     width:100%;
 
+}
+/*estilo para las cajas de texto del login de usuario*/
+#formulario #usuario[type=text]:focus{
+    
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px #ccc;
+
+}
+#formulario #clave[type=password]:focus{
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px #ccc;
 }
 .contenedor-login  #formulario{
     padding:  2% 40% 0 40%;   
@@ -64,5 +75,5 @@ hr{
     padding: 0 10% 0 10%;
     font-size: 13px;
     margin-top: 0;
-     
+
 }
