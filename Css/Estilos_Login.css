@@ -5,40 +5,36 @@
   width:100%;
    padding-top:10px;
   padding-bottom:10px;
-  background-color:#0B0B61;
+  background-color:#001e39;
 }
 .principal img{
   display: block; 
   margin: 0 0 0 10px;
   max-width: 100%;
-  width: 15%;
-  height:10%;
+  width: 150px;
+  height: 35px;
 }
 main{
   position: relative;
   top: 0px;
   left: 0px;
-  width:70%;
+ 
   background-color:white;
 }
 div img{
   display: block; 
   margin: 0 auto;
-  max-width: 60%;
-  width: 100%;
+  width: 40%;
+  height: 18%;
+  
+  
 }
 hr{
 height: 7px;
 background-color:#FACC2E;
 margin-top: 0;
 }
-#boton{
-  background:#FACC2E;
-  color: #000;
-  padding: 10px;
-  size:10px;
-  margin-left:25%;
-}
+
 #boton1{
   background:#0B0B3B;
   color: #fff;
@@ -46,10 +42,20 @@ margin-top: 0;
   padding: 10px;
   size:10px;
 }
-form{
+.formulario{
   position: relative;
   top: 1px;
-  left: 0px;
   width:100%;
+  
+}
+.contenedor-login  #formulario{
+  padding:  2% 40% 0 40%;   
+    
+}
+
+.contenedor-login #boton-login{
+  width: 100%;
+  background-color: #001e39; 
+  color: #fff;
 }
 
