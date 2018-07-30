@@ -10,11 +10,11 @@ require_once("../capaConexion/CL_Conexion.php");
 class DAO_Acceso {
     
     //variable para almacenar el estado de la conexion
-    private $conexion;
+    private $_conexion;
     
     function __construct() {
         //al crear una instancia de la clase, se obtiene de inmediato el estado de la conexión
-        $this->conexion = CL_Conexion::getInstancia();
+        $this->_conexion = CL_Conexion::getInstancia();
     }
 
     public function login(CL_Acceso $acceso) {
@@ -22,7 +22,7 @@ class DAO_Acceso {
         $password = $acceso->getPassword();
 
         //Cambiar consulta si es que no corresponde con la bdd
-        $sql = "select * from acceso where rut='$rutUsuario' and contrasenia='$password'";
+        $sql = "procedimiento almacenado";
 
         $resultado = $this->mysqli->query($sql);
 

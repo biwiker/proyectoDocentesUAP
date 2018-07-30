@@ -6,63 +6,63 @@
  */
 class CL_Usuario {
     
-    private $rut;
-    private $pnombre;
-    private $snombre;
-    private $apellidoP;
-    private $apellidoM;
-    private $correo;
+    private $_rut;
+    private $_pnombre;
+    private $_snombre;
+    private $_apellidoP;
+    private $_apellidoM;
+    private $_correo;
     
     function __construct() {
         
     }
 
     function getRut() {
-        return $this->rut;
+        return $this->_rut;
     }
 
     function getPnombre() {
-        return $this->pnombre;
+        return $this->_pnombre;
     }
 
     function getSnombre() {
-        return $this->snombre;
+        return $this->_snombre;
     }
 
     function getApellidoP() {
-        return $this->apellidoP;
+        return $this->_apellidoP;
     }
 
     function getApellidoM() {
-        return $this->apellidoM;
+        return $this->_apellidoM;
     }
 
     function getCorreo() {
-        return $this->correo;
+        return $this->_correo;
     }
 
     function setRut($rut) {
-        $this->rut = $rut;
+        $this->_rut = $rut;
     }
 
     function setPnombre($pnombre) {
-        $this->pnombre = $pnombre;
+        $this->_pnombre = $pnombre;
     }
 
     function setSnombre($snombre) {
-        $this->snombre = $snombre;
+        $this->_snombre = $snombre;
     }
 
     function setApellidoP($apellidoP) {
-        $this->apellidoP = $apellidoP;
+        $this->_apellidoP = $apellidoP;
     }
 
     function setApellidoM($apellidoM) {
-        $this->apellidoM = $apellidoM;
+        $this->_apellidoM = $apellidoM;
     }
 
     function setCorreo($correo) {
-        $this->correo = $correo;
+        $this->_correo = $correo;
     }
 
 

@@ -5,126 +5,126 @@
  * @author 
  */
 class CL_Docente {
-   private $rut;
-   private $dv;
-   private $id;  //(id de casa central)
-   private $pNombre;
-   private $sNombre;
-   private $apPaterno;
-   private $apMaterno;
-   private $idCentroCosto;
-   private $correo1;
-   private $correo2;
-   private $correo3;
-   private $fonoFijo;
-   private $fonoMovil;
+   private $_rut;
+   private $_dv;
+   private $_id;  //(id de casa central)
+   private $_pNombre;
+   private $_sNombre;
+   private $_apPaterno;
+   private $_apMaterno;
+   private $_idCentroCosto;
+   private $_correo1;
+   private $_correo2;
+   private $_correo3;
+   private $_fonoFijo;
+   private $_fonoMovil;
    
    function __construct() {
        
    }
    
    function getRut() {
-       return $this->rut;
+       return $this->_rut;
    }
 
    function getDv() {
-       return $this->dv;
+       return $this->_dv;
    }
 
    function getId() {
-       return $this->id;
+       return $this->_id;
    }
 
    function getPNombre() {
-       return $this->pNombre;
+       return $this->_pNombre;
    }
 
    function getSNombre() {
-       return $this->sNombre;
+       return $this->_sNombre;
    }
 
    function getApPaterno() {
-       return $this->apPaterno;
+       return $this->_apPaterno;
    }
 
    function getApMaterno() {
-       return $this->apMaterno;
+       return $this->_apMaterno;
    }
 
    function getIdCentroCosto() {
-       return $this->idCentroCosto;
+       return $this->_idCentroCosto;
    }
 
    function getCorreo1() {
-       return $this->correo1;
+       return $this->_correo1;
    }
 
    function getCorreo2() {
-       return $this->correo2;
+       return $this->_correo2;
    }
 
    function getCorreo3() {
-       return $this->correo3;
+       return $this->_correo3;
    }
 
    function getFonoFijo() {
-       return $this->fonoFijo;
+       return $this->_fonoFijo;
    }
 
    function getFonoMovil() {
-       return $this->fonoMovil;
+       return $this->_fonoMovil;
    }
 
    function setRut($rut) {
-       $this->rut = $rut;
+       $this->_rut = $rut;
    }
 
    function setDv($dv) {
-       $this->dv = $dv;
+       $this->_dv = $dv;
    }
 
    function setId($id) {
-       $this->id = $id;
+       $this->_id = $id;
    }
 
    function setPNombre($pNombre) {
-       $this->pNombre = $pNombre;
+       $this->_pNombre = $pNombre;
    }
 
    function setSNombre($sNombre) {
-       $this->sNombre = $sNombre;
+       $this->_sNombre = $sNombre;
    }
 
    function setApPaterno($apPaterno) {
-       $this->apPaterno = $apPaterno;
+       $this->_apPaterno = $apPaterno;
    }
 
    function setApMaterno($apMaterno) {
-       $this->apMaterno = $apMaterno;
+       $this->_apMaterno = $apMaterno;
    }
 
    function setIdCentroCosto($idCentroCosto) {
-       $this->idCentroCosto = $idCentroCosto;
+       $this->_idCentroCosto = $idCentroCosto;
    }
 
    function setCorreo1($correo1) {
-       $this->correo1 = $correo1;
+       $this->_correo1 = $correo1;
    }
 
    function setCorreo2($correo2) {
-       $this->correo2 = $correo2;
+       $this->_correo2 = $correo2;
    }
 
    function setCorreo3($correo3) {
-       $this->correo3 = $correo3;
+       $this->_correo3 = $correo3;
    }
 
    function setFonoFijo($fonoFijo) {
-       $this->fonoFijo = $fonoFijo;
+       $this->_fonoFijo = $fonoFijo;
    }
 
    function setFonoMovil($fonoMovil) {
-       $this->fonoMovil = $fonoMovil;
+       $this->_fonoMovil = $fonoMovil;
    }
 
 

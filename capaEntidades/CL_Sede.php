@@ -6,8 +6,8 @@
  */
 class CL_Sede {
     
-    private $id_sede;
-    private $descripcion;
+    private $_idSede;
+    private $_descripcion;
     
     function __construct() {
         
@@ -15,19 +15,19 @@ class CL_Sede {
     
     
     function getId_sede() {
-        return $this->id_sede;
+        return $this->_idSede;
     }
 
     function getDescripcion() {
-        return $this->descripcion;
+        return $this->_descripcion;
     }
 
     function setId_sede($id_sede) {
-        $this->id_sede = $id_sede;
+        $this->_idSede = $id_sede;
     }
 
     function setDescripcion($descripcion) {
-        $this->descripcion = $descripcion;
+        $this->_descripcion = $descripcion;
     }
 
 

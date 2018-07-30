@@ -6,27 +6,27 @@
  */
 class CL_TipoAcceso {
     
-    private $id;
-    private $descripcion;
+    private $_id;
+    private $_descripcion;
     
     function __construct() {
         
     }
 
     function getId() {
-        return $this->id;
+        return $this->_id;
     }
 
     function getDescripcion() {
-        return $this->descripcion;
+        return $this->_descripcion;
     }
 
     function setId($id) {
-        $this->id = $id;
+        $this->_id = $id;
     }
 
     function setDescripcion($descripcion) {
-        $this->descripcion = $descripcion;
+        $this->_descripcion = $descripcion;
     }
 
 

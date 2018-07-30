@@ -6,15 +6,15 @@
  */
 class CL_SedeCarga {
     
-    private $id_sede;
-    private $id_docente;
+    private $_idSede;
+    private $_idDocente;
     
     function __construct() {
         
     }
     
     function getId_sede() {
-        return $this->id_sede;
+        return $this->_idSede;
     }
 
     function getId_docente() {
@@ -22,7 +22,7 @@ class CL_SedeCarga {
     }
 
     function setId_sede($id_sede) {
-        $this->id_sede = $id_sede;
+        $this->_idSede = $id_sede;
     }
 
     function setId_docente($id_docente) {

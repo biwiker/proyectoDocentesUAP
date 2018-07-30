@@ -6,27 +6,27 @@
  */
 class CL_Acceso {
     
-    private $rut;
-    private $password;
+    private $_rut;
+    private $_password;
     
     function __construct() {
        
     }
     
     function getRut() {
-        return $this->rut;
+        return $this->_rut;
     }
 
     function getPassword() {
-        return $this->password;
+        return $this->_password;
     }
 
     function setRut($rut) {
-        $this->rut = $rut;
+        $this->_rut = $rut;
     }
 
     function setPassword($password) {
-        $this->password = $password;
+        $this->_password = $password;
     }
 
 
