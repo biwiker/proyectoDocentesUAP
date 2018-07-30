@@ -59,3 +59,10 @@ hr{
     background-color: #001e39; 
     color: #fff;
 }
+
+.contenedor-login  #formulario  h6{
+    padding: 0 10% 0 10%;
+    font-size: 13px;
+    margin-top: 0;
+     
+}

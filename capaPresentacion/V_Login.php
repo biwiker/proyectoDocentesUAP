@@ -28,6 +28,8 @@
             
             <form id="formulario" class="form-group" method="post" action="">
                 
+                <h6><strong>Sistema de Administraci&oacute;n UAP</strong></h6>
+                
                 <div class="form-group">
                     <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuario" required="">
                 </div>

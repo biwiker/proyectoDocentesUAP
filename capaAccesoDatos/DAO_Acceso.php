@@ -22,7 +22,7 @@ class DAO_Acceso {
         $password = $acceso->getPassword();
 
         //Cambiar consulta si es que no corresponde con la bdd
-        $sql = "procedimiento almacenado";
+        $sql = "call buscarCliente";
 
         $resultado = $this->mysqli->query($sql);
 
