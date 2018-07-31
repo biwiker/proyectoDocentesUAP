@@ -136,4 +136,81 @@ div .articulo_4 #btnEditarUap{
       position: absolute;
       top: 25%;
       left:95%;
+} 
+/*medias query para dispositivos con un ancho de 1024px y un alto de 768px*/
+@media screen and (max-width: 1024px) and (max-height:768px){ 
+  div .articulo_2 #Escuela{
+      left:23%;
+      top:15%;
+  }
+  div .articulo_2 #txtEscuela{
+  
+      left:23%;
+      top:35%;
+  }
+div .articulo_2 button{
+      left:43%;
+      top:35%;
+  }
+  
+div .articulo_3 #btnEditarInclusion{
+      top: 25%;
+      left:93%;
+}
+div .articulo_4 #btnEditarUap{
+      top: 25%;
+      left:93%;
+} 
+}
+/*medias query para dispositivos con un ancho de 800px y un alto de 480px*/
+@media screen and (max-width: 800px) and (max-height:480px){
+.cabezera p{
+    top: 4%;
+    left: 61%;
+}
+.boton_personalizado{
+    top:2%;
+    left:80%;
+  }
+ div .articulo_1 h1{
+    top:3%; 
+    left:2%;
+    font-size:20px;
+  }
+    div .articulo_1 span{
+      color: black;
+      font-size:20px;
+  }
+    div .articulo_2 #Escuela{
+      left:26%;
+      top:15%;
+  }
+    div .articulo_2 #txtEscuela{
+      left:26%;
+      top:40%;
+  }
+    div .articulo_2 #Rut{
+      left:2%;
+      top:40%;
+  }
+  div .articulo_2 button{
+      left:50%;
+      top:40%;
+  }
+    div .articulo_3 h4{
+      top: 8%;
+      left:2%;
+  }
+    div .articulo_3 #btnEditarInclusion{
+      top: 13%;
+      left:92%;
+  }
+    div .articulo_4 h4{
+      top: 10%;
+      left:2%;
+  }
+  div .articulo_4 #btnEditarUap{
+      top: 15%;
+      left:92%;
+} 
 }
