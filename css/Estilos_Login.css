@@ -71,6 +71,11 @@ hr{
     width: 100%;
     background-color: #001e39; 
     color: #fff;
+    box-shadow: 0 0 5px #ccc;
+}
+.contenedor-login #boton-login:hover{
+    background-color: #aeaeae;
+    color:black;
 }
 
 .contenedor-login  #formulario  h6{
