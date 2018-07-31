@@ -104,3 +104,15 @@
       -webkit-box-shadow: 2px 2px 5px #999;
       -moz-box-shadow: 2px 2px 5px #999;
   }
+  div .articulo_3 h4{
+      color: black;
+      position: absolute;
+      top: 25%;
+      left:2%;
+  }
+  div .articulo_3 #btnEditarInclusion{
+      position: absolute;
+      top: 25%;
+      left:95%;
+  }
+  

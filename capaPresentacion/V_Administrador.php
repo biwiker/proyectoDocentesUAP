@@ -19,10 +19,11 @@
             <!--boton que destruye sesion-->
             <button class="boton_personalizado" name="btnCerrarSesion" value="Cerrar Sesion"><span class="glyphicon glyphicon-remove"></span> Cerrar Sesion</button>
         </header>
-           
+            <!--div que muestra "adminstrador del sistema"-->
             <div class="articulo_1">
                 <h1><span class="glyphicon glyphicon-ok"></span> Administrador Del Sistema</h1>
             </div>
+            <!--div que muestra las cajas de texto y el boton-->
             <div class="articulo_2">
                 <label id="Docente">Rut Docente</label>
                 <input type="text" placeholder="Ingrese Rut" name="txtRut" id="Rut" required >
@@ -31,8 +32,10 @@
                 <button class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" name="btnVerDocente" value="Ver Docente" >Ver
                 </button>
             </div>
+            <!--div que muestra la otra funcion que tiene el administrador-->
             <div class="articulo_3">
-                
+                <h4>Inclusion</h4>
+                <button class="" id="btnEditarInclusion" name="btnEditarInclusion" value="Ver Inclusion">Ver</button>
             </div>
        </div>
     </body>
