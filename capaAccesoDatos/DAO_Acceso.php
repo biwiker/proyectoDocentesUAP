@@ -14,7 +14,11 @@ class DAO_Acceso {
 
     function __construct() {
         //al crear una instancia de la clase, se obtiene de inmediato el estado de la conexión
-        $this->_conexion = CL_Conexion::getInstancia();
+        try {
+            $this->_conexion = CL_Conexion::getInstancia();
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
     }
 
     public function login(CL_Acceso $acceso) {
@@ -25,7 +29,7 @@ class DAO_Acceso {
             $password = $acceso->getPassword();
 
             //Cambiar consulta si es que no corresponde con la bdd
-            $sql = "call buscarCliente(?,?) ";
+            $sql = "call buscarCliente('$rutUsuario','$password') ";
 
             $resultado = $this->mysqli->query($sql);
 
@@ -34,7 +38,7 @@ class DAO_Acceso {
             if ($row == null) {
                 return null;
             }
-            
+
             //si el usuario existe, se debe retornar el tipo de usuario
 
             return $usuarioValidado;
