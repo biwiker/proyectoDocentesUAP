@@ -115,4 +115,25 @@
       top: 25%;
       left:95%;
   }
-  
+  div .articulo_4{
+      margin-left:3%;
+      background-color: #ffffff;
+      color: #999999;
+      width: 95%;
+      height: 10%;
+      position: absolute;
+      top:75%;
+      -webkit-box-shadow: 2px 2px 5px #999;
+      -moz-box-shadow: 2px 2px 5px #999;
+  }
+  div .articulo_4 h4{
+      color: black;
+      position: absolute;
+      top: 25%;
+      left:2%;
+  }
+div .articulo_4 #btnEditarUap{
+      position: absolute;
+      top: 25%;
+      left:95%;
+}

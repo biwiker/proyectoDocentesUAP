@@ -35,7 +35,11 @@
             <!--div que muestra la otra funcion que tiene el administrador-->
             <div class="articulo_3">
                 <h4>Inclusion</h4>
-                <button class="" id="btnEditarInclusion" name="btnEditarInclusion" value="Ver Inclusion">Ver</button>
+                <button class="btn btn-success" id="btnEditarInclusion" name="btnEditarInclusion" value="Ver Inclusion">Ver</button>      
+            </div>
+            <div class="articulo_4">
+                <h4>Uap</h4>
+                <button class="btn btn-success" id="btnEditarUap" name="btnEditarUap" value="Ver Uap">Ver</button>
             </div>
        </div>
     </body>
