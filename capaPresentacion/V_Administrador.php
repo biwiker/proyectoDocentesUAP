@@ -10,9 +10,24 @@
     <body>
         <div class="contenedor"> 
         <header class="cabezera"> 
-            <p>Bienvenido/a:</p>
-            <button class="boton_personalizado">Cerrar Sesion</button>
+            <img src="../Imagenes/fondo-transparente_1.png" height="50px" width="200px">
+            <p>Bienvenido/a </p>
+            <button class="boton_personalizado" name="btnCerrarSesion" value="Cerrar Sesion"><span class="glyphicon glyphicon-remove"></span> Cerrar Sesion</button>
         </header>
+            <div class="articulo_1">
+                <h1><span class="glyphicon glyphicon-ok"></span> Administrador Del Sistema</h1>
+            </div>
+            <div class="articulo_2">
+                <label id="Docente">Rut Docente</label>
+                <input type="text" placeholder="Ingrese Rut" name="txtRut" id="Rut">
+                <label id="Escuela">Escuela</label>
+                <input type="text" placeholder="Ingrese Escuela" name="txtEscuela" id="txtEscuela"> 
+                <button class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" name="btnVerDocente" value="Ver Docente" >Ver
+                </button>
+            </div>
+            <div class="articulo_3">
+                
+            </div>
        </div>
     </body>
 </html>
