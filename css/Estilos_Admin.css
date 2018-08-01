@@ -76,20 +76,26 @@
   }
  div .articulo_2 #Escuela{
       position:absolute;
-      left:20%;
+      left:40%;
       top:15%;
   }
   div .articulo_2 #txtEscuela{
       position: absolute;
-      left:20%;
+      left:40%;
       top:35%;
   }
   
-  div .articulo_2 button{
+  div .articulo_2 #btnVerDocente{
       position: absolute;
-      left:35%;
+      left:17%;
       top:35%;
-      width:50px;
+      height:25px;
+      line-height: 13px;
+  }
+    div .articulo_2 #btnVerEscuela{
+      position: absolute;
+      left:55%;
+      top:35%;
       height:25px;
       line-height: 13px;
   }
