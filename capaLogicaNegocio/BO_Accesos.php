@@ -8,18 +8,23 @@
    $CL_Acceso->setRut($_POST['txtUsuario']);
    $CL_Acceso->setPassword($_POST['txtClave']);
    
+   //
+   $CL_TipoAcceso = new CL_TipoAcceso();
+   $CL_TipoAcceso->setId();
+   
    //creamos una clase DAO, y le envío la clase creada
    $DAO_Acceso = new DAO_Acceso();
    $resultado = $DAO_Acceso->login($CL_Acceso);
+   $resultado2 = $DAO_Acceso->login($CL_TipoAcceso);
        
    
    
    //si el metodo retorna un null
    if ($resultado != null) {
-       
-       if ($resultado == 'Administrador') {
+       //Se compara el resultado 2(id) con lo que rescató del que ingresó
+       if ($resultado2=$CL_TipoAcceso->getId()==1) {
            //se redirecciona a la pagina del admin
-       }else if($resultado == 'Asesor'){
+       }else if($resultado2=$CL_TipoAcceso->getId()==2){
            //se redirecciona a la pagina del asesor
        }else{
            //se redirecciona a la pagina del login
