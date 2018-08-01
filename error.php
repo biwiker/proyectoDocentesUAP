@@ -39,10 +39,13 @@
                         <strong>ERROR 404 NO FOUND</strong> Lo sentimos no encontramos la pagina.
                     </div>-->
             </body>
-            <footer style="position: absolute; bottom: 5px; right: 10px">
-                <div class="alert alert-danger">
+            <footer>
+                <div class="alert alert-danger" style="position: absolute; bottom: 5px; right: 10px">
                     <a href="capaPresentacion/V_Login.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     <strong>Lo sentimos no encontramos la pagina</strong>.
+                </div>
+                <div style="position: absolute; bottom: 5px; left:10px;">
+                    <button href="capaPresentacion/V_Login.php" type="button" class="btn">VOLVER</button>
                 </div>
             </footer>
             </html>
