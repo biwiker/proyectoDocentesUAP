@@ -47,4 +47,14 @@ class DAO_Acceso {
         }
     }
 
+    
+    //Sesion destruida ,falta redireccionar de manera correcta y revisar
+    public function cerrarSesion() {
+        //$_SESSION['nombre'] = null;
+        //$_SESSION['apellido'] = null;
+        session_start();
+        session_destroy();
+        header("location: index.php");
+    }
+
 }
