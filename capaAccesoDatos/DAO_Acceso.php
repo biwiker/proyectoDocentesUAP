@@ -39,6 +39,15 @@ class DAO_Acceso {
                 return null;
             }
 
+            $ValidarDocente = new CL_Docente();
+            $ValidarAcceso = new CL_TipoAcceso();
+
+            $ValidarDocente->setPNombre($row['nombre']);
+            $ValidarDocente->setApPaterno($row['apellido']);
+            $ValidarAcceso->setId($row['id']);
+            
+
+
             //si el usuario existe, se debe retornar el tipo de usuario
 
             return $usuarioValidado;
