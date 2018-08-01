@@ -13,9 +13,9 @@
             <!-- div de la barra superior -->
         <header class="cabezera"> 
             <!--imagen duoc uc-->
-            <img src="../Imagenes/fondo-transparente_1.png" height="50px" width="200px">
+            <img src="../Imagenes/fondo-transparente_1.png" height="50px" width="200px" >
             <!--texto donde deberia aparecer el usuario que inició sesion-->
-            <p>Bienvenido/a </p>
+            <p class="text-warning">Bienvenido/a </p>
             <!--boton que destruye sesion-->
             <button class="boton_personalizado" name="btnCerrarSesion" value="Cerrar Sesion"><span class="glyphicon glyphicon-remove"></span> Cerrar Sesion</button>
         </header>
