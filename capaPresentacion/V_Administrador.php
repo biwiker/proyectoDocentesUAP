@@ -25,12 +25,12 @@
             </div>
             <!--div que muestra las cajas de texto y los botones-->
             <div class="articulo_2">
-                <label id="Docente">Rut Docente</label>
+                <label id="Docente" class="label label-default">Rut Docente</label>
                 <input type="text" placeholder="Ingrese Rut" name="txtRut" id="Rut" required >
                 
                 <button class="btn btn-primary" data-toggle="button" aria-pressed="false" id="btnVerDocente"  autocomplete="off" name="btnVerDocente" value="VerDocente" >Ver Docente</button>
                 
-                <label id="Escuela">Escuela</label>
+                <label id="Escuela" class="label label-default">Escuela</label>
                 <input type="text" placeholder="Ingrese Escuela" name="txtEscuela" id="txtEscuela" required> 
                
                 <button class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off"  id="btnVerEscuela" name="btnVerEscuela" value="VerEscuela" >Ver Escuela</button>
