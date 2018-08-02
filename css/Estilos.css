@@ -1,0 +1,394 @@
+
+/*DISEÑO  PARA LOGIN ADMIN*/
+.cabezera{
+    width: 100%;
+}
+.cabezera p{
+    position: absolute;
+    top: 4%;
+    left: 75%;
+}
+.cabezera img{
+    position: absolute;
+    top: 5%;
+    left:4%;
+}
+.contenedor{
+    width: 100%;
+    height: 100%;
+    background-color:#F4F6F7;
+}
+.boton_personalizado{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #000;
+    background-color: #F4F6F7;
+    border-radius: 6px;
+    border: 2px solid #F4F6F7;
+    position: absolute;
+    top:2%;
+    left:87%;
+}
+.boton_personalizado:active,.boton_personalizado:focus,.boton_personalizado:active{
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+div .articulo_1{
+    background-color: #ffffff;
+    color: #999999;
+    width: 100%;
+    height: 12%;
+    position: absolute;
+    top:20%;
+    -webkit-box-shadow: 2px 2px 5px #999;
+    -moz-box-shadow: 2px 2px 5px #999;
+}
+div .articulo_1 h1{
+    position:absolute;
+    top:3%; 
+    left:2%;
+}
+div .articulo_1 span{
+    color: black;
+}
+div .articulo_2{
+    margin-left:3%;
+    background-color: #ffffff;
+    color: #999999;
+    width: 95%;
+    height: 15%;
+    position: absolute;
+    top:40%;
+    -webkit-box-shadow: 2px 2px 5px #999;
+    -moz-box-shadow: 2px 2px 5px #999;
+}
+div .articulo_2 #Docente{
+    position:absolute;
+    left:2%;
+    top:15%;
+}
+div .articulo_2 #Rut{
+    position: absolute;
+    left:2%;
+    top:35%;
+}
+div .articulo_2 #Escuela{
+    position:absolute;
+    left:40%;
+    top:15%;
+}
+div .articulo_2 #txtEscuela{
+    position: absolute;
+    left:40%;
+    top:35%;
+}
+
+div .articulo_2 #btnVerDocente{
+    position: absolute;
+    left:17%;
+    top:35%;
+    height:25px;
+    line-height: 13px;
+}
+div .articulo_2 #btnVerEscuela{
+    position: absolute;
+    left:55%;
+    top:35%;
+    height:25px;
+    line-height: 13px;
+}
+div .articulo_3{
+    margin-left:3%;
+    background-color: #ffffff;
+    color: #999999;
+    width: 95%;
+    height: 10%;
+    position: absolute;
+    top:60%;
+    -webkit-box-shadow: 2px 2px 5px #999;
+    -moz-box-shadow: 2px 2px 5px #999;
+}
+div .articulo_3 h4{
+    color: black;
+    position: absolute;
+    top: 25%;
+    left:2%;
+}
+div .articulo_3 #btnEditarInclusion{
+    position: absolute;
+    top: 25%;
+    left:95%;
+}
+div .articulo_4{
+    margin-left:3%;
+    background-color: #ffffff;
+    color: #999999;
+    width: 95%;
+    height: 10%;
+    position: absolute;
+    top:75%;
+    -webkit-box-shadow: 2px 2px 5px #999;
+    -moz-box-shadow: 2px 2px 5px #999;
+}
+div .articulo_4 h4{
+    color: black;
+    position: absolute;
+    top: 25%;
+    left:2%;
+}
+div .articulo_4 #btnEditarUap{
+    position: absolute;
+    top: 25%;
+    left:95%;
+} 
+/*medias query para dispositivos con un ancho de 1024px y un alto de 768px*/
+@media screen and (max-width: 1024px) and (max-height:768px){ 
+    div .articulo_2 #Escuela{
+        left:23%;
+        top:15%;
+    }
+    div .articulo_2 #txtEscuela{
+
+        left:23%;
+        top:35%;
+    }
+    div .articulo_2 button{
+        left:43%;
+        top:35%;
+    }
+
+    div .articulo_3 #btnEditarInclusion{
+        top: 25%;
+        left:93%;
+    }
+    div .articulo_4 #btnEditarUap{
+        top: 25%;
+        left:93%;
+    } 
+}
+/*medias query para dispositivos con un ancho de 800px y un alto de 480px*/
+@media screen and (max-width: 800px) and (max-height:480px){
+    .cabezera p{
+        top: 4%;
+        left: 61%;
+    }
+    .boton_personalizado{
+        top:2%;
+        left:80%;
+    }
+    div .articulo_1 h1{
+        top:3%; 
+        left:2%;
+        font-size:20px;
+    }
+    div .articulo_1 span{
+        color: black;
+        font-size:20px;
+    }
+    div .articulo_2 #Escuela{
+        left:26%;
+        top:15%;
+    }
+    div .articulo_2 #txtEscuela{
+        left:26%;
+        top:40%;
+    }
+    div .articulo_2 #Rut{
+        left:2%;
+        top:40%;
+    }
+    div .articulo_2 button{
+        left:50%;
+        top:40%;
+    }
+    div .articulo_3 h4{
+        top: 8%;
+        left:2%;
+    }
+    div .articulo_3 #btnEditarInclusion{
+        top: 13%;
+        left:92%;
+    }
+    div .articulo_4 h4{
+        top: 10%;
+        left:2%;
+    }
+    div .articulo_4 #btnEditarUap{
+        top: 15%;
+        left:92%;
+    } 
+}
+
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+
+/*DISEÑO  PARA LOGIN USUARIO*/
+.principal{
+    position: relative;
+    top: 1px;
+    left: 0px;
+    width:100%;
+    padding-top:15px;
+    padding-bottom:15px;
+    background-color:#001e39;
+}
+.principal img{
+    display: block; 
+    margin: 0 0 0 100px;
+    max-width: 100%;
+    width: 111px;
+    height: 25px;
+}
+main{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background-color:white;
+}
+div img{
+    display: block; 
+    margin: 0 auto;
+    width: 400px;
+    height: 90px;
+}
+/*linea amarilla divisoria*/
+.hr{
+    height: 7px;
+    background-color:#FACC2E;
+    margin-top: 0;
+    margin-bottom: 60px;
+    box-shadow: 0 3px 3px #ccc;
+}
+
+#boton1{
+    background:#0B0B3B;
+    color: #fff;
+    margin-left:2%;
+    padding: 10px;
+    size:10px;
+}
+#formulario{
+    position: relative;
+    top: 1px;
+    width:100%;
+
+}
+/*estilo para las cajas de texto del login de usuario*/
+#formulario #usuario[type=text]:focus{
+
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px #ccc;
+
+}
+#formulario #clave[type=password]:focus{
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px #ccc;
+}
+.contenedor-login  #formulario{
+    padding:  2% 40% 0 40%;   
+
+}
+.contenedor-login #boton-login{
+    width: 100%;
+    background-color: #001e39; 
+    color: #fff;
+    box-shadow: 0 0 5px #ccc;
+}
+.contenedor-login #boton-login:hover{
+    background-color: #aeaeae;
+    color:black;
+}
+
+.contenedor-login  #formulario  h6{
+    padding: 0 10% 0 10%;
+    font-size: 13px;
+    margin-top: 0;
+}
+
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/*DISEÑO  PARA PAGINA ERROR*/
+
+/*sub mensaje de error*/
+.mensajeError {
+    position: absolute;
+    right: 58%;
+    color: red;
+    margin-top: 140px;
+    color: red;
+    background-color: #FABDBD;
+}
+
+/*mensaje izquierda inferior*/
+#botonVolver{
+    right: 50%;
+    position: absolute;
+    bottom: 20%;
+    background:#0B0B3B;
+    color: #fff;
+    padding: 10px;
+    size:10px;
+}
+
+/*mensaje de ERROR 404*/
+.mensajeError404{
+    position: absolute;
+    right: 50%;
+    color: red;
+    margin-top: 60px;
+}
+
+/*cabecera con imagen de duoc*/
+.imagenDuocSuperior{
+    width: 100%;
+    top:1px;
+    left: 0px;
+    padding-top: 15px;
+    background-color: #001e39;
+    position: relative;
+}
+
+/*imagen de error lado izquierdo*/
+.imagenError{
+    height: 200px;
+    width: 200px;
+    margin-left: 40px;
+    position: absolute;
+    top: 20%;
+}
+
+/*color del cuerpo de la pagina*/
+.cuerpoError{
+    background-color: #ECEEF7;
+}
+
+
+
+
+
+
+

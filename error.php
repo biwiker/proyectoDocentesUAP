@@ -5,27 +5,27 @@
     </head>
     <title>Error 404</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link href="css/Estilos_Login.css" rel="stylesheet" type="text/css">
+    <link href="css/Estilos.css" rel="stylesheet" type="text/css">
         <link href="bootstrap 3/css/bootstrap.css" rel="stylesheet" type="text/css">
             <script src="bootstrap 3/js/bootstrap.js"></script>
             <script src="bootstrap 3/jquery-3.3.1.js"></script>
             
-            <body style="background-color: ">
+            <body class="cuerpoError">
                 <!--cabecera con imagen de DUOC-->
-                <header style="width: 100%;top: 1px;left: 0px;padding-top: 15px; background-color: #001e39; position: relative">
+                <header class="imagenDuocSuperior">
                     <img src="Imagenes/fondo-transparente_4.png"> 
                 </header>
                 <!--linea de división del header amarilla-->
-                <hr style="height: 7px; background-color: #FACC2E; margin-top: 0;margin-bottom: 60px; box-shadow: 0 3px 3px #ccc">
+                <hr class="hr">
 
                 <!--imagen de error en el lado izquierdo-->
                     <div>
-                        <div class="col-md-4"> 
-                            <img src="Imagenes/error.png" class="col-md-4" style="position: relative; display: block; left: 1%">
+                        <div> 
+                            <img class="imagenError" src="Imagenes/error.png">
                         </div>
                 <!--mensaje de error al pie de pagina lado derecho-->        
-                        <div>
-                            <h1 class="alert alert-danger" style="position: absolute; right: 50%"><strong>ERROR 404 NO FOUND</strong></h1>
+                        <div class="mensajeError404">
+                            <h1><strong>ERROR 404 NO FOUND</strong></h1>
                         </div>
                     </div>
 
@@ -40,12 +40,14 @@
                     </div>-->
             </body>
             <footer>
-                <div class="alert alert-danger" style="position: absolute; bottom: 5px; right: 10px">
-                    <a href="capaPresentacion/V_Login.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <!--mensaje en el inferior derecha -->
+                <div class="mensajeError">
+                    <a href="capaPresentacion/V_Login.php" class="close" data-dismiss="alert" >&times;</a>
                     <strong>Lo sentimos no encontramos la pagina</strong>.
                 </div>
-                <div style="position: absolute; bottom: 5px; left:10px;">
-                    <button href="capaPresentacion/V_Login.php" type="button" class="btn">VOLVER</button>
+                <!--boton para volver-->
+                <div>
+                    <button type="button" name="btnVolver" class="btn" href="capaPresentacion/V_Login.php"  id="botonVolver">Volver</button>
                 </div>
             </footer>
             </html>
