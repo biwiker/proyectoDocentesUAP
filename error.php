@@ -25,7 +25,7 @@
                         </div>
                 <!--mensaje de error al pie de pagina lado derecho-->        
                         <div class="mensajeError404">
-                            <h1><strong>ERROR 404 NO FOUND</strong></h1>
+                            <h1><strong>PAGE NOT FOUND</strong></h1>
                         </div>
                     </div>
 
