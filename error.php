@@ -29,7 +29,6 @@
                         </div>
                     </div>
 
-
                     <!--
                     <div>
                         <h1 class="alert-danger"><strong>ERROR 404 NO FOUND</strong></h1>

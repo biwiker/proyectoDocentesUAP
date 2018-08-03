@@ -14,8 +14,8 @@
         <header class="cabezera"> 
             <!--imagen duoc uc-->
             <img src="../Imagenes/fondo-transparente_1.png" height="50px" width="200px" >
-            <!--texto donde deberia aparecer el usuario que inició sesion-->
-            <p class="text-warning">Bienvenido/a </p>
+            <!--Mostrar quien es el usuario ingresado en el sistema(Revisar)-->
+            <p class="text-warning">Bienvenido/a: <?php echo $_SESSION['nombre']; ?> <?php echo $_SESSION['apellido']; ?></p>
             <!--boton que destruye sesion-->
             <button class="boton_personalizado" name="btnCerrarSesion" value="Cerrar Sesion"><span class="glyphicon glyphicon-remove"></span> Cerrar Sesion</button>
         </header>

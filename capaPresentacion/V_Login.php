@@ -25,8 +25,8 @@
         <!--boton de login-->
         
         <div class="contenedor-login">
-            
-            <form id="formulario" class="form-group" method="post" action="">
+             <!--la action que tiene el formulario para su completo funcionamiento(En prueba)-->
+            <form id="formulario" class="form-group" method="post" action="../capaLogicaNegocio/BO_Accesos.php">
                 
                 <h6><strong>Sistema de Administraci&oacute;n UAP</strong></h6>
                 

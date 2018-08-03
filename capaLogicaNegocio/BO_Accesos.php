@@ -6,7 +6,7 @@ include_once '../capaAccesoDatos/DAO_Acceso.php';
 //se crea una clase de acceso con los datos del login
 $CL_Acceso = new CL_Acceso();
 $CL_Acceso->setRut($_POST['txtUsuario']);
-$CL_Acceso->setPassword($_POST['txtClave']);
+$CL_Acceso->setPassword($_POST['txtClave']);          
 ($_POST['btnSalir']);
 
 //
@@ -28,7 +28,7 @@ if ($resultado != null) {
 
         //se redirecciona a la pagina del admin
     } else if ($resultado2 = $CL_TipoAcceso->getId() == 2) {
-
+        
         //se redirecciona a la pagina del asesor
     } else if ($resultado2 = $CL_TipoAcceso->getId() == 3) {
         //se redirecciona a la pagina del login
@@ -37,7 +37,7 @@ if ($resultado != null) {
         header("location: index.php");
     }
 }
-   
+  
    
    
    
