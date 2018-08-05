@@ -17,52 +17,41 @@ class DAO_Acceso {
         try {
             $this->_conexion = CL_Conexion::getInstancia();
         } catch (Exception $exc) {
-            echo $exc->getTraceAsString();
+            echo 'error al generar la instancia de conexion ' + $exc->getTraceAsString();
         }
     }
 
     public function login(CL_Acceso $acceso) {
 
         try {
-            //parámetros para el procedure
-            $rutUsuario = $acceso->getRut();
-            $password = $acceso->getPassword();
+            $us = $acceso->getRut();
+            $pass = $acceso->getPassword();
 
-            //Cambiar consulta si es que no corresponde con la bdd
-            $sql = "call buscarCliente('$rutUsuario','$password') ";
+            $stmt = $this->_conexion->getConexion()->prepare('SELECT FN_OBTENER_TIPO_USUARIO ( ? , ? )'); //se llama a la función almacenada
+            $stmt->bind_param('ii', $us, $pass);  //se reemplazan los argumentos por parámetros de tipo entero int ('i')
+            $stmt->execute();                     //se ejecuta la consulta  
+            $stmt->bind_result($tipo_usuario);    //se enlaza el retorno de la función a una variable bind
 
-            $resultado = $this->mysqli->query($sql);
-
-            $row = $resultado->fetch_assoc();
-
-            if ($row == null) {
-                return null;
+            while ($stmt->fetch()) {
+                if ($tipo_usuario != null) {
+                    return $tipo_usuario;
+                } else {
+                    return null;
+                }
             }
-
-            $ValidarDocente = new CL_Docente();
-            $ValidarAcceso = new CL_TipoAcceso();
-
-            $ValidarDocente->setPNombre($row['nombre']);
-            $ValidarDocente->setApPaterno($row['apellido']);
-            $ValidarAcceso->setId($row['id']);
+            $stmt->close();
             
-
-
-            //si el usuario existe, se debe retornar el tipo de usuario
-
-            return $usuarioValidado;
         } catch (Exception $exc) {
             return null;
         }
     }
 
-    
     //Sesion destruida ,falta redireccionar de manera correcta y revisar
     public function cerrarSesion() {
         //$_SESSION['nombre'] = null;
         //$_SESSION['apellido'] = null;   
         session_start();
-        session_destroy();       
+        session_destroy();
         //header("location: index.php");
     }
 

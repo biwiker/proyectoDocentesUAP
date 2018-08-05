@@ -29,14 +29,14 @@ class CL_Conexion {
     #conectarse al servidor
     public function abrirConexion() {
         if (!isset($this->_conexion)) {
-            $this->_conexion = (mysql_connect(HOST, USER, PASS));
+            $this->_conexion = (mysqli_connect(HOST, USER, PASS,DBNAME));
             if (!$this->_conexion) {
-                trigger_error('Error al conectar al servidor mysql: ' . mysql_error(), E_USER_ERROR);
+                trigger_error('Error al conectar al servidor mysql: ' . mysqli_error(), E_USER_ERROR);
             }
         }
 
-        if (!mysql_select_db(DBNAME, $this->_conexion)) {
-            trigger_error('Error al Seleccionar a la base de datos: ' . mysql_error(), E_USER_ERROR);
+        if (!mysqli_select_db($this->_conexion,DBNAME)) {
+            trigger_error('Error al Seleccionar a la base de datos: ' . mysqli_error(), E_USER_ERROR);
         }
     }
 

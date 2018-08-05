@@ -38,7 +38,7 @@
                     <input type="password" id="clave" name="txtClave" class="form-control" placeholder="Clave" required="">
                 </div>
                 
-                <button type="button" name="btnIngreso" class="btn"  id="boton-login">Ingresar</button>            
+                <button type="submit" name="btnIngreso" class="btn"  id="boton-login">Ingresar</button>            
 
             </form>
         </div>
