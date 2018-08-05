@@ -15,7 +15,7 @@
         <header class="principal"> 
             <!--imagen duoc uc-->
             <div class="logo">
-                <img src="../Imagenes/fondo-transparente_1.png">
+                <img src="../Imagenes/fondo-transparente_4.png">
             </div>
             <div class="info-usuario">
                 <div>
