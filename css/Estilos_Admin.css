@@ -1,222 +1,440 @@
-.cabezera{
-    width: 100%;
-}
-.cabezera p{
-    position: absolute;
-    top: 4%;
-    left: 75%;
-}
-.cabezera img{
- position: absolute;
- top: 5%;
- left:4%;
-}
-.contenedor{
-    width: 100%;
-    height: 100%;
+body{
+
     background-color:#F4F6F7;
 }
-.boton_personalizado{
+.principal{
+    position: relative;
+    top: 1px;
+    left: 0px;
+    width:100%;
+    height: 55px;
+    padding-top:15px;
+    padding-bottom:15px;
+    background-color:#F4F6F7;
+}
+.principal .logo{
+    float: left;
+    width: 50%;
+}
+.principal .logo img{
+    display: block; 
+    margin: 0 0 0 100px;
+    max-width: 100%;
+    width: 111px;
+    height: 25px;
+}
+
+/*linea amarilla divisoria*/
+hr{
+    height: 7px;
+    background-color:#FACC2E;
+    margin-top: 0;
+    box-shadow: 0 3px 3px #ccc;
+}
+.info-usuario{
+    display:  inline-block;
+    float: left;
+    width: 50%;
+}
+.info-usuario div p{
+    padding-top: 5px;
+    padding-left: 30%;
+    color: #999999;
+    float: left;
+}
+
+.info-usuario div button{
+    padding-top: 5px;
+    padding-left: 30px;
     text-decoration: none;
-    padding: 10px;
-    font-weight: 600;
+    font-size: 14px;
+    color: #999999;
+    background-color: #F4F6F7;    
+    border: none;
+    float: left;
+}
+
+.contenedor{    
+
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+
+.boton_personalizado:active,.boton_personalizado:focus,.boton_personalizado:active{
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/*elementos del articulo 1*/
+.articulo_1{
+    background-color: #ffffff;
+    color: #999999;
+    width: 100%;
+    height: 60px;
+    position: relative;
+    -webkit-box-shadow: 2px 2px 5px #999;
+    -moz-box-shadow: 2px 2px 5px #999;
+}
+.articulo_1 h5{
     font-size: 15px;
-    color: #000;
-    background-color: #F4F6F7;
-    border-radius: 6px;
-    border: 2px solid #F4F6F7;
+    margin: 0;
+    padding: 20px 0 0 25px;
+}
+.articulo_1 span{
+    color: #999999;
+}
+
+
+
+/*elementos del articulo 2*/
+.articulo_2{
+    position: relative;
+    margin-top: 20px;
+    background-color: #ffffff;
+    color: #999999;
+    width: 100%;
+    height: 95px;
+    -webkit-box-shadow: 2px 2px 5px #999;
+    -moz-box-shadow: 2px 2px 5px #999;
+}
+/*contedor para cada sección del filtro*/
+.articulo_2 section{
+    position: relative;
+    float: left;
+    background-color: #ffffff;
+    color: #999999;
+    height: 95px;
+}
+
+
+.articulo_2 #lblDocente{
     position: absolute;
-    top:2%;
-    left:87%;
-  }
-  .boton_personalizado:active,.boton_personalizado:focus,.boton_personalizado:active{
-      background-image: none;
-       outline: 0;
-      -webkit-box-shadow: none;
-      box-shadow: none;
-  }
-  div .articulo_1{
-      background-color: #ffffff;
-      color: #999999;
-      width: 100%;
-      height: 12%;
-      position: absolute;
-      top:20%;
-      -webkit-box-shadow: 2px 2px 5px #999;
-      -moz-box-shadow: 2px 2px 5px #999;
-  }
-  div .articulo_1 h1{
-      position:absolute;
-      top:3%; 
-      left:2%;
-  }
-  div .articulo_1 span{
-      color: black;
-  }
-  div .articulo_2{
-      margin-left:3%;
-      background-color: #ffffff;
-      color: #999999;
-      width: 95%;
-      height: 15%;
-      position: absolute;
-      top:40%;
-      -webkit-box-shadow: 2px 2px 5px #999;
-      -moz-box-shadow: 2px 2px 5px #999;
-  }
-  div .articulo_2 #Docente{
-      position:absolute;
-      left:2%;
-      top:15%;
-  }
-  div .articulo_2 #Rut{
-      position: absolute;
-      left:2%;
-      top:35%;
-  }
- div .articulo_2 #Escuela{
-      position:absolute;
-      left:40%;
-      top:15%;
-  }
-  div .articulo_2 #txtEscuela{
-      position: absolute;
-      left:40%;
-      top:35%;
-  }
-  
-  div .articulo_2 #btnVerDocente{
-      position: absolute;
-      left:17%;
-      top:35%;
-      height:25px;
-      line-height: 13px;
-  }
-    div .articulo_2 #btnVerEscuela{
-      position: absolute;
-      left:55%;
-      top:35%;
-      height:25px;
-      line-height: 13px;
-  }
-  div .articulo_3{
-       margin-left:3%;
-      background-color: #ffffff;
-      color: #999999;
-      width: 95%;
-      height: 10%;
-      position: absolute;
-      top:60%;
-      -webkit-box-shadow: 2px 2px 5px #999;
-      -moz-box-shadow: 2px 2px 5px #999;
-  }
-  div .articulo_3 h4{
-      color: black;
-      position: absolute;
-      top: 25%;
-      left:2%;
-  }
-  div .articulo_3 #btnEditarInclusion{
-      position: absolute;
-      top: 25%;
-      left:95%;
-  }
-  div .articulo_4{
-      margin-left:3%;
-      background-color: #ffffff;
-      color: #999999;
-      width: 95%;
-      height: 10%;
-      position: absolute;
-      top:75%;
-      -webkit-box-shadow: 2px 2px 5px #999;
-      -moz-box-shadow: 2px 2px 5px #999;
-  }
-  div .articulo_4 h4{
-      color: black;
-      position: absolute;
-      top: 25%;
-      left:2%;
-  }
-div .articulo_4 #btnEditarUap{
-      position: absolute;
-      top: 25%;
-      left:95%;
-} 
+    float: left;
+    margin-left: 25px;
+    margin-top: 12px;
+}
+
+
+/*caja de texto*/
+.articulo_2  #txtRut{
+    position: relative;
+    float: left;
+    padding: 10px;
+    height: 34px;
+    width: 200px;
+    border: 1px solid #e7eaec;
+    border-radius: 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    margin-top: 32px;
+    margin-left: 25px;
+}
+
+.articulo_2 #btnVerDocente{
+
+    padding: 10px;
+    height: 34px;
+    float: left;
+    line-height: 13px;
+    margin-left: 10px;
+    margin-top: 32px;
+    color:#fff;
+    background-color: #001e39;
+}
+
+
+.articulo_2 #lblEscuela{
+    position: absolute;
+    float: left;
+    margin-left: 25px;
+    margin-top: 12px;
+
+}
+.articulo_2 #txtEscuela{
+
+    float: left;
+    padding: 10px;
+    height: 34px;
+    width: 200px;
+    border: 1px solid #e7eaec;
+    border-radius: 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    margin-top: 32px;
+    margin-left: 25px;
+}
+
+.articulo_2 #btnVerEscuela{
+
+    padding: 10px;
+    height: 34px;
+    float: left;
+    line-height: 13px;
+    margin-left: 10px;
+    margin-top: 32px;
+    color:#fff;
+    background-color: #001e39;
+}
+
+
+
+/*------------------------------------------------------- elementos del articulo 3 -------------------------------------------------------*/
+.articulo_3{
+    position: relative;
+    margin-top: 20px;
+    background-color: #ffffff;
+    color: #999999;
+    width: 100%;
+
+
+    -webkit-box-shadow: 2px 2px 5px #999;
+    -moz-box-shadow: 2px 2px 5px #999;
+}
+.articulo_3 h4,span {
+    display: inline-block;
+}
+
+.articulo_3 h4 {
+    position: relative;
+    font-size: 15px;
+    margin: 0;
+    padding: 15px 0 15px 25px;
+}
+.articulo_3 span {
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+/*linea amarilla divisoria*/
+#linea-section{
+    padding: 0.5px;
+    background-color: #e7eaec;
+}
+#btnInfoDocente {   
+    background-color: #001e39;
+    color: #fff;
+
+}
+#btnInfoDocente span{   
+
+}
+[aria-expanded=false] #btnInfoDocente span:before{
+
+    content: "\2b  VER";
+    padding: 2px;
+    color: #fff;
+    font-size: 10px;
+
+
+}
+[aria-expanded=true] #btnInfoDocente span:after{
+    color:red;
+    content: "\2212  OCULTAR";
+    padding: 2px;
+    color: #fff;
+    font-size: 10px;
+}
+
+
+
+
+/*------------------------------------------------------- elementos del articulo 4 -------------------------------------------------------*/
+
+
+.articulo_4{
+    position: relative;
+    margin-top: 20px;
+    background-color: #ffffff;
+    color: #999999;
+    width: 100%;
+
+
+    -webkit-box-shadow: 2px 2px 5px #999;
+    -moz-box-shadow: 2px 2px 5px #999;
+}
+.articulo_4 h4,span {
+    display: inline-block;
+}
+
+.articulo_4 h4 {
+    position: relative;
+    font-size: 15px;
+    margin: 0;
+    padding: 15px 0 15px 25px;
+}
+.articulo_4 span {
+    position: relative;
+    float: right;
+    font-size: 15px;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+/*linea amarilla divisoria*/
+#linea-section{
+    padding: 0.5px;
+    background-color: #e7eaec;
+}
+#btnInfoDocente {   
+    background-color: #001e39;
+    padding:1px 15px 1px 15px;
+    color: #fff;
+    font-size: 12px;
+}
+#btnInfoDocente span{   
+    float: left;
+    margin:2px 3px 0 0;
+    color: #fff;
+    font-size: 9px;
+}
+
+/*------------------------------------------------------- elementos del articulo 5 -------------------------------------------------------*/
+
+
+.articulo_5{
+    position: relative;
+    margin-top: 20px;
+    background-color: #ffffff;
+    color: #999999;
+    width: 100%;
+
+
+    -webkit-box-shadow: 2px 2px 5px #999;
+    -moz-box-shadow: 2px 2px 5px #999;
+}
+.articulo_5 h4,span {
+    display: inline-block;
+}
+
+.articulo_5 h4 {
+    position: relative;
+    font-size: 15px;
+    margin: 0;
+    padding: 15px 0 15px 25px;
+}
+.articulo_5 span {
+    position: relative;
+    float: right;
+    font-size: 15px;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+/*linea amarilla divisoria*/
+#linea-section{
+    padding: 0.5px;
+    background-color: #e7eaec;
+}
+#btnInfoDocente {   
+    background-color: #001e39;
+    padding:1px 15px 1px 15px;
+    color: #fff;
+    font-size: 12px;
+}
+#btnInfoDocente span{   
+    float: left;
+    margin:2px 3px 0 0;
+    color: #fff;
+    font-size: 9px;
+}
+
+
+
+
+
 /*medias query para dispositivos con un ancho de 1024px y un alto de 768px*/
 @media screen and (max-width: 1024px) and (max-height:768px){ 
-  div .articulo_2 #Escuela{
-      left:23%;
-      top:15%;
-  }
-  div .articulo_2 #txtEscuela{
-  
-      left:23%;
-      top:35%;
-  }
-div .articulo_2 button{
-      left:43%;
-      top:35%;
-  }
-  
-div .articulo_3 #btnEditarInclusion{
-      top: 25%;
-      left:93%;
-}
-div .articulo_4 #btnEditarUap{
-      top: 25%;
-      left:93%;
-} 
+
+    .info-usuario div p{
+        padding-top: 5px;
+        padding-left: 0%;
+        color: #999999;
+        float: left;
+    }
+    .info-usuario div button{
+        padding-top: 5px;
+        padding-left: 10px;
+        text-decoration: none;
+        font-size: 14px;
+        color: #999999;
+        background-color: #F4F6F7;    
+        border: none;
+        float: left;
+    }
+    .articulo_2 #Escuela{
+        left:23%;
+        top:15%;
+    }
+    .articulo_2 #txtEscuela{
+
+        left:23%;
+        top:35%;
+    }
+    .articulo_2 button{
+        left:43%;
+        top:35%;
+    }
+
+    .articulo_3 #btnEditarInclusion{
+        top: 25%;
+        left:93%;
+    }
+    .articulo_4 #btnEditarUap{
+        top: 25%;
+        left:93%;
+    } 
 }
 /*medias query para dispositivos con un ancho de 800px y un alto de 480px*/
 @media screen and (max-width: 800px) and (max-height:480px){
-.cabezera p{
-    top: 4%;
-    left: 61%;
-}
-.boton_personalizado{
-    top:2%;
-    left:80%;
-  }
- div .articulo_1 h1{
-    top:3%; 
-    left:2%;
-    font-size:20px;
-  }
-    div .articulo_1 span{
-      color: black;
-      font-size:20px;
-  }
-    div .articulo_2 #Escuela{
-      left:26%;
-      top:15%;
-  }
-    div .articulo_2 #txtEscuela{
-      left:26%;
-      top:40%;
-  }
-    div .articulo_2 #Rut{
-      left:2%;
-      top:40%;
-  }
-  div .articulo_2 button{
-      left:50%;
-      top:40%;
-  }
-    div .articulo_3 h4{
-      top: 8%;
-      left:2%;
-  }
-    div .articulo_3 #btnEditarInclusion{
-      top: 13%;
-      left:92%;
-  }
-    div .articulo_4 h4{
-      top: 10%;
-      left:2%;
-  }
-  div .articulo_4 #btnEditarUap{
-      top: 15%;
-      left:92%;
-} 
+    .cabecera p{
+        top: 4%;
+        left: 61%;
+    }
+    .boton_personalizado{
+        top:2%;
+        left:80%;
+    }
+    .articulo_1 h1{
+        top:3%; 
+        left:2%;
+        font-size:20px;
+    }
+    .articulo_1 span{
+        color: black;
+        font-size:20px;
+    }
+    .articulo_2 #Escuela{
+        left:26%;
+        top:15%;
+    }
+    .articulo_2 #txtEscuela{
+        left:26%;
+        top:40%;
+    }
+    .articulo_2 #Rut{
+        left:2%;
+        top:40%;
+    }
+    .articulo_2 button{
+        left:50%;
+        top:40%;
+    }
+    .articulo_3 h4{
+        top: 8%;
+        left:2%;
+    }
+    .articulo_3 #btnEditarInclusion{
+        top: 13%;
+        left:92%;
+    }
+    .articulo_4 h4{
+        top: 10%;
+        left:2%;
+    }
+    .articulo_4 #btnEditarUap{
+        top: 15%;
+        left:92%;
+    } 
 }
