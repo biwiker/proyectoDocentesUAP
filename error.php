@@ -17,7 +17,6 @@
                 </header>
                 <!--linea de división del header amarilla-->
                 <hr class="hr">
-
                 <!--imagen de error en el lado izquierdo-->
                     <div>
                         <div> 
@@ -28,21 +27,11 @@
                             <h1><strong>PAGE NOT FOUND</strong></h1>
                         </div>
                     </div>
-
-                    <!--
-                    <div>
-                        <h1 class="alert-danger"><strong>ERROR 404 NO FOUND</strong></h1>
-                    </div>
-
-                     <div class="alert alert-warning">
-                        <strong>ERROR 404 NO FOUND</strong> Lo sentimos no encontramos la pagina.
-                    </div>-->
             </body>
             <footer>
                 <!--mensaje en el inferior derecha -->
                 <div class="mensajeError">
-                    <a href="capaPresentacion/V_Login.php" class="close" data-dismiss="alert" >&times;</a>
-                    <strong>Lo sentimos no encontramos la pagina</strong>.
+                    <h3><strong>Lo sentimos no encontramos la pagina</strong></h3>  
                 </div>
                 <!--boton para volver-->
                 <div>
