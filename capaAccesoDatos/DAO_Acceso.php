@@ -24,7 +24,7 @@ class DAO_Acceso {
     public function login(CL_Acceso $acceso) {
 
         try {
-            $us = $acceso->getRut();
+            $us   = $acceso->getRut();
             $pass = $acceso->getPassword();
 
             $stmt = $this->_conexion->getConexion()->prepare('SELECT FN_OBTENER_TIPO_USUARIO ( ? , ? )'); //se llama a la función almacenada

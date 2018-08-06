@@ -37,7 +37,7 @@
 
             <!--div que muestra "adminstrador del sistema"-->
             <div class="articulo_1">
-                <h5><span class="glyphicon glyphicon-ok"></span> Administrador Del Sistema</h5>
+                <h5><span class="glyphicon glyphicon-ok"></span> Administrador del sistema</h5>
             </div>
             <!--div que muestra las cajas de texto y los botones-->
             <article class="articulo_2">
@@ -60,7 +60,7 @@
                 <article>
                     <section>
                         
-                            <h4>Informacion Docente</h4>
+                        <h4>Informacion Docente</h4>
                             <span data-toggle="collapse"  aria-expanded="false" href="#art3-cargaDatos">
                                 
                                 <button class="btn" id="btnInfoDocente" name="btnInfoDocente" value="btnInfoDocente"><span></span></button>

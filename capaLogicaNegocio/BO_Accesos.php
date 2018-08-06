@@ -15,6 +15,7 @@ $_resultado = $DAO_Acceso->login($CL_Acceso);
 //si el resultado es distinto de nulo
 if (!is_null($_resultado) && $_resultado = 'administrador') {
     header('Location: ../capaPresentacion/V_Administrador.php');
+    
 }else if (!is_null($_resultado) && $_resultado = 'asesor') {
     header('Location: ../capaPresentacion/V_Administrador.php');
 } else {
