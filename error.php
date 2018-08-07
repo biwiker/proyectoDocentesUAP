@@ -16,7 +16,7 @@
                     <img src="Imagenes/fondo-transparente_4.png"> 
                 </header>
                 <!--linea de división del header amarilla-->
-                <hr class="hr">
+                <hr>
                 <!--imagen de error en el lado izquierdo-->
                     <div>
                         <div> 
