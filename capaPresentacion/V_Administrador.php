@@ -1,3 +1,10 @@
+<?php
+    @session_start();   
+    
+    //si la sessión que contiene el nombre de usuario existe y no está nula, entonces se presenta la gráfica
+    if (!is_null(isset($_SESSION['nombre_usuario']))) {
+        
+?>
 <html>
     <head>
         <title>Vista_Administrador</title>
@@ -20,7 +27,7 @@
             <div class="info-usuario">
                 <div>
                     <!--Mostrar quien es el usuario ingresado en el sistema-->
-                    <p>Bienvenido/a a <strong>Duoc UC</strong>: Carolina de la Cerda <?php echo @$_SESSION['nombre']; ?> <?php echo @$_SESSION['apellido']; ?></p>
+                    <p>Bienvenido/a a <strong>Duoc UC</strong>: <?php echo $_SESSION['nombre_usuario']?></p>
                 </div>
                 <div>
                     <!--boton que destruye sesion-->
@@ -130,3 +137,9 @@
         </div>
     </body>
 </html>
+<?php
+    }else{
+        //redireccionar al login
+        header('Location: V_Login.php');
+    }
+?>

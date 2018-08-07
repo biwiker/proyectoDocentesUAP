@@ -24,7 +24,7 @@ class DAO_Acceso {
     public function login(CL_Acceso $acceso) {
 
         try {
-            $us   = $acceso->getRut();
+            $us = $acceso->getRut();
             $pass = $acceso->getPassword();
 
             $stmt = $this->_conexion->getConexion()->prepare('SELECT FN_OBTENER_TIPO_USUARIO ( ? , ? )'); //se llama a la función almacenada
@@ -40,7 +40,27 @@ class DAO_Acceso {
                 }
             }
             $stmt->close();
-            
+        } catch (Exception $exc) {
+            return null;
+        }
+    }
+
+    public function nombreUsuario($rut) {
+
+        try {
+            $stmt = $this->_conexion->getConexion()->prepare('SELECT FN_OBTENER_NOMBRE_USUARIO ( ? )'); //se llama a la función almacenada
+            $stmt->bind_param('i',$rut);  //se reemplazan los argumentos por parámetros de tipo entero int ('i')
+            $stmt->execute();                     //se ejecuta la consulta  
+            $stmt->bind_result($nombre_usuario);    //se enlaza el retorno de la función a una variable bind
+
+            while ($stmt->fetch()) {
+                if ($nombre_usuario != null) {
+                    return $nombre_usuario;
+                } else {
+                    return null;
+                }
+            }
+            $stmt->close();
         } catch (Exception $exc) {
             return null;
         }
