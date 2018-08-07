@@ -68,11 +68,10 @@ class DAO_Acceso {
 
     //Sesion destruida ,falta redireccionar de manera correcta y revisar
     public function cerrarSesion() {
-        //$_SESSION['nombre'] = null;
-        //$_SESSION['apellido'] = null;   
-        session_start();
+        
+        unset($_SESSION['nombre_usuario']); //eliminamos la variable con los datos de usuario;
+	session_write_close(); //nos asegurmos que se guarda y cierra la sesion
         session_destroy();
-        //header("location: index.php");
     }
 
 }

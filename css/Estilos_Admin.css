@@ -41,8 +41,12 @@ hr{
     color: #999999;
     float: left;
 }
+.info-usuario div form{
+    margin: 0;
+    padding: 0;
+}
 
-.info-usuario div button{
+.info-usuario div form button{
     padding-top: 5px;
     padding-left: 30px;
     text-decoration: none;
@@ -51,6 +55,14 @@ hr{
     background-color: #001e39;    
     border: none;
     float: left;
+}
+.info-usuario div form button:hover{
+    color:#fff;
+    -o-transition:color .3s ease-out, background 3s ease-in;
+    -ms-transition:color .3s ease-out, background 3s ease-in;
+    -moz-transition:color .3s ease-out, background 3s ease-in;
+    -webkit-transition:color .3s ease-out, background 3s ease-in;
+    transition:color .3s ease-out, background 3s ease-in;
 }
 
 .contenedor{    
@@ -140,11 +152,18 @@ hr{
     line-height: 7px;
     margin-left: 10px;
     margin-top: 32px;
-    color:#fff;
+    color: #ccc;
     background-color: #001e39;
     font-size: 12px;
 }
-
+.articulo_2 #btnVerDocente:hover{
+    color: #fff;
+    -o-transition:color .3s ease-out, background 3s ease-in;
+    -ms-transition:color .3s ease-out, background 3s ease-in;
+    -moz-transition:color .3s ease-out, background 3s ease-in;
+    -webkit-transition:color .3s ease-out, background 3s ease-in;
+    transition:color .3s ease-out, background 3s ease-in;
+}
 
 .articulo_2 #lblEscuela{
     position: absolute;
@@ -175,11 +194,18 @@ hr{
     line-height: 7px;
     margin-left: 10px;
     margin-top: 32px;
-    color:#fff;
+    color:#ccc;
     background-color: #001e39;
     font-size: 12px;
 }
-
+.articulo_2 #btnVerEscuela:hover{
+    color: #fff;
+    -o-transition:color .3s ease-out, background 3s ease-in;
+    -ms-transition:color .3s ease-out, background 3s ease-in;
+    -moz-transition:color .3s ease-out, background 3s ease-in;
+    -webkit-transition:color .3s ease-out, background 3s ease-in;
+    transition:color .3s ease-out, background 3s ease-in;
+}
 /*------------------------------------------------------- elementos del articulo 3 -------------------------------------------------------*/
 .articulo_3{
     position: relative;
@@ -187,7 +213,7 @@ hr{
     background-color: #ffffff;
     color: #999999;
     width: 100%;
-    
+
 
     -webkit-box-shadow: 2px 2px 5px #999;
     -moz-box-shadow: 2px 2px 5px #999;
@@ -197,7 +223,7 @@ hr{
 }
 
 .articulo_3 h4 {
-    
+
     position: relative;
     font-size: 14px;    
     margin: 0;
@@ -207,7 +233,7 @@ hr{
     position: relative;
     float: right;
     margin-right: 10px;
-    margin-top: 15px;
+    margin-top: 15px;    
 }
 /*linea amarilla divisoria*/
 #linea-section{
@@ -219,28 +245,36 @@ hr{
     color: #fff;
 
 }
-#btnInfoDocente span{   
 
-}
 [aria-expanded=false] #btnInfoDocente span:before{
+
+    content: "\2b  VER";
+    padding: 2px;
+    color: #ccc;
+    font-size: 10px;
+}
+[aria-expanded=true] #btnInfoDocente span:after{
+    
+    content: "\2212  OCULTAR";
+    padding: 2px;
+    color: #ccc;
+    font-size: 10px;   
+}
+[aria-expanded=true] #btnInfoDocente span:hover:after{
+    
+    content: "\2212  OCULTAR";
+    padding: 2px;
+    color: #fff;
+    font-size: 10px;   
+    
+}
+[aria-expanded=false] #btnInfoDocente span:hover:before{
 
     content: "\2b  VER";
     padding: 2px;
     color: #fff;
     font-size: 10px;
-
-
 }
-[aria-expanded=true] #btnInfoDocente span:after{
-    color:red;
-    content: "\2212  OCULTAR";
-    padding: 2px;
-    color: #fff;
-    font-size: 10px;
-}
-
-
-
 
 /*------------------------------------------------------- elementos del articulo 4 -------------------------------------------------------*/
 

@@ -2,7 +2,7 @@
     @session_start();   
     
     //si la sessión que contiene el nombre de usuario existe y no está nula, entonces se presenta la gráfica
-    if (!is_null(isset($_SESSION['nombre_usuario']))) {
+    if (isset($_SESSION['nombre_usuario'])) {
         
 ?>
 <html>
@@ -31,7 +31,12 @@
                 </div>
                 <div>
                     <!--boton que destruye sesion-->
-                    <button class="boton_personalizado" name="btnCerrarSesion" value="Cerrar Sesion"><span class="glyphicon glyphicon-remove"></span> Cerrar Sesion</button>
+                    <form method="POST" action="../capaLogicaNegocio/BO_Accesos.php">
+                        <button class="boton_personalizado" name="btnCerrarSesion" value="Cerrar Sesion">
+                            <span class="glyphicon glyphicon-remove"></span> Cerrar Sesion
+                        </button>
+                    </form>
+                    
                 </div>
             </div>
 

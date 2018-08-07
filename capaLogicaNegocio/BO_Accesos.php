@@ -3,9 +3,11 @@
 include_once '../capaEntidades/CL_Acceso.php';
 include_once '../capaAccesoDatos/DAO_Acceso.php';
 
+@session_start();
+
 //si se hace un post en el boton ingreso
 if (isset($_POST['btnIngreso'])) {
-    @session_start();
+    
     //se crea una clase de acceso con los datos del login
     $CL_Acceso = new CL_Acceso();
     $CL_Acceso->setRut($_POST['txtUsuario']);
@@ -28,5 +30,9 @@ if (isset($_POST['btnIngreso'])) {
     }
 }
    
-   
+if (isset($_POST['btnCerrarSesion'])){
+        $DAO_Acceso = new DAO_Acceso();
+        $DAO_Acceso->cerrarSesion();
+        header('Location: ../capaPresentacion/V_Login.php');
+}   
 
