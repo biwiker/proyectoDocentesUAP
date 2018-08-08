@@ -7,7 +7,8 @@
         <script src="../bootstrap 3/js/bootstrap.js"></script>
         <script src="../bootstrap 3/jquery-3.3.1.js"></script>
     </head>
-    <body>
+    <!-- oncopy y onpaste es para no poder pegar ni copiar dentro de las cajas de texto-->
+    <body oncopy="return false" onpaste="return false">
         <!--cabecera-->
         <header class="principal">
             <img src="../Imagenes/fondo-transparente_4.png"> 
@@ -15,7 +16,6 @@
         
         <!--linea de división del header amarilla-->
         <hr>
-        
         
         <!--imágen central-->
         <div class="main">
