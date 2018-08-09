@@ -11,183 +11,177 @@
  *
  * @author Berni
  */
-include_once 'capaEntidades/CL_Docente.php';
-include_once 'capaConexion/CL_Conexion.php';
+include_once '../capaEntidades/CL_Docente.php';
+include_once '../capaConexion/CL_Conexion.php';
 
 class DAO_Docente {
-    
-    private $mysqli;
+
+    //variable para almacenar el estado de la conexion
+    private $_conexion;
 
     function __construct() {
-      try{
-        $conexion = new Conexion();
-        $this->mysqli = $conexion->conectar();
-      } catch (Exception $exc){
-          echo $exc->getTraceAsString();
-      }
+        //al crear una instancia de la clase, se obtiene de inmediato el estado de la conexión
+        try {
+            $this->_conexion = CL_Conexion::getInstancia();
+        } catch (Exception $exc) {
+            echo 'error al generar la instancia de conexion ' + $exc->getTraceAsString();
+        }
     }
- 
-    
+
     public function agregarDocente(CL_Docente $doncete) {
 
-        try{
-        $rut = $doncete->getRut();
-        $dv = $doncete->getDv();
-        $id = $doncete->getId();
-        $pNombre = $doncete->getPNombre();
-        $sNombre = $doncete->getSNombre();
-        $apPaterno = $doncete->getApPaterno();
-        $apMaterno = $doncete->getApMaterno();
-        $idCentroCosto = $doncete->getIdCentroCosto();
-        $correo1 = $doncete->getCorreo1();
-        $correo2 = $doncete->getCorreo2();
-        $correo3 = $doncete->getCorreo3();
-        $fonoFijo = $doncete->getFonoFijo();
-        $fonoMovil = $doncete->getFonoMovil();
+        try {
+            $rut = $doncete->getRut();
+            $dv = $doncete->getDv();
+            $id = $doncete->getId();
+            $pNombre = $doncete->getPNombre();
+            $sNombre = $doncete->getSNombre();
+            $apPaterno = $doncete->getApPaterno();
+            $apMaterno = $doncete->getApMaterno();
+            $idCentroCosto = $doncete->getIdCentroCosto();
+            $correo1 = $doncete->getCorreo1();
+            $correo2 = $doncete->getCorreo2();
+            $correo3 = $doncete->getCorreo3();
+            $fonoFijo = $doncete->getFonoFijo();
+            $fonoMovil = $doncete->getFonoMovil();
 
-        $sql = "insert into docente(rut,dv,id,pNombre,sNombre,apPaterno,apMaterno,idCentroCosto,correo1,correo2,correo3,fonoFijo,fonoMovil) values
+            $sql = "insert into docente(rut,dv,id,pNombre,sNombre,apPaterno,apMaterno,idCentroCosto,correo1,correo2,correo3,fonoFijo,fonoMovil) values
                  ('$rut','$dv','$id','$pNombre','$sNombre','$apPaterno','$apMaterno','$idCentroCosto','$correo1','$correo2','$correo3','$fonoFijo','$fonoMovil')";
 
 
-        $this->mysqli->query($sql);
+            $this->mysqli->query($sql);
 
-        if ($this->mysqli->affected_rows > 0) {
+            if ($this->mysqli->affected_rows > 0) {
+                $this->mysqli->close();
+                return true;
+            }
+
+
             $this->mysqli->close();
-            return true;
+            return false;
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
         }
-
-
-        $this->mysqli->close();
-        return false;
-         }catch (Exception $exc){
-          echo $exc->getTraceAsString();
-      }
     }
-    
+
     public function listarDocente() {
-       try{
-        
-        $sql = "SELECT * FROM docente ";
-        $respuesta = $this->mysqli->query($sql);
+        try {
 
-        $docentes = [];
+            $sql = "SELECT * FROM docente ";
+            $respuesta = $this->mysqli->query($sql);
 
-        while ($row = $respuesta->fetch_assoc()) {
-            $docente = new CL_Docente();
-            $docente->setRut($row['rut']);
-            $docente->setDv($row['dv']);
-            $docente->setId($row['id']);
-            $docente->setPNombre($row['pNombre']);
-            $docente->setSNombre($row['sNombre']);
-            $docente->setApPaterno($row['apPaterno']);
-            $docente->setApMaterno($row['apMaterno']);
-            $docente->setIdCentroCosto($row['idCentroCosto']);
-            $docente->setCorreo1($row['correo1']);
-            $docente->setCorreo2($row['correo2']);
-            $docente->setCorreo3($row['correo3']);
-            $docente->setFonoFijo($row['fonoFijo']);
-            $docente->setFonoMovil($row['fonoMovil']);
+            $docentes = [];
 
-            $docentes[] = $docente;
+            while ($row = $respuesta->fetch_assoc()) {
+                $docente = new CL_Docente();
+                $docente->setRut($row['rut']);
+                $docente->setDv($row['dv']);
+                $docente->setId($row['id']);
+                $docente->setPNombre($row['pNombre']);
+                $docente->setSNombre($row['sNombre']);
+                $docente->setApPaterno($row['apPaterno']);
+                $docente->setApMaterno($row['apMaterno']);
+                $docente->setIdCentroCosto($row['idCentroCosto']);
+                $docente->setCorreo1($row['correo1']);
+                $docente->setCorreo2($row['correo2']);
+                $docente->setCorreo3($row['correo3']);
+                $docente->setFonoFijo($row['fonoFijo']);
+                $docente->setFonoMovil($row['fonoMovil']);
+
+                $docentes[] = $docente;
+            }
+            $this->mysqli->close();
+
+            return $personas;
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
         }
-        $this->mysqli->close();
-
-        return $personas;
-         }catch (Exception $exc){
-          echo $exc->getTraceAsString();
-      }
     }
-    
+
     public function eliminarDocente($rut) {
-    try{
-       
-        $sql = "delete from docente where rut = $rut";
-        $this->mysqli->query($sql);
+        try {
 
-        if ($this->mysqli->affected_rows > 0) {
-            return true;
+            $sql = "delete from docente where rut = $rut";
+            $this->mysqli->query($sql);
+
+            if ($this->mysqli->affected_rows > 0) {
+                return true;
+            }
+
+            return false;
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
         }
-
-        return false;
-         }catch (Exception $exc){
-          echo $exc->getTraceAsString();
-      }
     }
-    
+
     public function buscarDocente($rut) {
-        try{
-         
-         $sql = "select * from docente where rut = $rut" ;
-
-        $respuesta = $this->mysqli->query($sql);
-
-        $row = $respuesta->fetch_assoc();
-
-        if ($row == null) {
-            return null;
+        try {
+            
+            $stmt = $this->_conexion->getConexion()->prepare("select 
+                                                                concat(RUT,'-',DV) AS 'RUT', 
+                                                                lower(concat(PNOMBRE , ' ' , SNOMBRE )) AS 'NOMBRE',
+                                                                lower(APATERNO) AS 'APATERNO',
+                                                                lower(AMATERNO) AS 'AMATERNO',
+                                                                lower(CORREO1) AS 'CORREO INSTITUCIONAL',
+                                                                lower(CORREO2) AS 'CORREO PERSONAL',
+                                                                TELEFONOMOVIL
+                                                              from docentes where rut = ?"); 
+            $stmt->bind_param('i',$rut);  
+            $stmt->execute();
+            $stmt->bind_result($d_rut,$d_nombre,$d_apaterno,$d_amaterno,$d_correo1,$d_correo2,$d_telefonoMovil);
+            
+            while ($stmt->fetch()) {
+                $docente = new CL_Docente();
+                $docente->setRut($d_rut);
+                $docente->setPNombre($d_nombre);
+                $docente->setApPaterno($d_apaterno);
+                $docente->setApMaterno($d_amaterno);
+                $docente->setCorreo1($d_correo1);
+                $docente->setCorreo2($d_correo2);
+                $docente->setFonoMovil($d_telefonoMovil);
+            }
+            $stmt->close();
+            return $docente;
+            
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
         }
-            $docente=new CL_Docente();
-            $docente->setRut($row['rut']);
-            $docente->setDv($row['dv']);
-            $docente->setId($row['id']);
-            $docente->setPNombre($row['pNombre']);
-            $docente->setSNombre($row['sNombre']);
-            $docente->setApPaterno($row['apPaterno']);
-            $docente->setApMaterno($row['apMaterno']);
-            $docente->setIdCentroCosto($row['idCentroCosto']);
-            $docente->setCorreo1($row['correo1']);
-            $docente->setCorreo2($row['correo2']);
-            $docente->setCorreo3($row['correo3']);
-            $docente->setFonoFijo($row['fonoFijo']);
-            $docente->setFonoMovil($row['fonoMovil']);
-        
-        $this->mysqli->close();
-        
-        return $docente;
-        
-        
-     
-     }catch (Exception $exc){
-          echo $exc->getTraceAsString();
-      }
-        
     }
-    
+
     public function modificarDocente(CL_Docente $docente) {
 
-            
-        try{
-        $rut = $docente->getRut();
-        $dv = $docente->getDv();
-        $id = $docente->getId();
-        $pNombre = $docente->getPNombre();
-        $sNombre = $docente->getSNombre();
-        $apPaterno = $docente->getApPaterno();
-        $apMaterno = $docente->getApMaterno();
-        $idCentroCosto = $docente->getIdCentroCosto();
-        $correo1 = $docente->getCorreo1();
-        $correo2 = $docente->getCorreo2();
-        $correo3 = $docente->getCorreo3();
-        $fonoFijo = $docente->getFonoFijo();
-        $fonoMovil = $docente->getFonoMovil();
 
-     
-        $sql="update docente set rut ='$rut', dv='$div',id='id',pNombre='$pNombre',sNombre='$sNombre',apPaterno='$apPaterno',apMaterno='$apMaterno',idCentroCosto='$idCentroCosto',correo1='$correo1',correo2='$correo2',correo3='$correo3',fonoFijo='$fonoFijo',fonoMovil='$fonoMovil'  where rut = $rut ";
-        
-        $this->mysqli->query($sql);
+        try {
+            $rut = $docente->getRut();
+            $dv = $docente->getDv();
+            $id = $docente->getId();
+            $pNombre = $docente->getPNombre();
+            $sNombre = $docente->getSNombre();
+            $apPaterno = $docente->getApPaterno();
+            $apMaterno = $docente->getApMaterno();
+            $idCentroCosto = $docente->getIdCentroCosto();
+            $correo1 = $docente->getCorreo1();
+            $correo2 = $docente->getCorreo2();
+            $correo3 = $docente->getCorreo3();
+            $fonoFijo = $docente->getFonoFijo();
+            $fonoMovil = $docente->getFonoMovil();
 
-        if ($this->mysqli->affected_rows > 0) {
+
+            $sql = "update docente set rut ='$rut', dv='$div',id='id',pNombre='$pNombre',sNombre='$sNombre',apPaterno='$apPaterno',apMaterno='$apMaterno',idCentroCosto='$idCentroCosto',correo1='$correo1',correo2='$correo2',correo3='$correo3',fonoFijo='$fonoFijo',fonoMovil='$fonoMovil'  where rut = $rut ";
+
+            $this->mysqli->query($sql);
+
+            if ($this->mysqli->affected_rows > 0) {
+                $this->mysqli->close();
+                return true;
+            }
+
             $this->mysqli->close();
-            return true;
-        }
 
-        $this->mysqli->close();
-        
-        return false;
-         }catch (Exception $exc){
-          echo $exc->getTraceAsString();
-      }
+            return false;
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
     }
-    
-    
+
 }
