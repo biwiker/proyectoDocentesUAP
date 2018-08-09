@@ -22,7 +22,7 @@ if (isset($_SESSION['nombre_usuario'])) {
                             url : '../capaLogicaNegocio/BO_Docentes.php',
                             data: {'txtRut' : rut},
                             success: function(response) {
-                                alert(response);
+                                //alert(response);
                                 $("#art3-cargaDatos").removeClass("collapse"); //se elimina la propiedad collapsed para hacer visible la info
                                 $('#contenido1').html(response); //se carga el contenido en el div
                             }
@@ -102,7 +102,7 @@ if (isset($_SESSION['nombre_usuario'])) {
                         </section>
                         <!--esta sección contiene la información-->
                         <section id="art3-cargaDatos" class="collapse">
-                            <div class="panel-body" id="contenido1">
+                            <div id="contenido1">
                                 contenido desde ajax
                             </div>
                         </section>
