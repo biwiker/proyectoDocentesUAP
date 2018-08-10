@@ -13,23 +13,30 @@ if (isset($_SESSION['nombre_usuario'])) {
             <!--  bajar versión local-->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-            
+
             <script>
-                function buscarDocente(){
+                  function buscarDocente() {
                     rut = document.getElementById("txtRut").value;
-                   $.ajax({
-                            type: "POST",
-                            url : '../capaLogicaNegocio/BO_Docentes.php',
-                            data: {'txtRut' : rut},
-                            success: function(response) {
-                                //alert(response);
-                                $("#art3-cargaDatos").removeClass("collapse"); //se elimina la propiedad collapsed para hacer visible la info
-                                $('#contenido1').html(response); //se carga el contenido en el div
-                            }
-                        }); 
-                    
+                    $.ajax({
+                        type: "POST",
+                        url: '../capaLogicaNegocio/BO_Docentes.php',
+                        data: {'txtRut' : rut,
+                               btnVerDocente : 'btnVerDocente' 
+                               },
+                        beforeSend: function () {
+                            //$("#contenido1").html("gif animado");
+                            $("#contenido1").slideUp(300).delay(100).fadeIn(800); //retraso y animacion
+                        },
+                        success: function (response) {
+                            $("#art3-cargaDatos").removeClass("collapse"); //se elimina la propiedad collapsed para hacer visible la info
+                            $('#contenido1').html(response); //se carga el contenido en el div
+                        }
+                    });
+
                 }
-                     
+
+              
+
             </script>
 
         </head>
@@ -74,7 +81,8 @@ if (isset($_SESSION['nombre_usuario'])) {
                         
                             <label id="lblDocente" class="label label-default">Rut Docente</label>
                             <input type="text" placeholder="Ingrese Rut" name="txtRut" id="txtRut" required >
-                            <button  class="btn"  id="btnVerDocente"  autocomplete="off" name="btnVerDocente" value="VerDocente" onclick="buscarDocente()">Ver Docente</button>
+                            <button type="submit" class="btn"  id="btnVerDocente"  autocomplete="off" name="btnVerDocente" value="VerDocente" onclick="buscarDocente()">Ver Docente</button>
+                        
                     </section>
 
                     <section class="art2-sec-2">

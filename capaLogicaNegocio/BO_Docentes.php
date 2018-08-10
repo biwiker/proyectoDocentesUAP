@@ -2,7 +2,7 @@
 include_once '../capaAccesoDatos/DAO_Docente.php';
 include_once '../capaEntidades/CL_Docente.php';
 
-//if (isset($_POST['btnVerDocente'])) {
+if (isset($_POST['btnVerDocente'])) {
 
 $Docente = new CL_Docente();
 
@@ -38,5 +38,7 @@ $Docente = $DAO_Docente->buscarDocente($rut);
     </table>
 </div>
 
-
+<?php
+}
+?>
 
