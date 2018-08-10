@@ -27,6 +27,8 @@
                     return false;
                 }
             }
+
+           
         </script>
 
     </head>
@@ -55,7 +57,7 @@
                 <h6><strong>Sistema de Administraci&oacute;n UAP</strong></h6>
 
                 <div class="form-group">
-                    <input type="text" id="usuario" name="txtUsuario" class="form-control" placeholder="Usuario" required="" onkeypress="return soloNumeros(event)" />
+                    <input type="text" id="usuario" maxlength="9" name="txtUsuario" class="form-control" placeholder="Usuario" required="" onkeypress="return soloNumeros(event)" />
                 </div>
 
                 <div class="form-group">
@@ -75,5 +77,5 @@
 
 
 
-    </body>
+</body>
 </html>
