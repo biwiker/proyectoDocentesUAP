@@ -118,21 +118,29 @@ class DAO_Docente {
         try {
             
             $stmt = $this->_conexion->getConexion()->prepare("select 
-                                                                concat(RUT,'-',DV) AS 'RUT', 
+                                                                RUT, 
+                                                                DV,
                                                                 lower(concat(PNOMBRE , ' ' , SNOMBRE )) AS 'NOMBRE',
                                                                 lower(APATERNO) AS 'APATERNO',
-                                                                lower(AMATERNO) AS 'AMATERNO',
-                                                                lower(CORREO1) AS 'CORREO INSTITUCIONAL',
-                                                                lower(CORREO2) AS 'CORREO PERSONAL',
-                                                                TELEFONOMOVIL
-                                                              from docentes where rut = ?"); 
+                                                                lower(AMATERNO) AS 'AMATERNO',	
+                                                                lower(CORREO1) 'CORREO INSTITUCIONAL',
+                                                                case CORREO2
+                                                                            when 'NULL' THEN 'No Registrado'
+                                                                            else lower(CORREO2) 
+                                                                    end AS 'CORREO PERSONAL',
+                                                                case TELEFONOMOVIL
+                                                                            when 'NULL' THEN 'No Registrado'
+                                                                            else TELEFONOMOVIL
+                                                                    end AS 'TELEFONOMOVIL'
+                                                              from docentes where concat(RUT,DV) = ?"); 
             $stmt->bind_param('i',$rut);  
             $stmt->execute();
-            $stmt->bind_result($d_rut,$d_nombre,$d_apaterno,$d_amaterno,$d_correo1,$d_correo2,$d_telefonoMovil);
+            $stmt->bind_result($d_rut,$d_dv,$d_nombre,$d_apaterno,$d_amaterno,$d_correo1,$d_correo2,$d_telefonoMovil);
             
             while ($stmt->fetch()) {
                 $docente = new CL_Docente();
                 $docente->setRut($d_rut);
+                $docente->setDv($d_dv);
                 $docente->setPNombre($d_nombre);
                 $docente->setApPaterno($d_apaterno);
                 $docente->setApMaterno($d_amaterno);

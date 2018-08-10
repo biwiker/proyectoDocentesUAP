@@ -213,11 +213,27 @@ hr{
     background-color: #ffffff;
     color: #999999;
     width: 100%;
-
-
     -webkit-box-shadow: 2px 2px 5px #999;
     -moz-box-shadow: 2px 2px 5px #999;
 }
+
+.articulo_3 article section{
+   width: 98%;              
+}
+.articulo_3 table{
+   color: #999999; 
+   font-size: 12px;
+}
+.articulo_3 article section table tr td{
+   width:25%;
+}
+
+#info-docente{
+    position: relative;
+    padding: 20px 0px 10px 25px;
+    width: 100% ;
+}
+
 .articulo_3 h4,span {
     display: inline-block;
 }
@@ -232,7 +248,7 @@ hr{
 .articulo_3 span {
     position: relative;
     float: right;
-    margin-right: 10px;
+    
     margin-top: 15px;    
 }
 /*linea amarilla divisoria*/

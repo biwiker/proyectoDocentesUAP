@@ -15,27 +15,26 @@ if (isset($_SESSION['nombre_usuario'])) {
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
             <script>
-                  function buscarDocente() {
+                function buscarDocente() {
                     rut = document.getElementById("txtRut").value;
                     $.ajax({
                         type: "POST",
                         url: '../capaLogicaNegocio/BO_Docentes.php',
-                        data: {'txtRut' : rut,
-                               btnVerDocente : 'btnVerDocente' 
-                               },
+                        data: {'txtRut': rut,
+                            btnVerDocente: 'btnVerDocente'
+                        },
                         beforeSend: function () {
-                            //$("#contenido1").html("gif animado");
-                            $("#contenido1").slideUp(300).delay(100).fadeIn(800); //retraso y animacion
+                                                    //$("#info-docente").html("gif animado");
+                                                    $("#info-docente").slideUp(300).delay(100).fadeIn(800); //retraso y animacion
                         },
                         success: function (response) {
-                            $("#art3-cargaDatos").removeClass("collapse"); //se elimina la propiedad collapsed para hacer visible la info
-                            $('#contenido1').html(response); //se carga el contenido en el div
+                            $('#info-docente').html(response); //se carga el contenido en el div
                         }
                     });
 
                 }
 
-              
+
 
             </script>
 
@@ -78,11 +77,11 @@ if (isset($_SESSION['nombre_usuario'])) {
                 <!--div que muestra las cajas de texto y los botones-->
                 <article class="articulo_2">
                     <section>
-                        
-                            <label id="lblDocente" class="label label-default">Rut Docente</label>
-                            <input type="text" placeholder="Ingrese Rut" name="txtRut" id="txtRut" required >
-                            <button type="submit" class="btn"  id="btnVerDocente"  autocomplete="off" name="btnVerDocente" value="VerDocente" onclick="buscarDocente()">Ver Docente</button>
-                        
+
+                        <label id="lblDocente" class="label label-default">Rut Docente</label>
+                        <input type="text" placeholder="Ingrese Rut" name="txtRut" id="txtRut" required >
+                        <button type="submit" class="btn"  id="btnVerDocente"  autocomplete="off" name="btnVerDocente" value="VerDocente" onclick="buscarDocente()">Ver Docente</button>
+
                     </section>
 
                     <section class="art2-sec-2">
@@ -92,9 +91,10 @@ if (isset($_SESSION['nombre_usuario'])) {
                     </section>
 
                 </article>
+
                 <!-- articulo 3-->
                 <article class="articulo_3">
-
+                    <!-- articulo 3-->
                     <article>
                         <section>
 
@@ -110,60 +110,14 @@ if (isset($_SESSION['nombre_usuario'])) {
                         </section>
                         <!--esta sección contiene la información-->
                         <section id="art3-cargaDatos" class="collapse">
-                            <div id="contenido1">
-                                contenido desde ajax
+                            <div id="info-docente">
+
                             </div>
                         </section>
                     </article>
+
                 </article>
-                <!-- articulo 4-->
-                <article class="articulo_3">
 
-                    <article>
-                        <section>
-
-                            <h4>Informacion Docente</h4>
-                            <span data-toggle="collapse"  aria-expanded="false" href="#art4-cargaDatos">
-
-                                <button class="btn" id="btnInfoDocente" name="btnInfoDocente" value="btnInfoDocente"><span></span></button>
-                            </span>
-                            <!--boton-->
-
-                            <!--linea de division-->
-                            <div id="linea-section"></div>
-                        </section>
-                        <!--esta sección contiene la información-->
-                        <section id="art4-cargaDatos" class="collapse">
-                            <div class="panel-body">
-                                contenido desde ajax
-                            </div>
-                        </section>
-                    </article>
-                </article>
-                <!-- articulo 5-->
-                <article class="articulo_3">
-
-                    <article>
-                        <section>
-
-                            <h4>Informacion Docente</h4>
-                            <span data-toggle="collapse"  aria-expanded="false" href="#art5-cargaDatos">
-
-                                <button class="btn" id="btnInfoDocente" name="btnInfoDocente" value="btnInfoDocente"><span></span></button>
-                            </span>
-                            <!--boton-->
-
-                            <!--linea de division-->
-                            <div id="linea-section"></div>
-                        </section>
-                        <!--esta sección contiene la información-->
-                        <section id="art5-cargaDatos" class="collapse">
-                            <div class="panel-body">
-                                contenido desde ajax
-                            </div>
-                        </section>
-                    </article>
-                </article>
 
             </div>
         </body>
