@@ -7,12 +7,12 @@
         <script src="../bootstrap 3/js/bootstrap.js"></script>
         <script src="../bootstrap 3/jquery-3.3.1.js"></script>
 
-        <!-- Bloquear teclas , solo se pueden utilizar numeros-->
+        <!-- Bloquear teclas , solo se pueden utilizar numeros y caracteres validos-->
         <script>
             function soloNumeros(e) {
                 key = e.keyCode || e.which;
                 tecla = String.fromCharCode(key).toLowerCase();
-                letras = "0123456789";
+                letras = "0123456789kK";
                 especiales = "8-37-39-46";
 
                 tecla_especial = false
@@ -48,14 +48,14 @@
 
         <!--boton de login-->
 
-        <div class="contenedor-login">
+        <div class="contenedor-login" >
             <!--la action que tiene el formulario para su completo funcionamiento(En prueba)-->
             <form id="formulario" class="form-group" method="post" action="../capaLogicaNegocio/BO_Accesos.php">
 
                 <h6><strong>Sistema de Administraci&oacute;n UAP</strong></h6>
 
                 <div class="form-group">
-                    <input type="text" id="usuario" name="txtUsuario" class="form-control" placeholder="Usuario" required="" onblur="limpia()"  onkeypress="return soloNumeros(event)" />
+                    <input type="text" id="usuario" name="txtUsuario" class="form-control" placeholder="Usuario" required="" onkeypress="return soloNumeros(event)" />
                 </div>
 
                 <div class="form-group">
@@ -66,6 +66,12 @@
 
             </form>
         </div>
+
+
+
+    </body>
+</html>
+
 
 
 
