@@ -1,0 +1,21 @@
+body{
+    background-color:#F4F6F7;
+}
+.logo{
+    clear:both;
+    display: block; 
+    margin: 30px 0 0 90px;
+    max-width: 100%;
+    width: 50%;
+    height:8%;
+}
+div .sesion{
+   padding-top: 10px;
+   padding-left: 60%;
+   color: #999999;    
+   float: left;
+}
+label{
+    margin-top:40px;
+    padding-top: 40px;
+}
