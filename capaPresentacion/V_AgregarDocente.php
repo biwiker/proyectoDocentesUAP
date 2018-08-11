@@ -20,10 +20,17 @@
                 <p class="sesion">Bienvenido/a a <strong>Duoc UC</strong>:</p>
             </div>
         </div>
-        <label class="etiqueta1">Agregar Nuevo Docente</label>
-        <button class="btn btn-success" id="btnNuevo">Nuevo</button>
-               
-                <table class="table table-hover table-bordered table-condensed table-responsive" id="tablaAlineamiento">
+        <hr>
+        <div class="col-lg-12 articulo_1">
+            <ul>
+                <li><a href="*">Docentes</a></li>
+                <li><a href="*">Adminstrar</a></li>
+            </ul>
+        </div>
+    
+        <div class="btn btn-success" id="btnNuevo"><span class="glyphicon glyphicon-file"></span> Nuevo </div>
+    
+                <table class="table-hover table-bordered table-condensed table-responsive" id="tablaAlineamiento">
                     <tr>
                         <th>Rut</th>
                         <th>DV</th>
@@ -33,22 +40,10 @@
                         <td><input type="text" class="form-control" /> </td>
                         <td><input type="text" class="form-control" /> </td>
                         <td class="text-center">
-                            <div class="btn btn-primary">Guardar</div>
-                            <div class="btn btn-danger">Eliminar</div>
+                            <div class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> Guardar</div>
+                            <div class="btn btn-danger"><span class="	glyphicon glyphicon-remove"></span> Eliminar</div>
                         </td>
                     </tr>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                  <!-- <tr class="danger">
                       <th>Rut</th>
@@ -81,5 +76,9 @@
                         <td>964321933</td>
                     </tr> -->
                 </table>
+     
     </body>
+      
+    </body>
+       
 </html>

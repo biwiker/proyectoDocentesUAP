@@ -15,7 +15,40 @@ div .sesion{
    color: #999999;    
    float: left;
 }
-label{
-    margin-top:40px;
-    padding-top: 40px;
+ #btnNuevo{
+  position:absolute;
+  top:28%;
+  left:5%; 
+}
+table {
+   position:absolute;
+   top:35%;
+   left:5%;
+}
+hr{
+    height: 1px;
+    background-color:rgba(189, 195, 199);
+}
+ul{
+    list-style-type: none;
+    margin: 0 53px 0 53px;
+    padding: 2;
+    overflow: hidden;
+    background-color:#F4F6F7;
+  
+}
+li{
+    float: left;
+    text-decoration:none;
+}
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: grey;
 }
