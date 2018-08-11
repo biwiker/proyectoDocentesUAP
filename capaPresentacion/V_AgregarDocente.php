@@ -29,24 +29,10 @@
         </div>
     
         <div class="btn btn-success" id="btnNuevo"><span class="glyphicon glyphicon-file"></span> Nuevo </div>
-    
-                <table class="table-hover table-bordered table-condensed table-responsive" id="tablaAlineamiento">
+     
+                <table class=" table-hover  table-condensed table-responsive" id="tablaAlineamiento">
                     <tr>
                         <th>Rut</th>
-                        <th>DV</th>
-                        <th>ID Docente</th>
-                    </tr>  
-                    <tr>
-                        <td><input type="text" class="form-control" /> </td>
-                        <td><input type="text" class="form-control" /> </td>
-                        <td class="text-center">
-                            <div class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> Guardar</div>
-                            <div class="btn btn-danger"><span class="	glyphicon glyphicon-remove"></span> Eliminar</div>
-                        </td>
-                    </tr>
-                    
-                 <!-- <tr class="danger">
-                      <th>Rut</th>
                         <th>DV</th>
                         <th>ID Docente</th>
                         <th>Primer Nombre</th>
@@ -56,27 +42,27 @@
                         <th>ID CentroCosto</th>
                         <th>Correo Duoc</th>
                         <th>Correo Personal</th>
-                        <th>ID_CentroCosto</th>
                         <th>Telefono Fijo</th>
                         <th>Telefono Movil</th>
+                    </tr>  
+                    <tr>
+                        <td><input type="text" class="form-control"> </td>
+                        <td><input type="text" class="form-control"> </td>
+                        <td><input type="text" class="form-control"> </td>
+                        <td><input type="text" class="form-control"> </td>
+                        <td><input type="text" class="form-control"> </td>
+                        <td><input type="text" class="form-control"> </td>
+                        <td><input type="text" class="form-control"> </td>
+                        <td><input type="text" class="form-control"> </td>
+                        <td><input type="text" class="form-control"> </td>
+                        <td><input type="text" class="form-control"> </td>
+                        <td><input type="text" class="form-control"> </td>
+                        <td><input type="text" class="form-control"> </td>
+                        <td><div class="btn btn-primary" id="btnGuardar"><span class="glyphicon glyphicon-edit"></span> Guardar</div></td>
+                        <td><div class="btn btn-danger" id="btnEliminar"><span class="glyphicon glyphicon-remove"></span> Eliminar</div></td>
                     </tr>
-                     <tr>
-                        <td>19.681.873</td>
-                        <td>1</td>
-                        <td>1</th>
-                        <td>Ariel</td>
-                        <td>Adolfo</td>
-                        <td>Concha</td>
-                        <td>Alegria</td>
-                        <td>1</td>
-                        <td>Ar.concha@profesor.duoc.cl</td>
-                        <td>Ariel.Adolfo@gmail.com</td>
-                        <td>5</td>
-                        <td>298765678</td>
-                        <td>964321933</td>
-                    </tr> -->
                 </table>
-     
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </body>
       
     </body>

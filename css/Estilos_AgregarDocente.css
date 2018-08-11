@@ -24,7 +24,10 @@ table {
    position:absolute;
    top:35%;
    left:5%;
+   width: 90%;
+   height: 40%;
 }
+
 hr{
     height: 1px;
     background-color:rgba(189, 195, 199);
@@ -34,12 +37,12 @@ ul{
     margin: 0 53px 0 53px;
     padding: 2;
     overflow: hidden;
-    background-color:#F4F6F7;
-  
+    background-color: #C0BFCD; 
 }
 li{
     float: left;
     text-decoration:none;
+     
 }
 li a {
     display: block;
@@ -47,8 +50,19 @@ li a {
     text-align: center;
     padding: 10px;
     text-decoration: none;
+    color: whitesmoke;
 }
-
 li a:hover {
-    background-color: grey;
+    background-color: black;
+    text-decoration: none;
+    
+}
+#btnGuardar{
+    background-color: #1511A3  ;
+    border: none;
+}
+#btnEliminar{
+    background-color: #E72E09  ;
+    border: none;
+    color:white;
 }
