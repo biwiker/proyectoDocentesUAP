@@ -38,18 +38,17 @@ if (isset($_SESSION['nombre_usuario'])) {
                             btnVerDocente: 'btnVerDocente'
                         },
                         beforeSend: function () {
-                                                    //$("#info-docente").html("gif animado");
-                                                    $("#info-docente").slideUp(300).delay(100).fadeIn(800); //retraso y animacion
+                            //$("#info-docente").html("gif animado");
+                            //$("#info-docente").slideUp(300).delay(100).fadeIn(800); //retraso y animacion
+                            $("#contenedor-info-docente").slideUp(300).delay(50).fadeIn(800); //retraso y animacion
                         },
                         success: function (response) {
-                            $('#info-docente').html(response); //se carga el contenido en el div
+                            //$('#info-docente').html(response); //se carga el contenido en el div
+                            $('#contenedor-info-docente').html(response); //se carga el contenido en el div
                         }
                     });
 
                 }
-
-
-
             </script>
 
         </head>
@@ -105,32 +104,11 @@ if (isset($_SESSION['nombre_usuario'])) {
                     </section>
 
                 </article>
-
-                <!-- articulo 3-->
-                <article class="articulo_3">
-                    <!-- articulo 3-->
-                    <article>
-                        <section>
-
-                            <h4>Informacion Docente</h4>
-                            <span data-toggle="collapse"  aria-expanded="false" href="#art3-cargaDatos">
-
-                                <button class="btn" id="btnInfoDocente" name="btnInfoDocente" value="btnInfoDocente"><span></span></button>
-                            </span>
-                            <!--boton-->
-
-                            <!--linea de division-->
-                            <div id="linea-section"></div>
-                        </section>
-                        <!--esta sección contiene la información-->
-                        <section id="art3-cargaDatos" class="collapse">
-                            <div id="info-docente">
-
-                            </div>
-                        </section>
-                    </article>
-
-                </article>
+                
+                <!--aqui se carga la información del docente-->
+                <div id="contenedor-info-docente">
+                    
+                </div>
 
 
             </div>

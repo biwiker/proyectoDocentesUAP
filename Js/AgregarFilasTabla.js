@@ -27,7 +27,7 @@ function funcionNuevaFila()
                             (
                                     $('<input>').attr('type', 'text').addClass('form-control')
                                     )
-                            ) .append
+                            ).append
                     (
                             $('<td>')
                             .append
@@ -42,7 +42,7 @@ function funcionNuevaFila()
                             (
                                     $('<input>').attr('type', 'text').addClass('form-control')
                                     )
-                            ) .append
+                            ).append
                     (
                             $('<td>')
                             .append
@@ -57,7 +57,7 @@ function funcionNuevaFila()
                             (
                                     $('<input>').attr('type', 'text').addClass('form-control')
                                     )
-                            ) .append
+                            ).append
                     (
                             $('<td>')
                             .append
@@ -72,7 +72,7 @@ function funcionNuevaFila()
                             (
                                     $('<input>').attr('type', 'text').addClass('form-control')
                                     )
-                            ) .append
+                            ).append
                     (
                             $('<td>')
                             .append
@@ -87,7 +87,7 @@ function funcionNuevaFila()
                             (
                                     $('<input>').attr('type', 'text').addClass('form-control')
                                     )
-                            ) .append
+                            ).append
                     (
                             $('<td>')
                             .append
@@ -103,7 +103,7 @@ function funcionNuevaFila()
                                     $('<input>').attr('type', 'text').addClass('form-control')
                                     )
                             )
-                    
+
                     //zona de los botones
                     .append
                     (
@@ -118,6 +118,6 @@ function funcionNuevaFila()
                                     $('<div>').addClass('btn btn-danger').text('Eliminar')
                                     )
                             )
-                   );
+                    );
 
 }
