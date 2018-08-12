@@ -27,7 +27,83 @@ function funcionNuevaFila()
                             (
                                     $('<input>').attr('type', 'text').addClass('form-control')
                                     )
+                            ) .append
+                    (
+                            $('<td>')
+                            .append
+                            (
+                                    $('<input>').attr('type', 'text').addClass('form-control')
+                                    )
                             )
+                    .append
+                    (
+                            $('<td>')
+                            .append
+                            (
+                                    $('<input>').attr('type', 'text').addClass('form-control')
+                                    )
+                            ) .append
+                    (
+                            $('<td>')
+                            .append
+                            (
+                                    $('<input>').attr('type', 'text').addClass('form-control')
+                                    )
+                            )
+                    .append
+                    (
+                            $('<td>')
+                            .append
+                            (
+                                    $('<input>').attr('type', 'text').addClass('form-control')
+                                    )
+                            ) .append
+                    (
+                            $('<td>')
+                            .append
+                            (
+                                    $('<input>').attr('type', 'text').addClass('form-control')
+                                    )
+                            )
+                    .append
+                    (
+                            $('<td>')
+                            .append
+                            (
+                                    $('<input>').attr('type', 'text').addClass('form-control')
+                                    )
+                            ) .append
+                    (
+                            $('<td>')
+                            .append
+                            (
+                                    $('<input>').attr('type', 'text').addClass('form-control')
+                                    )
+                            )
+                    .append
+                    (
+                            $('<td>')
+                            .append
+                            (
+                                    $('<input>').attr('type', 'text').addClass('form-control')
+                                    )
+                            ) .append
+                    (
+                            $('<td>')
+                            .append
+                            (
+                                    $('<input>').attr('type', 'text').addClass('form-control')
+                                    )
+                            )
+                    .append
+                    (
+                            $('<td>')
+                            .append
+                            (
+                                    $('<input>').attr('type', 'text').addClass('form-control')
+                                    )
+                            )
+                    
                     //zona de los botones
                     .append
                     (

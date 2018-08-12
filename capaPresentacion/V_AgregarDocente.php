@@ -27,9 +27,8 @@
                 <li><a href="*">Adminstrar</a></li>
             </ul>
         </div>
-    
-        <div class="btn btn-success" id="btnNuevo"><span class="glyphicon glyphicon-file"></span> Nuevo </div>
-     
+    <!--boton que tiene la funcion de agregar una nueva columna a la tabla-->
+        <div class="btn btn-success" id="btnNuevo"><span class="glyphicon glyphicon-file"></span> Nuevo Docente </div>
                 <table class=" table-hover  table-condensed table-responsive" id="tablaAlineamiento">
                     <tr>
                         <th>Rut</th>
