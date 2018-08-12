@@ -14,6 +14,20 @@ if (isset($_SESSION['nombre_usuario'])) {
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+              //Cerrar Sesion si no se realiza nada(Aun no terminado)
+            <script>
+
+                window.onload = function () {
+                    MatarSesion();
+                }
+
+                function MatarSesion() {
+
+                    setTimeout("window.open('../capaConexion/CL_Desconectar.php','_top');", 100000);
+
+                }
+
+            </script>
             <script>
                 function buscarDocente() {
                     rut = document.getElementById("txtRut").value;
