@@ -2,6 +2,73 @@ body{
 
     background-color:#F4F6F7;
 }
+/*---------------------------------------- barra lateral ----------------------------------------*/
+.sidebar {
+    position: fixed;
+    height: 100%;
+    /*width: 0; debe partir en cero*/
+    /*width: 78px;*/
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #001e39;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding: 1rem 0;
+    box-sizing:border-box;
+}
+.sidebar .boton-cerrar {
+    position: absolute;
+    top: 0.5rem;
+    right: 0;
+    font-size: 2rem;
+    display: block;
+    padding: 0;
+    line-height: 1.5rem;
+    margin: 0;
+    height: 32px;
+    width: 32px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.sidebar ul, .sidebar li{
+    margin:0;
+    padding:0;
+    list-style:none inside;
+}
+
+.sidebar ul {
+    display: block;
+    margin-top: 50px;
+}
+
+.sidebar a {
+    display: block;
+    width: 78px;
+    height: 60px;
+    color: #999999;
+    text-decoration: none;
+    
+}
+.sidebar span{
+    margin-left: 30px;
+}
+.sidebar p {
+    text-align: center;
+    font-size: 11.5px;
+    padding-top: 10px;
+    
+}
+.sidebar a:hover{
+    color:#fff;
+}
+#cerrar {
+    display:none;
+}
+
+/*---------------------------------------- barra lateral ----------------------------------------*/
+
 .principal{
     position: relative;
     left: 0px;
@@ -67,7 +134,8 @@ hr{
 
 .contenedor{    
 
-    margin-left: 40px;
+    /*margin-left: 40px; original*/
+    margin-left: 90px;
     margin-right: 40px;
 }
 
@@ -218,14 +286,14 @@ hr{
 }
 
 .articulo_3 article section{
-   width: 98%;              
+    width: 98%;              
 }
 .articulo_3 table{
-   color: #999999; 
-   font-size: 12px;
+    color: #999999; 
+    font-size: 12px;
 }
 .articulo_3 article section table tr td{
-   width:25%;
+    width:25%;
 }
 
 #info-docente{
@@ -248,7 +316,7 @@ hr{
 .articulo_3 span {
     position: relative;
     float: right;
-    
+
     margin-top: 15px;    
 }
 /*linea amarilla divisoria*/
@@ -270,19 +338,19 @@ hr{
     font-size: 10px;
 }
 [aria-expanded=true] #btnInfoDocente span:after{
-    
+
     content: "\2212  OCULTAR";
     padding: 2px;
     color: #ccc;
     font-size: 10px;   
 }
 [aria-expanded=true] #btnInfoDocente span:hover:after{
-    
+
     content: "\2212  OCULTAR";
     padding: 2px;
     color: #fff;
     font-size: 10px;   
-    
+
 }
 [aria-expanded=false] #btnInfoDocente span:hover:before{
 

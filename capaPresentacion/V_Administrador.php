@@ -14,7 +14,7 @@ if (isset($_SESSION['nombre_usuario'])) {
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-              
+
             <script>
                 //Cerrar Sesion automáticamente si no se realiza nada en 10 minutos(Aun no terminado)
                 window.onload = function () {
@@ -51,67 +51,106 @@ if (isset($_SESSION['nombre_usuario'])) {
                 }
             </script>
 
+            <script>
+                function mostrar() {
+                    document.getElementById("sidebar").style.width = "78px";
+                    document.getElementById("menu-lateral").style.marginLeft = "78px";
+                    document.getElementById("contenedor").style.marginLeft = "90px";
+                    document.getElementById("abrir").style.display = "none";
+                    document.getElementById("cerrar").style.display = "inline";
+                }
+
+                function ocultar() {
+                    document.getElementById("sidebar").style.width = "0";
+                    document.getElementById("menu-lateral").style.marginLeft = "0";
+                    document.getElementById("contenedor").style.marginLeft = "40px";
+                    document.getElementById("abrir").style.display = "inline";
+                    document.getElementById("cerrar").style.display = "none";
+                }
+            </script>
         </head>
         <body>
-
-            <!-- div de la barra superior -->
-            <header class="principal"> 
-                <!--imagen duoc uc-->
-                <div class="logo">
-                    <img src="../Imagenes/fondo-transparente_4.png">
-                </div>
-                <div class="info-usuario">
-                    <div>
-                        <!--Mostrar quien es el usuario ingresado en el sistema-->
-                        <p>Bienvenido/a a <strong>Duoc UC</strong>: <?php echo $_SESSION['nombre_usuario'] ?></p>
-                    </div>
-                    <div>
-                        <!--boton que destruye sesion-->
-                        <form method="POST" action="../capaLogicaNegocio/BO_Accesos.php">
-                            <button class="boton_personalizado" name="btnCerrarSesion" value="Cerrar Sesion">
-                                <span class="glyphicon glyphicon-remove"></span> Cerrar Sesion
-                            </button>
-                        </form>
-
-                    </div>
-                </div>
-
-
-
-            </header>
-            <hr>
-            <!--este div contiene el color del sistema-->
-            <div class="contenedor">    
-
-                <!--div que muestra "adminstrador del sistema"-->
-                <div class="articulo_1">
-                    <h5><span class="glyphicon glyphicon-ok"></span> Administrador del sistema</h5>
-                </div>
-                <!--div que muestra las cajas de texto y los botones-->
-                <article class="articulo_2">
-                    <section>
-
-                        <label id="lblDocente" class="label label-default">Rut Docente</label>
-                        <input type="text" placeholder="Ingrese Rut" name="txtRut" id="txtRut" required >
-                        <button type="submit" class="btn"  id="btnVerDocente"  autocomplete="off" name="btnVerDocente" value="VerDocente" onclick="buscarDocente()">Ver Docente</button>
-
-                    </section>
-
-                    <section class="art2-sec-2">
-                        <label id="lblEscuela" class="label label-default">Escuela</label>
-                        <input type="text" placeholder="Ingrese Escuela" name="txtEscuela" id="txtEscuela" required> 
-                        <button class="btn" data-toggle="button" aria-pressed="false" autocomplete="off"  id="btnVerEscuela" name="btnVerEscuela" value="VerEscuela" >Ver Escuela</button>
-                    </section>
-
-                </article>
-                
-                <!--aqui se carga la información del docente-->
-                <div id="contenedor-info-docente">
-                    
-                </div>
-
+            <!--menù lateral para acciones adicionales-->
+            <div id="sidebar" class="sidebar">
+                <a href="#" class="boton-cerrar" onclick="ocultar()">&times;</a>
+                <ul class="menu">
+                    <li><a href="#"><span class="glyphicon glyphicon-th-large"></span><p>Administrar</p></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-signal"></span><p>Estad&iacute;sticas</p></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span><p>Usuarios</p></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-cog"></span><p>Configuraci&oacute;n</p></a></li>
+                </ul>
 
             </div>
+            <div id="contenido-total">
+                
+                <!-- div de la barra superior -->
+                <header class="principal"> 
+                    
+                    <!--imagen duoc uc-->
+                    <div class="logo">
+                        <img src="../Imagenes/fondo-transparente_4.png">
+                    </div>
+                    <div class="info-usuario">
+                        <div>
+                            <!--Mostrar quien es el usuario ingresado en el sistema-->
+                            <p>Bienvenido/a a <strong>Duoc UC</strong>: <?php echo $_SESSION['nombre_usuario'] ?></p>
+                        </div>
+                        <div>
+                            <!--boton que destruye sesion-->
+                            <form method="POST" action="../capaLogicaNegocio/BO_Accesos.php">
+                                <button class="boton_personalizado" name="btnCerrarSesion" value="Cerrar Sesion">
+                                    <span class="glyphicon glyphicon-remove"></span> Cerrar Sesion
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                    <!--BOTON PARA MENÙ LATERAL-->
+                    <div id="menu-lateral">
+                        <a id="abrir" class="abrir-cerrar" href="javascript:void(0)" onclick="mostrar()"><span class="glyphicon glyphicon-transfer"></span></a>
+                        <a id="cerrar" class="abrir-cerrar" href="#" onclick="ocultar()"><span class="glyphicon glyphicon-transfer"></span></a>
+                    </div>
+
+                    
+                </header>
+                <hr>
+
+
+                <!--este div contiene el color del sistema-->
+                <div class="contenedor" id="contenedor">    
+
+                    <!--div que muestra "adminstrador del sistema"-->
+                    <div class="articulo_1">
+                        <h5><span class="glyphicon glyphicon-ok"></span> Administrador del sistema</h5>
+                    </div>
+                    <!--div que muestra las cajas de texto y los botones-->
+                    <article class="articulo_2">
+                        <section>
+
+                            <label id="lblDocente" class="label label-default">Rut Docente</label>
+                            <input type="text" placeholder="Ingrese Rut" name="txtRut" id="txtRut" required >
+                            <button type="submit" class="btn"  id="btnVerDocente"  autocomplete="off" name="btnVerDocente" value="VerDocente" onclick="buscarDocente()">Ver Docente</button>
+
+                        </section>
+
+                        <section class="art2-sec-2">
+                            <label id="lblEscuela" class="label label-default">Escuela</label>
+                            <input type="text" placeholder="Ingrese Escuela" name="txtEscuela" id="txtEscuela" required> 
+                            <button class="btn" data-toggle="button" aria-pressed="false" autocomplete="off"  id="btnVerEscuela" name="btnVerEscuela" value="VerEscuela" >Ver Escuela</button>
+                        </section>
+
+                    </article>
+
+                    <!--aqui se carga la información del docente-->
+                    <div id="contenedor-info-docente">
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
         </body>
     </html>
     <?php
