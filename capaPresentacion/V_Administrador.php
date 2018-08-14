@@ -14,58 +14,73 @@ if (isset($_SESSION['nombre_usuario'])) {
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
+<!--Detectar Movimiento (Para Matar la sesion por inactividad)-->
             <script>
-                //Cerrar Sesion automáticamente si no se realiza nada en 10 minutos(Aun no terminado)
-                window.onload = function () {
-                    MatarSesion();
-                }
+                function(){
+                var moviendo = false;
+                        document.onmousemove = function(){
+                        moviendo = true;
+                        };
+                        setInterval (function() {
+                        if (!moviendo) {
+                        // No ha habido movimiento desde hace un segundo, aquí tu codigo
+                        } else {
+                        moviendo = false;
+                        }
+                        }, 1000); // Cada segundo, pon el valor que quieras.
+                        })()
+            </script>
+
+            <!--Cerrar Sesion si no se realiza nada(Aun no terminado xd)-->
+            <script>
+                        //Cerrar Sesion automáticamente si no se realiza nada en 10 minutos(Aun no terminado)
+                        window.onload = function () {
+                        MatarSesion();
+                        }
 
                 function MatarSesion() {
 
-                    setTimeout("window.open('../capaConexion/CL_Desconectar.php','_top');", 100000);
-
+                setTimeout("window.open('../capaConexion/CL_Desconectar.php','_top');", 600000);
                 }
 
             </script>
             <script>
                 function buscarDocente() {
-                    rut = document.getElementById("txtRut").value;
-                    $.ajax({
+                rut = document.getElementById("txtRut").value;
+                        $.ajax({
                         type: "POST",
-                        url: '../capaLogicaNegocio/BO_Docentes.php',
-                        data: {'txtRut': rut,
-                            btnVerDocente: 'btnVerDocente'
-                        },
-                        beforeSend: function () {
-                            //$("#info-docente").html("gif animado");
-                            //$("#info-docente").slideUp(300).delay(100).fadeIn(800); //retraso y animacion
-                            $("#contenedor-info-docente").slideUp(300).delay(50).fadeIn(800); //retraso y animacion
-                        },
-                        success: function (response) {
-                            //$('#info-docente').html(response); //se carga el contenido en el div
-                            $('#contenedor-info-docente').html(response); //se carga el contenido en el div
-                        }
-                    });
-
+                                url: '../capaLogicaNegocio/BO_Docentes.php',
+                                data: {'txtRut': rut,
+                                        btnVerDocente: 'btnVerDocente'
+                                },
+                                beforeSend: function () {
+                                //$("#info-docente").html("gif animado");
+                                //$("#info-docente").slideUp(300).delay(100).fadeIn(800); //retraso y animacion
+                                $("#contenedor-info-docente").slideUp(300).delay(50).fadeIn(800); //retraso y animacion
+                                },
+                                success: function (response) {
+                                //$('#info-docente').html(response); //se carga el contenido en el div
+                                $('#contenedor-info-docente').html(response); //se carga el contenido en el div
+                                }
+                        });
                 }
             </script>
 
             <script>
                 function mostrar() {
-                    document.getElementById("sidebar").style.width = "78px";
-                    document.getElementById("menu-lateral").style.marginLeft = "78px";
-                    document.getElementById("contenedor").style.marginLeft = "90px";
-                    document.getElementById("abrir").style.display = "none";
-                    document.getElementById("cerrar").style.display = "inline";
+                document.getElementById("sidebar").style.width = "78px";
+                        document.getElementById("menu-lateral").style.marginLeft = "78px";
+                        document.getElementById("contenedor").style.marginLeft = "90px";
+                        document.getElementById("abrir").style.display = "none";
+                        document.getElementById("cerrar").style.display = "inline";
                 }
 
                 function ocultar() {
-                    document.getElementById("sidebar").style.width = "0";
-                    document.getElementById("menu-lateral").style.marginLeft = "0";
-                    document.getElementById("contenedor").style.marginLeft = "40px";
-                    document.getElementById("abrir").style.display = "inline";
-                    document.getElementById("cerrar").style.display = "none";
+                document.getElementById("sidebar").style.width = "0";
+                        document.getElementById("menu-lateral").style.marginLeft = "0";
+                        document.getElementById("contenedor").style.marginLeft = "40px";
+                        document.getElementById("abrir").style.display = "inline";
+                        document.getElementById("cerrar").style.display = "none";
                 }
             </script>
         </head>
@@ -82,10 +97,10 @@ if (isset($_SESSION['nombre_usuario'])) {
 
             </div>
             <div id="contenido-total">
-                
+
                 <!-- div de la barra superior -->
                 <header class="principal"> 
-                    
+
                     <!--imagen duoc uc-->
                     <div class="logo">
                         <img src="../Imagenes/fondo-transparente_4.png">
@@ -111,7 +126,7 @@ if (isset($_SESSION['nombre_usuario'])) {
                         <a id="cerrar" class="abrir-cerrar" href="#" onclick="ocultar()"><span class="glyphicon glyphicon-transfer"></span></a>
                     </div>
 
-                    
+
                 </header>
                 <hr>
 
