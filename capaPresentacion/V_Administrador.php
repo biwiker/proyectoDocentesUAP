@@ -11,7 +11,9 @@ if (isset($_SESSION['nombre_usuario'])) {
             <link href="../bootstrap 3/css/bootstrap.css" rel="stylesheet" type="text/css">
             <link href="../css/Estilos_Admin.css" rel="stylesheet" type="text/css">
             <!--  bajar versión local-->
-           
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
 
 
@@ -24,7 +26,7 @@ if (isset($_SESSION['nombre_usuario'])) {
                     var escribiendo = false;
                     var contador = 0;
                     var fin_contador = 600;
-                   
+                    
                     document.onkeypress = function () {
                         escribiendo = true;
                     };
@@ -34,7 +36,6 @@ if (isset($_SESSION['nombre_usuario'])) {
                     //Si no se hace movimiento se resta del contador
                     setInterval(function () {
                         
-                        
                         if (!moviendo && !escribiendo) {
                             
                             //Aqui se le resta 1 al "fin_contador"                
@@ -43,7 +44,7 @@ if (isset($_SESSION['nombre_usuario'])) {
                             //Si llega a cero procede a cerrar la pagina
                             if (contador >= fin_contador) {
 
-                                location.href = "V_Login.php";
+                                location.href = "../capaConexion/CL_Desconectar.php";
                             }
                             //De lo contrario,si se realiza alguna accion en el mouse o teclado,se reinciará el contador a su valor predeterminado
                         } else {
