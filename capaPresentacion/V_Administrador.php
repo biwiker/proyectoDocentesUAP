@@ -11,76 +11,88 @@ if (isset($_SESSION['nombre_usuario'])) {
             <link href="../bootstrap 3/css/bootstrap.css" rel="stylesheet" type="text/css">
             <link href="../css/Estilos_Admin.css" rel="stylesheet" type="text/css">
             <!--  bajar versión local-->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+           
 
-<!--Detectar Movimiento (Para Matar la sesion por inactividad)-->
+
+
+            <!--Se detecta Movimiento o Escritura (Para Matar la sesion por inactividad)-->
             <script>
-                function(){
-                var moviendo = false;
-                        document.onmousemove = function(){
+                (function () {
+                    //Se estable un escribir y un moviendo para interacturar con los IF
+                    //Se hace un contador que preguntara cada 1 segundo si se ha hecho algun movimiento
+                    var moviendo = false;
+                    var escribiendo = false;
+                    var contador = 0;
+                    var fin_contador = 600;
+                   
+                    document.onkeypress = function () {
+                        escribiendo = true;
+                    };
+                    document.onmousemove = function () {
                         moviendo = true;
-                        };
-                        setInterval (function() {
-                        if (!moviendo) {
-                        // No ha habido movimiento desde hace un segundo, aquí tu codigo
+                    };
+                    //Si no se hace movimiento se resta del contador
+                    setInterval(function () {
+                        
+                        
+                        if (!moviendo && !escribiendo) {
+                            
+                            //Aqui se le resta 1 al "fin_contador"                
+                            fin_contador--;
+                            
+                            //Si llega a cero procede a cerrar la pagina
+                            if (contador >= fin_contador) {
+
+                                location.href = "V_Login.php";
+                            }
+                            //De lo contrario,si se realiza alguna accion en el mouse o teclado,se reinciará el contador a su valor predeterminado
                         } else {
-                        moviendo = false;
+                            fin_contador = 600;
+                            moviendo = false;
+                            escribiendo = false;
                         }
-                        }, 1000); // Cada segundo, pon el valor que quieras.
-                        })()
-            </script>
-
-            <!--Cerrar Sesion si no se realiza nada(Aun no terminado xd)-->
-            <script>
-                        //Cerrar Sesion automáticamente si no se realiza nada en 10 minutos(Aun no terminado)
-                        window.onload = function () {
-                        MatarSesion();
-                        }
-
-                function MatarSesion() {
-
-                setTimeout("window.open('../capaConexion/CL_Desconectar.php','_top');", 600000);
+                    }, 1000); // = 1 Seg
                 }
-
+                )()
             </script>
+
             <script>
                 function buscarDocente() {
-                rut = document.getElementById("txtRut").value;
-                        $.ajax({
+                    rut = document.getElementById("txtRut").value;
+                    $.ajax({
                         type: "POST",
-                                url: '../capaLogicaNegocio/BO_Docentes.php',
-                                data: {'txtRut': rut,
-                                        btnVerDocente: 'btnVerDocente'
-                                },
-                                beforeSend: function () {
-                                //$("#info-docente").html("gif animado");
-                                //$("#info-docente").slideUp(300).delay(100).fadeIn(800); //retraso y animacion
-                                $("#contenedor-info-docente").slideUp(300).delay(50).fadeIn(800); //retraso y animacion
-                                },
-                                success: function (response) {
-                                //$('#info-docente').html(response); //se carga el contenido en el div
-                                $('#contenedor-info-docente').html(response); //se carga el contenido en el div
-                                }
-                        });
+                        url: '../capaLogicaNegocio/BO_Docentes.php',
+                        data: {'txtRut': rut,
+                            btnVerDocente: 'btnVerDocente'
+                        },
+                        beforeSend: function () {
+                            //$("#info-docente").html("gif animado");
+                            //$("#info-docente").slideUp(300).delay(100).fadeIn(800); //retraso y animacion
+                            $("#contenedor-info-docente").slideUp(300).delay(50).fadeIn(800); //retraso y animacion
+                        },
+                        success: function (response) {
+                            //$('#info-docente').html(response); //se carga el contenido en el div
+                            $('#contenedor-info-docente').html(response); //se carga el contenido en el div
+                        }
+                    });
                 }
             </script>
 
             <script>
                 function mostrar() {
-                document.getElementById("sidebar").style.width = "78px";
-                        document.getElementById("menu-lateral").style.marginLeft = "78px";
-                        document.getElementById("contenedor").style.marginLeft = "90px";
-                        document.getElementById("abrir").style.display = "none";
-                        document.getElementById("cerrar").style.display = "inline";
+                    document.getElementById("sidebar").style.width = "78px";
+                    document.getElementById("menu-lateral").style.marginLeft = "78px";
+                    document.getElementById("contenedor").style.marginLeft = "90px";
+                    document.getElementById("abrir").style.display = "none";
+                    document.getElementById("cerrar").style.display = "inline";
                 }
 
                 function ocultar() {
-                document.getElementById("sidebar").style.width = "0";
-                        document.getElementById("menu-lateral").style.marginLeft = "0";
-                        document.getElementById("contenedor").style.marginLeft = "40px";
-                        document.getElementById("abrir").style.display = "inline";
-                        document.getElementById("cerrar").style.display = "none";
+                    document.getElementById("sidebar").style.width = "0";
+                    document.getElementById("menu-lateral").style.marginLeft = "0";
+                    document.getElementById("contenedor").style.marginLeft = "40px";
+                    document.getElementById("abrir").style.display = "inline";
+                    document.getElementById("cerrar").style.display = "none";
                 }
             </script>
         </head>
