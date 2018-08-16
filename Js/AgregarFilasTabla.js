@@ -1,3 +1,5 @@
+<script src="../bootstrap 3/jquery-3.3.1.js"></script>
+
 $(document).on('ready', funcionPrincipal);
 
 function funcionPrincipal()
