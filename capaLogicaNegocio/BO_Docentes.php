@@ -139,14 +139,8 @@ if (isset($_POST['btnVerEscuela'])) {
                                 echo "                <td>".$d_nombre." ".$d_apaterno." ".$d_amaterno."</td>";
                                 echo "                <td style='background-color: #F4F6F7'><b>RUN:</b></td>";
                                 echo "                <td>".$d_rut."".$d_dv."</td>";
-                                echo "                <td><button type='submit' class='btn'  id='btnVerDocente'  autocomplete='off' name='btnVerDocente' value='VerDocente' onclick='buscarDocente2(".$d_rut."".$d_dv.")'>Ver Docente</button></td>";
+                                echo "                <td><button type='submit' class='btn'  id='btnVerDocente'  autocomplete='off' name='btnVerDocente' value='VerDocente' onclick='buscarDocente2(\"$d_rut$d_dv\")'>Ver Docente</button></td>";
                                 echo "            </tr>";
-//                                echo "            <tr>";
-//                                echo "                <td style='background-color: #F4F6F7'><b>Correo Institucional:</b></td>";
-//                                echo "                <td>".$d_correo1."</td>";
-//                                echo "                <td style='background-color: #F4F6F7'><b>Tel&eacute;fono M&oacute;vil:</b></td>";
-//                                echo "                <td>".$d_telefonoMovil."</td>";
-//                                echo "            </tr>";
                                 echo "  </tbody>";
                                 echo "</table>";
                                 $contador ++;

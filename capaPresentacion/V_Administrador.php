@@ -80,7 +80,7 @@ if (isset($_SESSION['nombre_usuario'])) {
                     });
                 }
                 function buscarDocente2(rut) {
-                    
+                    alert(rut);
                     $.ajax({
                         type: "POST",
                         url: '../capaLogicaNegocio/BO_Docentes.php',

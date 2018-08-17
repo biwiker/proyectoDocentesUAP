@@ -140,7 +140,7 @@ class DAO_Docente {
                                                             JOIN CENTRO_COSTO CC
                                                             ON CC.ID_CENTRO_COSTO = D.ID_CENTRO_COSTO
                                                             where concat(RUT,DV) = ?"); 
-            $stmt->bind_param('i',$rut);  
+            $stmt->bind_param('s',$rut);  
             $stmt->execute();
             $stmt->bind_result($d_rut,$d_dv,$d_nombre,$d_apaterno,$d_amaterno,$d_ceco,$d_escuelaPrograma, $d_correo1,$d_correo2,$d_telefonoMovil);
             $docente = null;
