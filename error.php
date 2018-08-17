@@ -1,42 +1,47 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    </head>
-    <title>Error 404</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link href="css/Estilos.css" rel="stylesheet" type="text/css">
+        <title>Error Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link href="bootstrap 3/css/bootstrap.css" rel="stylesheet" type="text/css">
-            <script src="bootstrap 3/js/bootstrap.js"></script>
-            <script src="bootstrap 3/jquery-3.3.1.js"></script>
+        <link href="css/Estilos.css" rel="stylesheet" type="text/css">
+        <script src="bootstrap 3/js/bootstrap.js"></script>
+        <script src="bootstrap 3/jquery-3.3.1.js"></script>
+    </head>
 
-            <body class="cuerpoError">
-                <!--cabecera con imagen de DUOC-->
-                <header class="imagenDuocSuperior">
-                    <img src="Imagenes/fondo-transparente_4.png"> 
-                </header>
-                <!--linea de división del header amarilla-->
-                <hr class="hr" id="linea"></hr> 
-                    <!--imagen de error en el lado izquierdo-->
-                    <div>
-                        <div> 
-                            <img class="imagenError" src="Imagenes/error.png">
-                        </div>
-                        <!--mensaje de error al pie de pagina lado derecho-->        
-                        <div class="mensajeError404 ">
-                            <h1><strong>PAGE NOT FOUND</strong></h1>
-                        </div>
-                    </div>
-            </body>
-            <!--mensaje en el inferior derecha -->
-            <div class="mensajeError">
-                <h3><strong>Lo sentimos no encontramos la pagina...</strong></h3>  
+
+    <body>
+        <!--cabecera con imagen de DUOC-->
+        <header class="imagenDuocSuperior">
+            <img src="Imagenes/fondo-transparente_4.png"> 
+        </header>
+
+        <!-- Titulo y subtitulo -->
+        <div class="container">
+            <h1 class="titulo">Oops!! Lo sentimos</h1>
+            <h1 class="subtitulo">404 - La pagina no fue encontrada</h1>
+            <br/>
+
+            <!-- texto error -->
+            <div class="mensajeCompleto">
+                <p>No podemos encontrar la página que está buscando.</p>
+                <p>Es posible que se haya eliminado, que se haya cambiado su nombre o que no esté disponible temporalmente. </p>
+                <p>Verifique que la dirección del sitio web esté escrita correctamente.</p>
+                <p> puede ir a nuestra 
+                    <a href="/capaPresentacion/V_login.php">Pagina de inicio</a>, y intente ingresar nuevamente.</p>
             </div>
-            <!--boton para volver-->
-            <div>
-                
-            </div>
-            <form action="capaPresentacion/V_Login.php">
-                <button type="submit" name="btnVolver" class="btn" id="botonVolver">Volver</button>
-            </form>
-            </html>
+        </div>
+
+        <!-- imagen error -->
+        <div>
+            <img src="Imagenes/error1.png" class="imagenError" title="error 404">  
+                        
+        </div>
+    </body>
+
+</div>
+
+
+</body>
+</html>
+
+
