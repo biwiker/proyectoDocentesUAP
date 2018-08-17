@@ -3,6 +3,7 @@
 
 //si la sessión que contiene el nombre de usuario existe y no está nula, entonces se presenta la gráfica
 if (isset($_SESSION['nombre_usuario'])) {
+    include_once '../capaAccesoDatos/DAO_Escuela.php';
     ?>
     <html>
         <head>
@@ -26,7 +27,7 @@ if (isset($_SESSION['nombre_usuario'])) {
                     var escribiendo = false;
                     var contador = 0;
                     var fin_contador = 600;
-                    
+
                     document.onkeypress = function () {
                         escribiendo = true;
                     };
@@ -35,12 +36,12 @@ if (isset($_SESSION['nombre_usuario'])) {
                     };
                     //Si no se hace movimiento se resta del contador
                     setInterval(function () {
-                        
+
                         if (!moviendo && !escribiendo) {
-                            
+
                             //Aqui se le resta 1 al "fin_contador"                
                             fin_contador--;
-                            
+
                             //Si llega a cero procede a cerrar la pagina
                             if (contador >= fin_contador) {
 
@@ -59,12 +60,54 @@ if (isset($_SESSION['nombre_usuario'])) {
 
             <script>
                 function buscarDocente() {
+                    
                     rut = document.getElementById("txtRut").value;
                     $.ajax({
                         type: "POST",
                         url: '../capaLogicaNegocio/BO_Docentes.php',
                         data: {'txtRut': rut,
                             btnVerDocente: 'btnVerDocente'
+                        },
+                        beforeSend: function () {
+                            //$("#info-docente").html("gif animado");
+                            //$("#info-docente").slideUp(300).delay(100).fadeIn(800); //retraso y animacion
+                            //$("#contenedor-info-docente").slideUp(300).delay(50).fadeIn(800); //retraso y animacion
+                        },
+                        success: function (response) {
+                            //$('#info-docente').html(response); //se carga el contenido en el div
+                            $('#contenedor-info-docente').html(response); //se carga el contenido en el div
+                        }
+                    });
+                }
+                function buscarDocente2(rut) {
+                    
+                    $.ajax({
+                        type: "POST",
+                        url: '../capaLogicaNegocio/BO_Docentes.php',
+                        data: {'txtRut': rut,
+                            btnVerDocente: 'btnVerDocente'
+                        },
+                        beforeSend: function () {
+                            //$("#info-docente").html("gif animado");
+                            //$("#info-docente").slideUp(300).delay(100).fadeIn(800); //retraso y animacion
+                            //$("#contenedor-info-docente").slideUp(300).delay(50).fadeIn(800); //retraso y animacion
+                        },
+                        success: function (response) {
+                            //$('#info-docente').html(response); //se carga el contenido en el div
+                            $('#contenedor-info-docente').html(response); //se carga el contenido en el div
+                        }
+                    });
+                }
+                function buscarEscuela() {
+                    idEscuela = document.getElementById("ddlEscuela").value;
+                    nombreEscuela = document.getElementById("ddlEscuela").options[document.getElementById("ddlEscuela").selectedIndex].text;
+
+                    $.ajax({
+                        type: "POST",
+                        url: '../capaLogicaNegocio/BO_Docentes.php',
+                        data: {'ddlEscuela': idEscuela,
+                            'nombreEscuela': nombreEscuela,
+                            btnVerEscuela: 'btnVerEscuela'
                         },
                         beforeSend: function () {
                             //$("#info-docente").html("gif animado");
@@ -78,34 +121,15 @@ if (isset($_SESSION['nombre_usuario'])) {
                     });
                 }
             </script>
-
-            <script>
-                function mostrar() {
-                    document.getElementById("sidebar").style.width = "78px";
-                    document.getElementById("menu-lateral").style.marginLeft = "78px";
-                    document.getElementById("contenedor").style.marginLeft = "90px";
-                    document.getElementById("abrir").style.display = "none";
-                    document.getElementById("cerrar").style.display = "inline";
-                }
-
-                function ocultar() {
-                    document.getElementById("sidebar").style.width = "0";
-                    document.getElementById("menu-lateral").style.marginLeft = "0";
-                    document.getElementById("contenedor").style.marginLeft = "40px";
-                    document.getElementById("abrir").style.display = "inline";
-                    document.getElementById("cerrar").style.display = "none";
-                }
-            </script>
         </head>
         <body>
             <!--menù lateral para acciones adicionales-->
             <div id="sidebar" class="sidebar">
-                <a href="#" class="boton-cerrar" onclick="ocultar()">&times;</a>
                 <ul class="menu">
                     <li><a href="#"><span class="glyphicon glyphicon-th-large"></span><p>Administrar</p></a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-signal"></span><p>Estad&iacute;sticas</p></a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span><p>Usuarios</p></a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-cog"></span><p>Configuraci&oacute;n</p></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span><p>Docentes</p></a></li>
+    <!--                    <li><a href="#"><span class="glyphicon glyphicon-cog"></span><p>Configuraci&oacute;n</p></a></li>-->
                 </ul>
 
             </div>
@@ -133,13 +157,6 @@ if (isset($_SESSION['nombre_usuario'])) {
 
                         </div>
                     </div>
-                    <!--BOTON PARA MENÙ LATERAL-->
-                    <div id="menu-lateral">
-                        <a id="abrir" class="abrir-cerrar" href="javascript:void(0)" onclick="mostrar()"><span class="glyphicon glyphicon-transfer"></span></a>
-                        <a id="cerrar" class="abrir-cerrar" href="#" onclick="ocultar()"><span class="glyphicon glyphicon-transfer"></span></a>
-                    </div>
-
-
                 </header>
                 <hr>
 
@@ -163,8 +180,18 @@ if (isset($_SESSION['nombre_usuario'])) {
 
                         <section class="art2-sec-2">
                             <label id="lblEscuela" class="label label-default">Escuela</label>
-                            <input type="text" placeholder="Ingrese Escuela" name="txtEscuela" id="txtEscuela" required> 
-                            <button class="btn" data-toggle="button" aria-pressed="false" autocomplete="off"  id="btnVerEscuela" name="btnVerEscuela" value="VerEscuela" >Ver Escuela</button>
+                            <select name="ddlEscuela" id="ddlEscuela" class="form-control">
+                                <?php
+                                $DAO_Escuela = new DAO_Escuela();
+                                $stmt = $DAO_Escuela->buscarEscuela();
+                                $stmt->bind_result($e_idEscuela, $e_descripcion);
+                                while ($stmt->fetch()) {
+                                    echo "<option value='" . $e_idEscuela . "'>" . $e_descripcion . "</option>";
+                                }
+                                $stmt->close();
+                                ?>
+                            </select>
+                            <button type="submit" class="btn" id="btnVerEscuela" autocomplete="off"  name="btnVerEscuela" value="VerEscuela" onclick="buscarEscuela()">Ver Escuela</button>
                         </section>
 
                     </article>

@@ -9,11 +9,12 @@ include_once("CL_Configuracion.php");
 
 class CL_Conexion {
 
-    private $_conexion;    
+    private $_conexion;
     static private $instancia = null;
 
     #patron singleton para instanciar solo 1 vez la clase conexion 
     #método estático para acceder a él sin necesidad de instanciar la clase
+
     public static function getInstancia() {
         if (self::$instancia == null) {
             self::$instancia = new CL_Conexion();
@@ -22,25 +23,31 @@ class CL_Conexion {
     }
 
     #constructor de la clase
+
     public function CL_Conexion() {
         $this->abrirConexion();
     }
 
     #conectarse al servidor
+
     public function abrirConexion() {
         if (!isset($this->_conexion)) {
-            $this->_conexion = (mysqli_connect(HOST, USER, PASS,DBNAME));
+            $this->_conexion = (mysqli_connect(HOST, USER, PASS, DBNAME));
             if (!$this->_conexion) {
                 trigger_error('Error al conectar al servidor mysql: ' . mysqli_error(), E_USER_ERROR);
             }
         }
 
-        if (!mysqli_select_db($this->_conexion,DBNAME)) {
+        if (!mysqli_select_db($this->_conexion, DBNAME)) {
             trigger_error('Error al Seleccionar a la base de datos: ' . mysqli_error(), E_USER_ERROR);
         }
+        
+        $this->_conexion->query("SET NAMES 'utf8'"); //correcciòn para acentos y tiles
+        
     }
 
     #recuperar el estado de la conexion
+
     function getConexion() {
         return $this->_conexion;
     }

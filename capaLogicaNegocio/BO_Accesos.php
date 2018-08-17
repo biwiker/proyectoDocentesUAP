@@ -3,6 +3,7 @@
 include_once '../capaEntidades/CL_Acceso.php';
 include_once '../capaAccesoDatos/DAO_Acceso.php';
 
+
 @session_start();
 
 //si se hace un post en el boton ingreso
@@ -29,7 +30,8 @@ if (isset($_POST['btnIngreso'])) {
         header('Location: ../capaPresentacion/V_Login.php');
     }
 }
-   
+
+//si se hace un post en el boton cerrar sesion
 if (isset($_POST['btnCerrarSesion'])){
         $DAO_Acceso = new DAO_Acceso();
         $DAO_Acceso->cerrarSesion();

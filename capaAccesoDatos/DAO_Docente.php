@@ -164,6 +164,35 @@ class DAO_Docente {
             echo $exc->getTraceAsString();
         }
     }
+    
+    public function buscarDocentePorEscuela($idEscuela) {
+        try {
+            
+            $stmt = $this->_conexion->getConexion()->prepare("select 
+                                                                RUT, 
+                                                                DV,
+                                                                lower(concat(PNOMBRE , ' ' , SNOMBRE )) AS 'NOMBRE',
+                                                                lower(APATERNO) AS 'APATERNO',
+                                                                lower(AMATERNO) AS 'AMATERNO',	
+                                                                lower(CORREO1) 'CORREO INSTITUCIONAL',
+                                                                case TELEFONOMOVIL
+                                                                        when 'NULL' THEN 'No Registrado'
+                                                                        else TELEFONOMOVIL
+                                                                end AS 'TELEFONOMOVIL'
+                                                                from docentes D
+                                                                JOIN escuela_o_programa ES
+                                                                ON D.ID_ESCUELA_O_PROGRAMA = ES.ID_ESCUELA
+                                                                JOIN CENTRO_COSTO CC
+                                                                ON CC.ID_CENTRO_COSTO = D.ID_CENTRO_COSTO
+                                                                where ES.id_escuela = ?"); 
+            $stmt->bind_param('i',$idEscuela);  
+            $stmt->execute();
+            return $stmt;
+            
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
+    }
 
     public function modificarDocente(CL_Docente $docente) {
 
