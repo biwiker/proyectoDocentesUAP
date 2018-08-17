@@ -1,61 +1,56 @@
 body{
-    background-color:#F4F6F7;
+ background-color:#F4F6F7;
 }
-.logo{
-    clear:both;
-    display: block; 
-    margin: 30px 0 0 90px;
-    max-width: 100%;
-    width: 50%;
-    height:8%;
+.articulo_1{
+    position: relative;
+    height: 400px;
 }
-div .sesion{
-   padding-top: 10px;
-   padding-left: 60%;
-   color: #999999;    
-   float: left;
+.articulo_1 label{
+  position: absolute;
+  top:20px;;
+  left: 10%;
+} 
+input {
+   position: absolute;
+   top: 50px;
+   left: 10%;
 }
- #btnNuevo{
-  position:absolute;
-  top:28%;
-  left:5%; 
+#btnNuevo{
+    position:absolute;
+    top:20px;
+    left:30%;
 }
-table {
+.caja {
+   margin:20px auto 40px auto;	
+   border:1px solid #d9d9d9;
+   height:30px;
+   overflow: hidden;
+   width: 175px;
    position:absolute;
-   top:35%;
-   left:5%;
-   width: 90%;
-   height: 40%;
+   top:65px;
+   left: 10%;
 }
+select {
+   border: none;
+   font-size: 14px;
+   height: 30px;
+   padding: 5px;
+   width: 250px;
+}
+select:focus{ outline: none;}
 
-hr{
-    height: 1px;
-    background-color:rgba(189, 195, 199);
-}
-ul{
-    list-style-type: none;
-    margin: 0 53px 0 53px;
-    padding: 2;
-    overflow: hidden;
-    background-color: #C0BFCD; 
-}
-li{
-    float: left;
-    text-decoration:none;
-     
-}
-li a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
-    color: whitesmoke;
-}
-li a:hover {
-    background-color: black;
-    text-decoration: none;
-    
+.caja::after{
+	content:"\025be";
+	display:table-cell;
+	padding-top:7px;
+	text-align:center;
+	width:30px;
+	height:30px;
+	background-color:#d9d9d9;
+	position:absolute;
+	top:0;
+	right:0px;	
+	pointer-events: none;
 }
 #btnGuardar{
     background-color: #1511A3  ;
@@ -65,4 +60,132 @@ li a:hover {
     background-color: #E72E09  ;
     border: none;
     color:white;
+}
+.sidebar {
+    position: fixed;
+    height: 100%;
+    /*width: 0; debe partir en cero*/
+    /*width: 78px;*/
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #001e39;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding: 1rem 0;
+    box-sizing:border-box;
+}
+.sidebar .boton-cerrar {
+    position: absolute;
+    top: 0.5rem;
+    right: 0;
+    font-size: 2rem;
+    display: block;
+    padding: 0;
+    line-height: 1.5rem;
+    margin: 0;
+    height: 32px;
+    width: 32px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.sidebar ul, .sidebar li{
+    margin:0;
+    padding:0;
+    list-style:none inside;
+}
+
+.sidebar ul {
+    display: block;
+    margin-top: 50px;
+}
+
+.sidebar a {
+    display: block;
+    width: 78px;
+    height: 60px;
+    color: #999999;
+    text-decoration: none;
+    
+}
+.sidebar span{
+    margin-left: 30px;
+}
+.sidebar p {
+    text-align: center;
+    font-size: 11.5px;
+    padding-top: 10px;
+    
+}
+.sidebar a:hover{
+    color:#fff;
+}
+#cerrar {
+    display:none;
+}
+
+/*---------------------------------------- barra lateral ----------------------------------------*/
+
+.principal{
+    position: relative;
+    left: 0px;
+    width:100%;
+    height: 55px;
+    padding-top:15px;
+    padding-bottom:15px;
+    background-color:#001e39;
+}
+.principal .logo{
+    float: left;
+    width: 50%;
+}
+.principal .logo img{
+    display: block; 
+    margin: 0 0 0 100px;
+    max-width: 100%;
+    width: 111px;
+    height: 25px;
+}
+
+/*linea amarilla divisoria*/
+hr{
+    height: 7px;
+    background-color:#FACC2E;
+    margin-top: -1px;
+    box-shadow: 0 3px 3px #ccc;
+}
+.info-usuario{
+    display:  inline-block;
+    float: left;
+    width: 50%;
+}
+.info-usuario div p{
+    padding-top: 5px;
+    padding-left: 30%;
+    color: #999999;
+    float: left;
+}
+.info-usuario div form{
+    margin: 0;
+    padding: 0;
+}
+
+.info-usuario div form button{
+    padding-top: 5px;
+    padding-left: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #999999;
+    background-color: #001e39;    
+    border: none;
+    float: left;
+}
+.info-usuario div form button:hover{
+    color:#fff;
+    -o-transition:color .3s ease-out, background 3s ease-in;
+    -ms-transition:color .3s ease-out, background 3s ease-in;
+    -moz-transition:color .3s ease-out, background 3s ease-in;
+    -webkit-transition:color .3s ease-out, background 3s ease-in;
+    transition:color .3s ease-out, background 3s ease-in;
 }
