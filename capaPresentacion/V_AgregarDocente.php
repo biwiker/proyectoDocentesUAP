@@ -82,17 +82,12 @@
                      <!--caja de texto para el rut-->
                      <input type="text" class="txtRut" placeholder="Ingrese Rut" >
                      <!--select que se debe relacionar con la base de datos para obtener las escuelas-->
-                         <div class="caja">
-                          <select>
+                         <select class="selectpicker" data-style="btn-warning"> 
                            <option>PUENTE ALTO</option>
                          </select>
-                    </div>
                 </div>
             </div>
-
         </div>  
-    
-    
          <!-- <div class="btn btn-primary" id="btnGuardar"><span class="glyphicon glyphicon-edit"></span> Guardar</div>
           <div class="btn btn-danger" id="btnEliminar"><span class="glyphicon glyphicon-remove"></span> Eliminar</div>-->
 </body>
