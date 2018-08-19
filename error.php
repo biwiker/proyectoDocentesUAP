@@ -28,18 +28,22 @@
                 <li type="disc"><p>Es posible que se haya eliminado, que se haya cambiado su nombre o que no esté disponible temporalmente. </p></li>
                 <li type="disc"><p>Verifique que la dirección del sitio web esté escrita correctamente.</p></li>
                 <li type="disc"><p> puede ir a nuestra <a href="capaPresentacion/V_login.php">Página de inicio</a>
-                        , y intente ingresar nuevamente.</p></li>   
+                        , e intente ingresar nuevamente.</p></li>   
             </ul>
 
             <!-- imagen error -->
-            <div class="col-lg-6 col-md-6 dibujoDocente">
-                <marquee scrollamount=”6″ loop=”0″ direction="right"><img src="Imagenes/error1.png" title="error 404" style="width:400px;height: 400px;"></marquee> 
+          
+            <div class=" dibujoDocente">
+                <img src="Imagenes/error1.png" title="error 404" >
             </div>
-
             <!--boton volver-->
-            <form action="capaPresentacion/V_Login.php">
-                <button type="submit" name="btnVolver" class="btn botonVolver">Volver</button>
-            </form>
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12">
+                 <form action="capaPresentacion/V_Login.php">
+                    <button type="submit" name="btnVolver" class="btn botonVolver">Volver</button>
+                </form>
+                  </div>
+              </div>
             <br/>
         </div>
     </body>
