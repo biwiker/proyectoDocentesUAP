@@ -74,7 +74,7 @@
         <hr>
         <div class="articulo_1"> 
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12 col-md-12 col-xs-12">
                      <!--boton que tiene la funcion de agregar una nueva columna a la tabla-->
                      <div class="btn btn-success" id="btnNuevo"><span class="glyphicon glyphicon-file"></span> Nuevo Docente </div>
                      <!--etiqueta-->
@@ -82,9 +82,33 @@
                      <!--caja de texto para el rut-->
                      <input type="text" class="txtRut" placeholder="Ingrese Rut" >
                      <!--select que se debe relacionar con la base de datos para obtener las escuelas-->
-                         <select class="selectpicker" data-style="btn-warning"> 
+                         <select class="escuela"> 
                            <option>PUENTE ALTO</option>
                          </select>
+                     <!--tabla la cual contiene la informacion de la base de datos-->
+                     <table class="table table-responsive table-bordered table-condensed">
+                         <thead >
+                            <th>Rut</th>
+                            <th>DV</th>
+                            <th>ID</th>
+                            <th>Primer Nombre</th>
+                            <th>Segundo Nombre</th>
+                            <th>Tercer Nombre</th>
+                            <th>Apellido Paterno</th>
+                            <th>Apellido Materno</th>
+                            <th>ID Centro Coste</th>
+                            <th>Correo Duoc</th>
+                            <th>Correo Personal</th>
+                            <th>Correo Personal Alternativo</th>
+                            <th>Telefono Fijo</th>
+                            <th>Telefono Movil</th>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td></td>
+                             </tr>
+                         </tbody>
+                     </table>
                 </div>
             </div>
         </div>  
