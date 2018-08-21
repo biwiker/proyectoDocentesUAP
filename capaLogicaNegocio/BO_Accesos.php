@@ -27,7 +27,9 @@ if (isset($_POST['btnIngreso'])) {
         $_SESSION['nombre_usuario'] = $DAO_Acceso->nombreUsuario($CL_Acceso->getRut()); //se crea una variable de sesión con nombre del usuario 
         header('Location: ../capaPresentacion/V_Administrador.php');
     } else {
-        header('Location: ../capaPresentacion/V_Login.php');
+         $mensaje="Credenciales Incorrectas";
+         include_once '../capaPresentacion/V_Login.php';
+
     }
 }
 
