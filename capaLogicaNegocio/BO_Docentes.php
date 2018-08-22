@@ -58,8 +58,16 @@ if (isset($_POST['btnVerDocente'])) {
                                 <tr>
                                     <td style="background-color: #F4F6F7"><b>Tel&eacute;fono M&oacute;vil:</b></td>
                                     <td><?php echo $Docente->getFonoMovil(); ?></td>
-                                    <td style="background-color: #F4F6F7"><b>Tel&eacute;fono Fijo:</b></td>
-                                    <td><?php echo $Docente->getFonoFijo(); ?></td>
+                                    <td style="background-color: #F4F6F7"><b>A&ntilde;o de Ingreso:</b></td>
+                                    <td><?php echo $Docente->getAnioIngreso(); ?></td>
+                                    <!--<td style="background-color: #F4F6F7"><b>Tel&eacute;fono Fijo:</b></td>
+                                    <td>echo $Docente->getFonoFijo();</td>-->
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #F4F6F7"><b>Tipo Docente:</b></td>
+                                    <td><?php echo $Docente->getTipoDocente(); ?></td>
+                                    <td style="background-color: #F4F6F7"><b>Grado Acad&eacute;mico:</b></td>
+                                    <td><?php echo $Docente->getGradoProfesional(); ?></td>
                                 </tr>
                             </tbody>
                         </table>

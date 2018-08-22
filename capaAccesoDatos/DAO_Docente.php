@@ -118,31 +118,38 @@ class DAO_Docente {
         try {
             
             $stmt = $this->_conexion->getConexion()->prepare("select 
-                                                            RUT, 
-                                                            DV,
-                                                            lower(concat(PNOMBRE , ' ' , SNOMBRE )) AS 'NOMBRE',
-                                                            lower(APATERNO) AS 'APATERNO',
-                                                            lower(AMATERNO) AS 'AMATERNO',	
-                                                            substr(CC.DESCRIPCION,6,length(CC.DESCRIPCION)) AS 'CECO',
-                                                            ES.DESCRIPCION AS 'ESCUELA O PROGRAMA',
-                                                            lower(CORREO1) 'CORREO INSTITUCIONAL',
-                                                            case CORREO2
-                                                                when 'NULL' THEN 'No Registrado'
-                                                                else lower(CORREO2) 
-                                                            end AS 'CORREO PERSONAL',
-                                                            case TELEFONOMOVIL
-                                                                when 'NULL' THEN 'No Registrado'
-                                                                else TELEFONOMOVIL
-                                                            end AS 'TELEFONOMOVIL'
-                                                            from docentes D
-                                                            JOIN escuela_o_programa ES
-                                                            ON D.ID_ESCUELA_O_PROGRAMA = ES.ID_ESCUELA
-                                                            JOIN CENTRO_COSTO CC
-                                                            ON CC.ID_CENTRO_COSTO = D.ID_CENTRO_COSTO
-                                                            where concat(RUT,DV) = ?"); 
+                                                                RUT, 
+                                                                DV,
+                                                                lower(concat(PNOMBRE , ' ' , SNOMBRE )) AS 'NOMBRE',
+                                                                lower(APATERNO) AS 'APATERNO',
+                                                                lower(AMATERNO) AS 'AMATERNO',	
+                                                                ANIO_INGRESO,
+                                                                substr(CC.DESCRIPCION,6,length(CC.DESCRIPCION)) AS 'CECO',
+                                                                ES.DESCRIPCION AS 'ESCUELA O PROGRAMA',
+                                                                lower(CORREO1) 'CORREO INSTITUCIONAL',
+                                                                case CORREO2
+                                                                        when 'NULL' THEN 'No Registrado'
+                                                                        else lower(CORREO2) 
+                                                                end AS 'CORREO PERSONAL',
+                                                                case TELEFONOMOVIL
+                                                                        when 'NULL' THEN 'No Registrado'
+                                                                        else TELEFONOMOVIL
+                                                                end AS 'TELEFONOMOVIL',
+                                                                TD.DESCRIPCION AS 'TIPO DOCENTE',
+                                                                LOWER(GP.DESCRIPCION)  AS 'GRADO PROFESIONAL'
+                                                                from docentes D
+                                                                JOIN escuela_o_programa ES
+                                                                ON D.ID_ESCUELA_O_PROGRAMA = ES.ID_ESCUELA
+                                                                JOIN CENTRO_COSTO CC
+                                                                ON CC.ID_CENTRO_COSTO = D.ID_CENTRO_COSTO
+                                                                JOIN TIPO_DOCENTE TD
+                                                                ON TD.ID_TIPO_DOCENTE = D.ID_TIPO_DOCENTE
+                                                                JOIN GRADO_PROFESIONAL GP
+                                                                ON GP.ID_GRADO_PROFESIONAL = D.ID_GRADO_PROFESIONAL
+                                                                where concat(RUT,DV) = ?"); 
             $stmt->bind_param('s',$rut);  
             $stmt->execute();
-            $stmt->bind_result($d_rut,$d_dv,$d_nombre,$d_apaterno,$d_amaterno,$d_ceco,$d_escuelaPrograma, $d_correo1,$d_correo2,$d_telefonoMovil);
+            $stmt->bind_result($d_rut,$d_dv,$d_nombre,$d_apaterno,$d_amaterno,$d_anioIngreso,$d_ceco,$d_escuelaPrograma, $d_correo1,$d_correo2,$d_telefonoMovil,$d_tipoDocente,$d_gradoProfesional);
             $docente = null;
             while ($stmt->fetch()) {
                 $docente = new CL_Docente();
@@ -151,11 +158,15 @@ class DAO_Docente {
                 $docente->setPNombre($d_nombre);                
                 $docente->setApPaterno($d_apaterno);
                 $docente->setApMaterno($d_amaterno);
+                $docente->setAnioIngreso($d_anioIngreso);
                 $docente->setCentroCosto($d_ceco);                
                 $docente->setEscuelaPrograma($d_escuelaPrograma);                
                 $docente->setCorreo1($d_correo1);
                 $docente->setCorreo2($d_correo2);
                 $docente->setFonoMovil($d_telefonoMovil);
+                $docente->setTipoDocente($d_tipoDocente);
+                $docente->setGradoProfesional($d_gradoProfesional);
+                
             }
             $stmt->close();
             return $docente;
@@ -184,7 +195,8 @@ class DAO_Docente {
                                                                 ON D.ID_ESCUELA_O_PROGRAMA = ES.ID_ESCUELA
                                                                 JOIN CENTRO_COSTO CC
                                                                 ON CC.ID_CENTRO_COSTO = D.ID_CENTRO_COSTO
-                                                                where ES.id_escuela = ?"); 
+                                                                where ES.id_escuela = ?
+                                                                order by PNOMBRE asc"); 
             $stmt->bind_param('i',$idEscuela);  
             $stmt->execute();
             return $stmt;

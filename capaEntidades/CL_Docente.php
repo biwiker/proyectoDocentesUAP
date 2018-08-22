@@ -13,6 +13,7 @@ class CL_Docente {
     private $_sNombre;
     private $_apPaterno;
     private $_apMaterno;
+    private $_anioIngreso;
     private $_centroCosto;
     private $_escuelaPrograma;
     private $_correo1;
@@ -20,6 +21,8 @@ class CL_Docente {
     private $_correo3;
     private $_fonoFijo;
     private $_fonoMovil;
+    private $_tipoDocente;
+    private $_gradoProfesional;
 
     function __construct() {
         
@@ -53,6 +56,10 @@ class CL_Docente {
         return $this->_apMaterno;
     }
 
+    function getAnioIngreso() {
+        return $this->_anioIngreso;
+    }
+
     function getCentroCosto() {
         return $this->_centroCosto;
     }
@@ -79,6 +86,14 @@ class CL_Docente {
 
     function getFonoMovil() {
         return $this->_fonoMovil;
+    }
+
+    function getTipoDocente() {
+        return $this->_tipoDocente;
+    }
+
+    function getGradoProfesional() {
+        return $this->_gradoProfesional;
     }
 
     function setRut($rut) {
@@ -109,10 +124,14 @@ class CL_Docente {
         $this->_apMaterno = $apMaterno;
     }
 
+    function setAnioIngreso($_anioIngreso) {
+        $this->_anioIngreso = $_anioIngreso;
+    }
+
     function setCentroCosto($centroCosto) {
         $this->_centroCosto = $centroCosto;
     }
-    
+
     function setEscuelaPrograma($escuelaPrograma) {
         $this->_escuelaPrograma = $escuelaPrograma;
     }
@@ -135,6 +154,14 @@ class CL_Docente {
 
     function setFonoMovil($fonoMovil) {
         $this->_fonoMovil = $fonoMovil;
+    }
+
+    function setTipoDocente($_tipoDocente) {
+        $this->_tipoDocente = $_tipoDocente;
+    }
+
+    function setGradoProfesional($_gradoProfesional) {
+        $this->_gradoProfesional = $_gradoProfesional;
     }
 
 }
