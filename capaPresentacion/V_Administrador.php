@@ -129,7 +129,7 @@ if (isset($_SESSION['nombre_usuario'])) {
                     <li><a href="#"><span class="glyphicon glyphicon-th-large"></span><p>Administrar</p></a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-signal"></span><p>Estad&iacute;sticas</p></a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span><p>Docentes</p></a></li>
-    <!--                    <li><a href="#"><span class="glyphicon glyphicon-cog"></span><p>Configuraci&oacute;n</p></a></li>-->
+                    <!--<li><a href="#"><span class="glyphicon glyphicon-cog"></span><p>Configuraci&oacute;n</p></a></li>-->
                 </ul>
 
             </div>

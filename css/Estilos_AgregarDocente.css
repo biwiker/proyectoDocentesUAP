@@ -145,24 +145,30 @@ hr{
     box-shadow: 0 3px 3px #ccc;
 }
 .info-usuario{
-    display:  inline-block;
-    float: left;
+    
+    display: inline-block;
     width: 50%;
 }
-.info-usuario div p{
-    padding-top: 5px;
-    padding-left: 30%;
-    color: #999999;
-    float: left;
+.info-usuario div span{
+    float: right; 
+    margin-top: -7px;
 }
-.info-usuario div form{
+.info-usuario div p{
+    padding-left: 10px;
+    margin-top: -7px;
+    color: #999999;
+    float: right;
+    width: 170px;
+    
+}
+.info-usuario div {
     margin: 0;
-    padding: 0;
+    padding-right: 20px;
+    float: right;
 }
 
-.info-usuario div form button{
-    padding-top: 5px;
-    padding-left: 30px;
+.info-usuario div > button{
+    padding-top: 10px;
     text-decoration: none;
     font-size: 14px;
     color: #999999;
@@ -170,11 +176,27 @@ hr{
     border: none;
     float: left;
 }
-.info-usuario div form button:hover{
+.info-usuario div  button:hover{
     color:#fff;
     -o-transition:color .3s ease-out, background 3s ease-in;
     -ms-transition:color .3s ease-out, background 3s ease-in;
     -moz-transition:color .3s ease-out, background 3s ease-in;
     -webkit-transition:color .3s ease-out, background 3s ease-in;
     transition:color .3s ease-out, background 3s ease-in;
+}
+
+/*estilo para el elemento de inicio de sesion*/
+#info-usuario-login{
+
+    padding: 20px 20px 20px 20px; 
+    background-image: url('../Imagenes/silueta.png');  
+    border-radius: 50%; 
+    background-size: 40px 41px; 
+    background-repeat: no-repeat;
+    
+}
+/*estilo para el menu desplegable de la cabecera*/
+.menu-deplegable{
+    
+    
 }
