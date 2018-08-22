@@ -67,7 +67,8 @@
                 </div>
 
                 <button type="submit" name="btnIngreso" class="btn"  id="boton-login">Ingresar</button>            
-                <?php echo (isset($mensaje)) ? $mensaje : ''; ?>
+                <!--Mensaje de Error-->
+                    <?php echo (isset($mensaje)) ? $mensaje : ''; ?>
             </form>
 
         </div>
