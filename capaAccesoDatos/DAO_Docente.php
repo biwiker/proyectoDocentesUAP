@@ -27,7 +27,7 @@ class DAO_Docente {
             echo 'error al generar la instancia de conexion ' + $exc->getTraceAsString();
         }
     }
-
+    
     public function agregarDocente(CL_Docente $doncete) {
 
         try {
