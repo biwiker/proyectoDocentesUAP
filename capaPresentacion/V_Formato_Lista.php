@@ -136,20 +136,19 @@
                         <center>
                             <label class=" label label-default">Filtros De Busqueda</label>
                             <!--caja de texto para el rut-->
-                            <input type="text" class="txtRut" placeholder="Ingrese Rut" >
+                            <input type="text" name="txtRut" placeholder="Ingrese Rut" style="position: absolute;top:50px;left:170px; width:130px" >
                             <!--select que se debe relacionar con la base de datos para obtener las escuelas-->
                             <select class="escuela"> 
                                 <option>PUENTE ALTO</option>
                             </select>
-                            <h2>Tabla Dinamica</h2>
+                         
                             <br /><br />
-                            <button id="add" class="btn btn-sm btn-success">Agregar</button>
-                            <button id="del" class="btn btn-sm btn-danger">Eliminar</button>
+                            <button id="add" class="nuevoDocente btn btn-success "><span class="glyphicon glyphicon-file"></span>Nuevo Docente</button>
+                            <button id="del" class="eliminarDocente btn btn-danger "><span class="glyphicon glyphicon-remove"></span>Eliminar Docente</button>
                             <br /><br />
-
 
                             <form action="" method="POST">
-                                <table class="table table-responsive table-bordered table-condensed" style="width: 80%" id="tabla">
+                                <table class=" tabla table table-responsive table-bordered table-condensed"id="tabla">
                                     <thead>
                                         <tr class="info">
                                             <th>Rut</th>

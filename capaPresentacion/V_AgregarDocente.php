@@ -12,6 +12,24 @@ if (isset($_SESSION['nombre_usuario'])) {
         <link href="../css/Estilos_AgregarDocente.css" rel="stylesheet" type="text/css">
         <!--  bajar versión local-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+         <script>
+           $(buscar_datos());  
+                function buscar_datos(consulta){
+                $.ajax({
+                   url:'../capaLogicaNegocio/Buscar.php';
+                   type:'POST';
+                   dataType:'html';
+                   data:{consulta:consulta};
+                })
+}         .done(function(respuesta){
+            $("#datos").html(respuesta);
+          })
+           .fail(function(){
+            console.log("error");     
+          })  
+         </script>
+         <title>Agregar Nuevo Docente</title>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
                                 <title>Agregar Nuevo Docente</title>
 
@@ -111,6 +129,24 @@ if (isset($_SESSION['nombre_usuario'])) {
                         
                     </div>
                 </header>
+            </div>
+        <hr>
+        <div class="articulo_1"> 
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-xs-12">
+                     <!--boton que tiene la funcion de agregar una nueva columna a la tabla-->
+                     <div class="btn btn-success" id="btnNuevo"><span class="glyphicon glyphicon-file"></span> Nuevo Docente </div>
+                     <!--etiqueta-->
+                     <label class=" label label-default">Filtros De Busqueda</label>
+                     <!--caja de texto para el rut-->
+                     <input type="text" name="txtRut" id="txtRut" placeholder="Ingrese Rut" >
+                     <!--select que se debe relacionar con la base de datos para obtener las escuelas-->
+                         <select class="escuela"> 
+                           <option>PUENTE ALTO</option>
+                         </select>
+                     <div id="datos">
+                         
+                     </div>
                 <hr>
                 
 <!--            <div class="articulo_1"> 
@@ -151,10 +187,21 @@ if (isset($_SESSION['nombre_usuario'])) {
                             </tbody>
                         </table>
                     </div>
+
                 </div>
+
+            </div>
+        </div>  
+         <!-- <div class="btn btn-primary" id="btnGuardar"><span class="glyphicon glyphicon-edit"></span> Guardar</div>
+          <div class="btn btn-danger" id="btnEliminar"><span class="glyphicon glyphicon-remove"></span> Eliminar</div>-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+</html>
+
             </div>  -->
              <!-- <div class="btn btn-primary" id="btnGuardar"><span class="glyphicon glyphicon-edit"></span> Guardar</div>
               <div class="btn btn-danger" id="btnEliminar"><span class="glyphicon glyphicon-remove"></span> Eliminar</div>-->
+
 
         </div>
 
