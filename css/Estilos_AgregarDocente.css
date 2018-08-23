@@ -3,44 +3,42 @@ body{
 }
 .articulo_1{
     position: relative;
-    height: 250px;
+    height: 350px;
 }
 .articulo_1 label{
   position: absolute;
-  top:20px;;
-  left: 12%;
+  top:30px;;
+  left: 170px;
 } 
-input {
+.buscarRut {
    position: absolute;
    top: 50px;
-   left: 12%;
-   width: 130px;
+   left: 32%;
 }
-table{
-    position: absolute;
-    top:75px;
-    left: 349px;
-    width:100px;
-}
-th{
-   height:10px;
-}
-#btnNuevo{
+.nuevoDocente{
     position:absolute;
-    top:20px;
-    left:25%;
+    top:70px;
+    left:23%;
+}
+.eliminarDocente{
+    position:absolute;
+    top:70px;                    
+    left:33%;
 }
 .escuela{
     position: absolute;
-    top:100px;
-    left:12%;
+    top:85px;
+    left:170px;
     height:25px;
     width:130px;
 }
-#table{
-    position: absolute;
-    left:100px;
+.tabla{
+    width:60%; 
+    position: absolute; 
+    top:120px;
+    left:23%;
 }
+
 #btnGuardar{
     background-color: #1511A3  ;
     border: none;
@@ -145,30 +143,24 @@ hr{
     box-shadow: 0 3px 3px #ccc;
 }
 .info-usuario{
-    
-    display: inline-block;
+    display:  inline-block;
+    float: left;
     width: 50%;
 }
-.info-usuario div span{
-    float: right; 
-    margin-top: -7px;
-}
 .info-usuario div p{
-    padding-left: 10px;
-    margin-top: -7px;
+    padding-top: 5px;
+    padding-left: 30%;
     color: #999999;
-    float: right;
-    width: 170px;
-    
+    float: left;
 }
-.info-usuario div {
+.info-usuario div form{
     margin: 0;
-    padding-right: 20px;
-    float: right;
+    padding: 0;
 }
 
-.info-usuario div > button{
-    padding-top: 10px;
+.info-usuario div form button{
+    padding-top: 5px;
+    padding-left: 30px;
     text-decoration: none;
     font-size: 14px;
     color: #999999;
@@ -176,27 +168,11 @@ hr{
     border: none;
     float: left;
 }
-.info-usuario div  button:hover{
+.info-usuario div form button:hover{
     color:#fff;
     -o-transition:color .3s ease-out, background 3s ease-in;
     -ms-transition:color .3s ease-out, background 3s ease-in;
     -moz-transition:color .3s ease-out, background 3s ease-in;
     -webkit-transition:color .3s ease-out, background 3s ease-in;
     transition:color .3s ease-out, background 3s ease-in;
-}
-
-/*estilo para el elemento de inicio de sesion*/
-#info-usuario-login{
-
-    padding: 20px 20px 20px 20px; 
-    background-image: url('../Imagenes/silueta.png');  
-    border-radius: 50%; 
-    background-size: 40px 41px; 
-    background-repeat: no-repeat;
-    
-}
-/*estilo para el menu desplegable de la cabecera*/
-.menu-deplegable{
-    
-    
 }
