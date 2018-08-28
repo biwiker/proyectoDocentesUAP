@@ -8,160 +8,162 @@ class CL_Docente {
 
     private $_rut;
     private $_dv;
-    private $_id;  //(id de casa central)
+    private $_idDuoc;  //(id de casa central)
     private $_pNombre;
     private $_sNombre;
+    private $_tNombre;
     private $_apPaterno;
     private $_apMaterno;
     private $_anioIngreso;
-    private $_centroCosto;
-    private $_escuelaPrograma;
     private $_correo1;
     private $_correo2;
-    private $_correo3;
-    private $_fonoFijo;
-    private $_fonoMovil;
-    private $_tipoDocente;
+    private $_telefonoFijo;
+    private $_telefonoMovil;
+    private $_idEscuelaPrograma;
+    private $_idTipoDocente;
+    private $_idCentroCosto;
     private $_gradoProfesional;
 
     function __construct() {
         
     }
 
-    function getRut() {
+    function get_rut() {
         return $this->_rut;
     }
 
-    function getDv() {
+    function get_dv() {
         return $this->_dv;
     }
 
-    function getId() {
-        return $this->_id;
+    function get_idDuoc() {
+        return $this->_idDuoc;
     }
 
-    function getPNombre() {
+    function get_pNombre() {
         return $this->_pNombre;
     }
 
-    function getSNombre() {
+    function get_sNombre() {
         return $this->_sNombre;
     }
 
-    function getApPaterno() {
+    function get_tNombre() {
+        return $this->_tNombre;
+    }
+
+    function get_apPaterno() {
         return $this->_apPaterno;
     }
 
-    function getApMaterno() {
+    function get_apMaterno() {
         return $this->_apMaterno;
     }
 
-    function getAnioIngreso() {
+    function get_anioIngreso() {
         return $this->_anioIngreso;
     }
 
-    function getCentroCosto() {
-        return $this->_centroCosto;
-    }
-
-    function getEscuelaPrograma() {
-        return $this->_escuelaPrograma;
-    }
-
-    function getCorreo1() {
+    function get_correo1() {
         return $this->_correo1;
     }
 
-    function getCorreo2() {
+    function get_correo2() {
         return $this->_correo2;
     }
 
-    function getCorreo3() {
-        return $this->_correo3;
+    function get_telefonoFijo() {
+        return $this->_telefonoFijo;
     }
 
-    function getFonoFijo() {
-        return $this->_fonoFijo;
+    function get_telefonoMovil() {
+        return $this->_telefonoMovil;
     }
 
-    function getFonoMovil() {
-        return $this->_fonoMovil;
+    function get_idEscuelaPrograma() {
+        return $this->_idEscuelaPrograma;
     }
 
-    function getTipoDocente() {
-        return $this->_tipoDocente;
+    function get_idTipoDocente() {
+        return $this->_idTipoDocente;
     }
 
-    function getGradoProfesional() {
+    function get_idCentroCosto() {
+        return $this->_idCentroCosto;
+    }
+
+    function get_gradoProfesional() {
         return $this->_gradoProfesional;
     }
 
-    function setRut($rut) {
-        $this->_rut = $rut;
+    function set_rut($_rut) {
+        $this->_rut = $_rut;
     }
 
-    function setDv($dv) {
-        $this->_dv = $dv;
+    function set_dv($_dv) {
+        $this->_dv = $_dv;
     }
 
-    function setId($id) {
-        $this->_id = $id;
+    function set_idDuoc($_idDuoc) {
+        $this->_idDuoc = $_idDuoc;
     }
 
-    function setPNombre($pNombre) {
-        $this->_pNombre = $pNombre;
+    function set_pNombre($_pNombre) {
+        $this->_pNombre = $_pNombre;
     }
 
-    function setSNombre($sNombre) {
-        $this->_sNombre = $sNombre;
+    function set_sNombre($_sNombre) {
+        $this->_sNombre = $_sNombre;
     }
 
-    function setApPaterno($apPaterno) {
-        $this->_apPaterno = $apPaterno;
+    function set_tNombre($_tNombre) {
+        $this->_tNombre = $_tNombre;
     }
 
-    function setApMaterno($apMaterno) {
-        $this->_apMaterno = $apMaterno;
+    function set_apPaterno($_apPaterno) {
+        $this->_apPaterno = $_apPaterno;
     }
 
-    function setAnioIngreso($_anioIngreso) {
+    function set_apMaterno($_apMaterno) {
+        $this->_apMaterno = $_apMaterno;
+    }
+
+    function set_anioIngreso($_anioIngreso) {
         $this->_anioIngreso = $_anioIngreso;
     }
 
-    function setCentroCosto($centroCosto) {
-        $this->_centroCosto = $centroCosto;
+    function set_correo1($_correo1) {
+        $this->_correo1 = $_correo1;
     }
 
-    function setEscuelaPrograma($escuelaPrograma) {
-        $this->_escuelaPrograma = $escuelaPrograma;
+    function set_correo2($_correo2) {
+        $this->_correo2 = $_correo2;
     }
 
-    function setCorreo1($correo1) {
-        $this->_correo1 = $correo1;
+    function set_telefonoFijo($_telefonoFijo) {
+        $this->_telefonoFijo = $_telefonoFijo;
     }
 
-    function setCorreo2($correo2) {
-        $this->_correo2 = $correo2;
+    function set_telefonoMovil($_telefonoMovil) {
+        $this->_telefonoMovil = $_telefonoMovil;
     }
 
-    function setCorreo3($correo3) {
-        $this->_correo3 = $correo3;
+    function set_idEscuelaPrograma($_idEscuelaPrograma) {
+        $this->_idEscuelaPrograma = $_idEscuelaPrograma;
     }
 
-    function setFonoFijo($fonoFijo) {
-        $this->_fonoFijo = $fonoFijo;
+    function set_idTipoDocente($_idTipoDocente) {
+        $this->_idTipoDocente = $_idTipoDocente;
     }
 
-    function setFonoMovil($fonoMovil) {
-        $this->_fonoMovil = $fonoMovil;
+    function set_idCentroCosto($_idCentroCosto) {
+        $this->_idCentroCosto = $_idCentroCosto;
     }
 
-    function setTipoDocente($_tipoDocente) {
-        $this->_tipoDocente = $_tipoDocente;
-    }
-
-    function setGradoProfesional($_gradoProfesional) {
+    function set_gradoProfesional($_gradoProfesional) {
         $this->_gradoProfesional = $_gradoProfesional;
     }
+
+
 
 }
