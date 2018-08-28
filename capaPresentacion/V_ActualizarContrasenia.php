@@ -14,6 +14,25 @@ if (isset($_SESSION['nombre_usuario'])) {
             <!--  bajar versión local-->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <script>
+                function actualizarContrasenia() {
+
+                    x1 = document.getElementById("txtActualContrasenia").value;
+                    x2 = document.getElementById("txtNuevaContrasenia2").value;
+                    $.ajax({
+                        type: "POST",
+                        url: '../capaLogicaNegocio/BO_Procesos.php',
+                        data: {'txtActualContrasenia': x1,
+                               'txtNuevaContrasenia2': x2,
+                                btnActualizarContrasenia: 'btnActualizarContrasenia'
+                        },
+                        success: function (response) {
+                            alert('Actualizada con éxito');
+                            
+                        }
+                    });
+                }
+            </script>
 
         </head>
         <body>
@@ -45,7 +64,7 @@ if (isset($_SESSION['nombre_usuario'])) {
                             <!--Opciones de menu--> 
                             <div class="dropdown-content">
                                 <a tabindex="-1" href="#">Configuración</a>
-                                <a tabindex="-1" href="#">Cambiar contraseña</a>
+                                <a tabindex="-1" href="V_ActualizarContrasenia.php">Cambiar contraseña</a>
                                 <!--boton que destruye sesion-->
                                 <form method="POST" action="../capaLogicaNegocio/BO_Accesos.php">
                                     <button name="btnCerrarSesion" value="Cerrar Sesion">
@@ -74,27 +93,27 @@ if (isset($_SESSION['nombre_usuario'])) {
                             <label id="titulo">Cambiar contraseña</label>
                             <p id="subtitulo">Se recomienda usar una contraseña segura que no uses para ningún otro sitio</p>
                         </div>
-                        <form action="" method="POST" onsubmit="return validarContrasenia()">    
+                        <form  method="POST" onsubmit="return validarContrasenia()">    
 
                             <span id="linea-section-gris-completa"></span>
                             <div class="form-group">
                                 <label>Actual contrase&ntilde;a</label>
-                                <input type="password" minlength="4" class="form-control" id="txtActualContrasenia" required="true" />
+                                <input type="password" minlength="4" class="form-control" id="txtActualContrasenia" name="txtActualContrasenia" required="true" />
                             </div>
                             <div class="form-group">
                                 <label>Nueva contrase&ntilde;a</label>
-                                <input type="password" minlength="4" class="form-control" id="txtNuevaContrasenia" required="true"/>
+                                <input type="password" minlength="4" class="form-control" id="txtNuevaContrasenia" name="txtNuevaContrasenia" required="true"/>
                                 <span toggle="#txtNuevaContrasenia" class="glyphicon glyphicon-eye-open toggle-password"></span>
                             </div>
                             <div class="form-group">
                                 <label>Repetir Nueva contrase&ntilde;a</label>
-                                <input type="password" minlength="4" class="form-control" id="txtNuevaContrasenia2" required="true">
+                                <input type="password" minlength="4" class="form-control" id="txtNuevaContrasenia2" name="txtNuevaContrasenia2" required="true">
                                 <span toggle="#txtNuevaContrasenia2" class="glyphicon glyphicon-eye-open toggle-password"></span>
                             </div>
                             </br>
                             <div class="form-group">
 
-                                <input type="submit" class="form-control" name="btnGuardarCambios" id="btnGuardarCambios" value="Guardar Cambios" >
+                                <input type="submit" class="form-control" name="btnActualizarContrasenia" id="btnActualizarContrasenia" value="Guardar Cambios" onclick="actualizarContrasenia()" >
 
                             </div>
                         </form>

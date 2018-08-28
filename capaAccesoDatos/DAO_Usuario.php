@@ -27,7 +27,7 @@ class DAO_Usuario {
         }
     }
 
-    public function bsucarUsuario($rut) {
+    public function buscarUsuario($rut) {
         try {
 
             $sql = "select * from usuario where rut = $rut";
@@ -153,4 +153,5 @@ class DAO_Usuario {
         }
     }
 
+    
 }

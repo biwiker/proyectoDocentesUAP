@@ -20,10 +20,12 @@ if (isset($_POST['btnIngreso'])) {
 
     //si el resultado es distinto de nulo
     if (!is_null($_resultado) && $_resultado = 'administrador') {
+        $_SESSION['rut_usuario']    = $CL_Acceso->getRut(); //se crea una variable de sesión con el rut del usuario 
         $_SESSION['nombre_usuario'] = $DAO_Acceso->nombreUsuario($CL_Acceso->getRut()); //se crea una variable de sesión con nombre del usuario 
         header('Location: ../capaPresentacion/V_Administrador.php');
 
     }else if (!is_null($_resultado) && $_resultado = 'asesor') {
+        $_SESSION['rut_usuario']    = $CL_Acceso->getRut(); //se crea una variable de sesión con el rut del usuario 
         $_SESSION['nombre_usuario'] = $DAO_Acceso->nombreUsuario($CL_Acceso->getRut()); //se crea una variable de sesión con nombre del usuario 
         header('Location: ../capaPresentacion/V_Administrador.php');
     } else {

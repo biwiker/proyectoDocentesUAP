@@ -73,5 +73,20 @@ class DAO_Acceso {
 	session_write_close(); //nos asegurmos que se guarda y cierra la sesion
         session_destroy();
     }
+    
+    public function actualizarContrasenia($_rut,$_actualContrasenia,$_nuevaContrasenia){
+        
+        try {
+            $stmt = $this->_conexion->getConexion()->prepare('CALL SP_ACTUALIZAR_CONTRASENIA ( ? , ? , ? )'); //se llama a la función almacenada
+            $stmt->bind_param('iss',$_rut,$_actualContrasenia, $_nuevaContrasenia);  
+            $filasAfectadas = $stmt->execute();                     
+            $stmt->close();
+            
+            return $filasAfectadas > 0 ? true : false;            
+            
+        } catch (Exception $exc) {
+            return null;
+        }
+    }
 
 }

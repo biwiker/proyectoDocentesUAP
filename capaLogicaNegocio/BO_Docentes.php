@@ -9,11 +9,11 @@ if (isset($_POST['btnVerDocente'])) {
 
     $Docente = new CL_Docente();
 
-    $rut = $_POST['txtRut'];
+    $_rut = $_POST['txtRut'];
 
     $DAO_Docente = new DAO_Docente();
     //buscar información del docente
-    $Docente = $DAO_Docente->buscarDocente($rut);
+    $Docente = $DAO_Docente->buscarDocente($_rut);
     if (!is_null($Docente)) {
         ?>
         <!-- articulo 3-->

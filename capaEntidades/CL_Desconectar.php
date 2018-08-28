@@ -1,7 +1,8 @@
 <?php
 
-session_start();
+@session_start();
 
+//Se detecta Movimiento o Escritura (Para Matar la sesion por inactividad)
 if ($_SESSION['nombre_usuario']) {
 
     session_write_close();

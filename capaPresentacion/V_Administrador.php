@@ -45,7 +45,7 @@ if (isset($_SESSION['nombre_usuario'])) {
                             //Si llega a cero procede a cerrar la pagina
                             if (contador >= fin_contador) {
 
-                                location.href = "../capaConexion/CL_Desconectar.php";
+                                location.href = "../capaEntidades/CL_Desconectar.php";
                             }
                             //De lo contrario,si se realiza alguna accion en el mouse o teclado,se reinciará el contador a su valor predeterminado
                         } else {
