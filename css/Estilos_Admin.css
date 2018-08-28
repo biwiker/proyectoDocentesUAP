@@ -2,7 +2,7 @@ body{
 
     background-color:#F4F6F7;
 }
-/*---------------------------------------- barra lateral ----------------------------------------*/
+/*---------------------------------------- barra lateral izquierda ----------------------------------------*/
 .sidebar {
     position: fixed;
     height: 100%;
@@ -34,7 +34,7 @@ body{
     height: 60px;
     color: #999999;
     text-decoration: none;
-    
+
 }
 .sidebar span{
     margin-left: 30px;
@@ -43,26 +43,26 @@ body{
     text-align: center;
     font-size: 11.5px;
     padding-top: 10px;
-    
+
 }
 .sidebar a:hover{
     color:#fff;
 }
 
-/*----------------------------------------fin barra lateral ----------------------------------------*/
+/*----------------------------------------cabecera----------------------------------------*/
 
 .principal{
     position: relative;
     left: 0px;
     width:100%;
     height: 55px;
-    padding-top:15px;
     padding-bottom:15px;
     background-color:#001e39;
 }
 .principal .logo{
     float: left;
     width: 50%;
+    padding-top: 15px;
 }
 .principal .logo img{
     display: block; 
@@ -72,40 +72,56 @@ body{
     height: 25px;
 }
 
-/*linea amarilla divisoria*/
+/*----------------------------------------linea amarilla divisoria----------------------------------------*/
 hr{
     height: 7px;
     background-color:#FACC2E;
     margin-top: -1px;
     box-shadow: 0 3px 3px #ccc;
 }
+/*----------------------------------------datos usuario----------------------------------------*/
 .info-usuario{
     display:  inline-block;
-    float: left;
+    float: right;
     width: 50%;
+    padding-right: 40px;
+    height: 54px;
 }
-.info-usuario div p{
-    padding-top: 5px;
-    padding-left: 30%;
-    color: #999999;
-    float: left;
+.info-usuario div{
+    color: #999999;    
 }
-.info-usuario div form{
-    margin: 0;
-    padding: 0;
+.info-usuario div > button{
+    float: right;
+    width: 40px;
+    height: 50px;
+
+
+}
+.info-usuario div p {
+    padding-top: 7px;
+    float: right;
+    width: 170px;
+}
+.info-usuario div #info-usuario-login {
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;    
+    padding: 17px;
+    background-image: url('../Imagenes/silueta.png');
+    background-size: 35px;
+    background-repeat: no-repeat;
+    border-radius: 50%;
 }
 
-.info-usuario div form button{
-    padding-top: 5px;
-    padding-left: 30px;
-    text-decoration: none;
-    font-size: 14px;
-    color: #999999;
-    background-color: #001e39;    
+
+/*----------------------------------------menu desplegable usuario----------------------------------------*/
+.info-usuario div > button{
+    outline: none;
+    background-color: transparent !important;
     border: none;
-    float: left;
+    color:#999999;
 }
-.info-usuario div form button:hover{
+.info-usuario div > button:hover{
     color:#fff;
     -o-transition:color .3s ease-out, background 3s ease-in;
     -ms-transition:color .3s ease-out, background 3s ease-in;
@@ -114,6 +130,64 @@ hr{
     transition:color .3s ease-out, background 3s ease-in;
 }
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 75%;
+    top: 50px;
+    background-color: #F4F6F7;
+    min-width: 130px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 3px;
+}
+
+.dropdown-content a {
+    color: #001e39;
+    font-size: 13.5px;
+    padding: 7px 13px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+
+}
+.dropdown-content form{
+    margin: 0px;
+    padding: 0px;  
+}
+.dropdown-content form button{
+    outline: none;
+    background-color: transparent !important;
+    border: none;
+    color: #001e39;
+    font-size: 13.5px;
+    margin: 0px;
+    padding: 0px;  
+}
+
+.dropdown-content a:hover {
+    background-color: #ccc;
+    border-radius: 3px;
+    color:#fff;    
+    width: 100%;
+}
+.dropdown-content button:hover {
+    background-color: #ccc;
+    border-radius: 3px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/*----------------------------------------contenido principal----------------------------------------*/
 .contenedor{    
 
     margin-left: 110px;
@@ -128,7 +202,7 @@ hr{
     box-shadow: none;
 }
 
-/*elementos del articulo 1*/
+/*----------------------------------------elementos del articulo 1----------------------------------------*/
 .articulo_1{
     background-color: #ffffff;
     color: #999999;
@@ -149,7 +223,7 @@ hr{
 
 
 
-/*elementos del articulo 2*/
+/*----------------------------------------elementos del articulo 2----------------------------------------*/
 .articulo_2{
     position: relative;
     margin-top: 20px;
@@ -160,7 +234,7 @@ hr{
     -webkit-box-shadow: 2px 2px 5px #999;
     -moz-box-shadow: 2px 2px 5px #999;
 }
-/*contedor para cada sección del filtro*/
+/*----------------------------------------contedor para cada sección del filtro----------------------------------------*/
 .articulo_2 section{
     position: relative;
     float: left;
@@ -178,7 +252,7 @@ hr{
 }
 
 
-/*caja de texto*/
+/*----------------------------------------caja de texto----------------------------------------*/
 .articulo_2  #txtRut{
     position: relative;
     float: left;
@@ -303,11 +377,25 @@ hr{
 
     margin-top: 15px;    
 }
-/*linea amarilla divisoria*/
+/*----------------------------------------linea amarilla divisoria----------------------------------------*/
 #linea-section{
     padding: 0.5px;
     background-color: #e7eaec;
 }
+/*----------------------------------------linea gris divisoria----------------------------------------*/
+#linea-section-gris-completa{
+    padding: 0.5px;
+    width: 100%;
+    background-color: #ccc;
+    margin-bottom: 20px;
+}
+#linea-section-gris{
+    padding: 0.5px;
+    width: 50%;
+    background-color: #ccc;
+    margin-bottom: 20px;
+}
+
 #btnInfoDocente {   
     background-color: #001e39;
     color: #fff;
@@ -424,11 +512,8 @@ hr{
     margin-right: 10px;
     margin-top: 15px;
 }
-/*linea amarilla divisoria*/
-#linea-section{
-    padding: 0.5px;
-    background-color: #e7eaec;
-}
+/*----------------------------------------boton docente e info docente----------------------------------------*/
+
 #btnInfoDocente {   
     background-color: #001e39;
     padding:1px 15px 1px 15px;
@@ -441,12 +526,41 @@ hr{
     color: #fff;
     font-size: 9px;
 }
+.articulo_cambiar_contrasenia{
+    color: #666;
+    align-items: center ;
+    justify-content: center;
+}
+.articulo_cambiar_contrasenia #titulo{
+    width: 150px;
+}
+.articulo_cambiar_contrasenia #subtitulo{
+    color: #999;
+    font-size: 12.5px; 
+
+}
+.articulo_cambiar_contrasenia form div{
+    margin-left: 37%;
+    width: 250px;
+}
+.articulo_cambiar_contrasenia form div span{
+    float: right;
+    margin-top: -24px;
+    margin-right: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+#btnGuardarCambios{
+    width: 250px;
+    background-color: #001e39;
+    color:#fff;
+}
 
 
 
 
-
-/*medias query para dispositivos con un ancho de 1024px y un alto de 768px*/
+/*----------------------------------------medias query para dispositivos con un ancho de 1024px y un alto de 768px----------------------------------------*/
 @media screen and (max-width: 1024px) and (max-height:768px){ 
 
     .info-usuario div p{
@@ -488,7 +602,7 @@ hr{
         left:93%;
     } 
 }
-/*medias query para dispositivos con un ancho de 800px y un alto de 480px*/
+/*----------------------------------------medias query para dispositivos con un ancho de 800px y un alto de 480px----------------------------------------*/
 @media screen and (max-width: 800px) and (max-height:480px){
     .cabecera p{
         top: 4%;

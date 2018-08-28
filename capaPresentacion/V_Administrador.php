@@ -60,7 +60,7 @@ if (isset($_SESSION['nombre_usuario'])) {
 
             <script>
                 function buscarDocente() {
-                    
+
                     rut = document.getElementById("txtRut").value;
                     $.ajax({
                         type: "POST",
@@ -143,19 +143,32 @@ if (isset($_SESSION['nombre_usuario'])) {
                         <img src="../Imagenes/fondo-transparente_4.png">
                     </div>
                     <div class="info-usuario">
+                        <div class="dropdown">
+                            
+                            <button>
+                                <span class="glyphicon glyphicon-chevron-down"></span>
+                            </button>
+                            <!--Opciones de menu--> 
+                            <div class="dropdown-content">
+                                <a tabindex="-1" href="#">Configuración</a>
+                                <a tabindex="-1" href="#">Cambiar contraseña</a>
+                                <!--boton que destruye sesion-->
+                                <form method="POST" action="../capaLogicaNegocio/BO_Accesos.php">
+                                    <button name="btnCerrarSesion" value="Cerrar Sesion">
+                                        <a>cerrar sesion</a>
+                                    </button>
+                                </form>
+                            </div>       
+                        </div>
                         <div>
                             <!--Mostrar quien es el usuario ingresado en el sistema-->
-                            <p>Bienvenido/a a <strong>Duoc UC</strong>: <?php echo $_SESSION['nombre_usuario'] ?></p>
+                            <p>
+                                Bienvenido/a a <strong>Duoc UC</strong>
+                                <?php echo $_SESSION['nombre_usuario'] ?>
+                            </p>
+                            <span id="info-usuario-login"></span>
                         </div>
-                        <div>
-                            <!--boton que destruye sesion-->
-                            <form method="POST" action="../capaLogicaNegocio/BO_Accesos.php">
-                                <button class="boton_personalizado" name="btnCerrarSesion" value="Cerrar Sesion">
-                                    <span class="glyphicon glyphicon-remove"></span> Cerrar Sesion
-                                </button>
-                            </form>
 
-                        </div>
                     </div>
                 </header>
                 <hr>

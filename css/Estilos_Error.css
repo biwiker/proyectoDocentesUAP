@@ -1,47 +1,71 @@
-hr{
-     height:7px; 
-     background-color:#FACC2E; 
-     margin-top:0;
-     border:0;
+.principal{
+    position: relative;
+    left: 0px;
+    width:100%;
+    padding-top:15px;
+    padding-bottom:15px;
+    background-color:#001e39;
+    margin:0px;
 }
- .titulo{
-    margin-left: 40px;
-    font-size:30pt;
+.principal img{
+    display: block; 
+    margin: 0 0 0 100px;
+    max-width: 100%;
+    width: 111px;
+    height: 25px;
+}
+/*linea amarilla divisoria*/
+hr{
+    height: 7px;
+    background-color:#FACC2E;
+    margin-top: -1px;
+    margin-bottom: 60px;
+    box-shadow: 0 3px 3px #ccc;
+}
+/*----------------------------contenido principal----------------------------*/
+.contenido{
+    
     position: relative;
 }
-.subtitulo{
-   margin-left: 50px;
-   font-size:24pt;
+
+.contenido #mensaje{
+    width: 55%;
+    position: relative;
+    float: left;
 }
-ul{
-    font-size:11pt;
-    font-weight:bold;
-    font-family: 'Arial';
+.contenido #imagen{
+    position: relative;
+    float: left;
+    width: 30%; 
 }
-.dibujoDocente{
-    position:absolute; 
-    top:80px;
-    left:810px;
-    width:400px;
-    height: 400px;
+.contenido #boton{
+    position: relative;
+    margin-top: 5%;
+    padding-left: 300px;
+    width: 100%; 
 }
-.imagenDuocSuperior{
-    background-color: #001e39;
-    height:60px;
-    padding-left: 12px;
-}
+
 .botonVolver{
-    size:10px;
-    right:49%;
-    bottom:20%;
-    top:100px;
     width:100px;
     height:40px;
-    position:absolute;
+    position:relative;
     padding: 10px;
-    background-color:#0B0B3B;
+    background-color:#001e39;
     color: #fff;
 }
 .botonVolver:hover{
     background-color:#FACC2E;
+}
+
+/*estilos asociados al texto*/
+#mensaje h1{
+    font-family: monospace;
+    padding-left: 40px;
+}
+#mensaje li{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    line-height: 1.6;
+    
 }

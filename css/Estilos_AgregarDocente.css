@@ -112,7 +112,7 @@ body{
     display:none;
 }
 
-/*---------------------------------------- barra lateral ----------------------------------------*/
+/*---------------------------------------- barra lateral izquierda----------------------------------------*/
 
 .principal{
     position: relative;
@@ -135,7 +135,7 @@ body{
     height: 25px;
 }
 
-/*linea amarilla divisoria*/
+/*----------------------------------------linea amarilla divisoria ----------------------------------------*/
 hr{
     height: 7px;
     background-color:#FACC2E;

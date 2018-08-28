@@ -113,11 +113,6 @@ if (isset($_SESSION['nombre_usuario'])) {
 
                             </ul>
                         </div>
-                        <div >
-                            <!--Boton de menu-->
-                            
-                            
-                        </div>
                         <div>
                             <!--Mostrar quien es el usuario ingresado en el sistema-->
                             <p>
@@ -129,25 +124,26 @@ if (isset($_SESSION['nombre_usuario'])) {
                         
                     </div>
                 </header>
+                <hr>
             </div>
-        <hr>
-        <div class="articulo_1"> 
+        
+<!--        <div class="articulo_1"> 
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-xs-12">
-                     <!--boton que tiene la funcion de agregar una nueva columna a la tabla-->
+                     boton que tiene la funcion de agregar una nueva columna a la tabla
                      <div class="btn btn-success" id="btnNuevo"><span class="glyphicon glyphicon-file"></span> Nuevo Docente </div>
-                     <!--etiqueta-->
+                     etiqueta
                      <label class=" label label-default">Filtros De Busqueda</label>
-                     <!--caja de texto para el rut-->
+                     caja de texto para el rut
                      <input type="text" name="txtRut" id="txtRut" placeholder="Ingrese Rut" >
-                     <!--select que se debe relacionar con la base de datos para obtener las escuelas-->
+                     select que se debe relacionar con la base de datos para obtener las escuelas
                          <select class="escuela"> 
                            <option>PUENTE ALTO</option>
                          </select>
                      <div id="datos">
                          
                      </div>
-                <hr>
+                <hr>-->
                 
 <!--            <div class="articulo_1"> 
                 <div class="row">
@@ -194,18 +190,20 @@ if (isset($_SESSION['nombre_usuario'])) {
         </div>  
          <!-- <div class="btn btn-primary" id="btnGuardar"><span class="glyphicon glyphicon-edit"></span> Guardar</div>
           <div class="btn btn-danger" id="btnEliminar"><span class="glyphicon glyphicon-remove"></span> Eliminar</div>-->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
 </body>
-</html>
+<!--</html>
 
-            </div>  -->
-             <!-- <div class="btn btn-primary" id="btnGuardar"><span class="glyphicon glyphicon-edit"></span> Guardar</div>
-              <div class="btn btn-danger" id="btnEliminar"><span class="glyphicon glyphicon-remove"></span> Eliminar</div>-->
+            </div> 
+              <div class="btn btn-primary" id="btnGuardar"><span class="glyphicon glyphicon-edit"></span> Guardar</div>
+              <div class="btn btn-danger" id="btnEliminar"><span class="glyphicon glyphicon-remove"></span> Eliminar</div>
 
 
         </div>
 
-    </body>
+    
+        
+        </body>-->
 </html>
 <?php
 } else {
