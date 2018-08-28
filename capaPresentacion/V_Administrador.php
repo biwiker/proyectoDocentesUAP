@@ -151,7 +151,7 @@ if (isset($_SESSION['nombre_usuario'])) {
                             <!--Opciones de menu--> 
                             <div class="dropdown-content">
                                 <a tabindex="-1" href="#">Configuración</a>
-                                <a tabindex="-1" href="#">Cambiar contraseña</a>
+                                <a tabindex="-1" href="V_ActualizarContrasenia.php">Cambiar contraseña</a>
                                 <!--boton que destruye sesion-->
                                 <form method="POST" action="../capaLogicaNegocio/BO_Accesos.php">
                                     <button name="btnCerrarSesion" value="Cerrar Sesion">
