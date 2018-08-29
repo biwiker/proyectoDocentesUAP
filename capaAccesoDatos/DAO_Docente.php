@@ -12,6 +12,7 @@
  * @author Berni
  */
 include_once '../capaEntidades/CL_Docente.php';
+include_once '../capaEntidades/CL_DetallePAD.php';
 include_once '../capaConexion/CL_Conexion.php';
 
 class DAO_Docente {
@@ -31,19 +32,19 @@ class DAO_Docente {
     public function agregarDocente(CL_Docente $doncete) {
 
         try {
-            $rut = $doncete->getRut();
-            $dv = $doncete->getDv();
-            $id = $doncete->getId();
-            $pNombre = $doncete->getPNombre();
-            $sNombre = $doncete->getSNombre();
-            $apPaterno = $doncete->getApPaterno();
-            $apMaterno = $doncete->getApMaterno();
-            $idCentroCosto = $doncete->getIdCentroCosto();
-            $correo1 = $doncete->getCorreo1();
-            $correo2 = $doncete->getCorreo2();
-            $correo3 = $doncete->getCorreo3();
-            $fonoFijo = $doncete->getFonoFijo();
-            $fonoMovil = $doncete->getFonoMovil();
+            $rut = $doncete->get_rut();
+            $dv = $doncete->get_dv();
+            $id = $doncete->get_id();
+            $pNombre = $doncete->get_pNombre();
+            $sNombre = $doncete->get_sNombre();
+            $apPaterno = $doncete->get_apPaterno();
+            $apMaterno = $doncete->get_apMaterno();
+            $idCentroCosto = $doncete->get_idCentroCosto();
+            $correo1 = $doncete->get_correo1();
+            $correo2 = $doncete->get_correo2();
+            $correo3 = $doncete->get_correo3();
+            $fonoFijo = $doncete->get_fonoFijo();
+            $fonoMovil = $doncete->get_fonoMovil();
 
             $sql = "insert into docente(rut,dv,id,pNombre,sNombre,apPaterno,apMaterno,idCentroCosto,correo1,correo2,correo3,fonoFijo,fonoMovil) values
                  ('$rut','$dv','$id','$pNombre','$sNombre','$apPaterno','$apMaterno','$idCentroCosto','$correo1','$correo2','$correo3','$fonoFijo','$fonoMovil')";
@@ -74,19 +75,19 @@ class DAO_Docente {
 
             while ($row = $respuesta->fetch_assoc()) {
                 $docente = new CL_Docente();
-                $docente->setRut($row['rut']);
-                $docente->setDv($row['dv']);
-                $docente->setId($row['id']);
-                $docente->setPNombre($row['pNombre']);
-                $docente->setSNombre($row['sNombre']);
-                $docente->setApPaterno($row['apPaterno']);
-                $docente->setApMaterno($row['apMaterno']);
-                $docente->setIdCentroCosto($row['idCentroCosto']);
-                $docente->setCorreo1($row['correo1']);
-                $docente->setCorreo2($row['correo2']);
-                $docente->setCorreo3($row['correo3']);
-                $docente->setFonoFijo($row['fonoFijo']);
-                $docente->setFonoMovil($row['fonoMovil']);
+                $docente->set_rut($row['rut']);
+                $docente->set_dv($row['dv']);
+                $docente->set_id($row['id']);
+                $docente->set_pNombre($row['pNombre']);
+                $docente->set_sNombre($row['sNombre']);
+                $docente->set_apPaterno($row['apPaterno']);
+                $docente->set_apMaterno($row['apMaterno']);
+                $docente->set_idCentroCosto($row['idCentroCosto']);
+                $docente->set_correo1($row['correo1']);
+                $docente->set_correo2($row['correo2']);
+                $docente->set_correo3($row['correo3']);
+                $docente->set_telefonoFijo($row['fonoFijo']);
+                $docente->set_telefonoMovil($row['fonoMovil']);
 
                 $docentes[] = $docente;
             }
@@ -113,8 +114,9 @@ class DAO_Docente {
             echo $exc->getTraceAsString();
         }
     }
-
-    public function buscarDocente($rut) {
+    
+    //metodo que realiza la busqueda de la información personal del docente
+    public function buscarDocentePorRut($rut) {
         try {
             
             $stmt = $this->_conexion->getConexion()->prepare("select 
@@ -153,19 +155,19 @@ class DAO_Docente {
             $docente = null;
             while ($stmt->fetch()) {
                 $docente = new CL_Docente();
-                $docente->setRut($d_rut);
-                $docente->setDv($d_dv);
-                $docente->setPNombre($d_nombre);                
-                $docente->setApPaterno($d_apaterno);
-                $docente->setApMaterno($d_amaterno);
-                $docente->setAnioIngreso($d_anioIngreso);
-                $docente->setCentroCosto($d_ceco);                
-                $docente->setEscuelaPrograma($d_escuelaPrograma);                
-                $docente->setCorreo1($d_correo1);
-                $docente->setCorreo2($d_correo2);
-                $docente->setFonoMovil($d_telefonoMovil);
-                $docente->setTipoDocente($d_tipoDocente);
-                $docente->setGradoProfesional($d_gradoProfesional);
+                $docente->set_rut($d_rut);
+                $docente->set_dv($d_dv);
+                $docente->set_pNombre($d_nombre);                
+                $docente->set_apPaterno($d_apaterno);
+                $docente->set_apMaterno($d_amaterno);
+                $docente->set_anioIngreso($d_anioIngreso);
+                $docente->set_idCentroCosto($d_ceco);                
+                $docente->set_idEscuelaPrograma($d_escuelaPrograma);                
+                $docente->set_correo1($d_correo1);
+                $docente->set_correo2($d_correo2);
+                $docente->set_telefonoMovil($d_telefonoMovil);
+                $docente->set_idTipoDocente($d_tipoDocente);
+                $docente->set_gradoProfesional($d_gradoProfesional);
                 
             }
             $stmt->close();
@@ -176,6 +178,7 @@ class DAO_Docente {
         }
     }
     
+    //metodo que presenta todos los docentes de la escuela seleccionada
     public function buscarDocentePorEscuela($idEscuela) {
         try {
             
@@ -205,24 +208,57 @@ class DAO_Docente {
             echo $exc->getTraceAsString();
         }
     }
-
+    
+    public function buscarIndicadorPAD($rut){
+        try {
+            
+            $stmt = $this->_conexion->getConexion()->prepare("SELECT 
+                                                                P.ANIO, 
+                                                                P.SEMESTRE,
+                                                                DP.PORCENTAJE 
+                                                             FROM DETALLE_PAD DP
+                                                             JOIN PAD P
+                                                             ON DP.ID_PAD = P.ID_PAD
+                                                             JOIN DOCENTES D 
+                                                             ON DP.RUT = D.RUT
+                                                             WHERE concat(D.RUT,D.DV) = ?"); 
+            $stmt->bind_param('s',$rut);  
+            $stmt->execute();
+            $stmt->bind_result($pad_anio,$pad_semestre,$pad_porcentaje);
+            $detallePAD = null;
+            while ($stmt->fetch()) {
+                
+                $detallePAD = new CL_DetallePAD();
+                $detallePAD->set_anio($pad_anio);
+                $detallePAD->set_semestre($pad_semestre);
+                $detallePAD->set_porcentaje($pad_porcentaje);
+            }
+            $stmt->close();
+            return $detallePAD;
+            
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
+        
+    }
+    
     public function modificarDocente(CL_Docente $docente) {
 
 
         try {
-            $rut = $docente->getRut();
-            $dv = $docente->getDv();
-            $id = $docente->getId();
-            $pNombre = $docente->getPNombre();
-            $sNombre = $docente->getSNombre();
-            $apPaterno = $docente->getApPaterno();
-            $apMaterno = $docente->getApMaterno();
-            $idCentroCosto = $docente->getIdCentroCosto();
-            $correo1 = $docente->getCorreo1();
-            $correo2 = $docente->getCorreo2();
-            $correo3 = $docente->getCorreo3();
-            $fonoFijo = $docente->getFonoFijo();
-            $fonoMovil = $docente->getFonoMovil();
+            $rut = $docente->get_rut();
+            $dv = $docente->get_dv();
+            $id = $docente->get_id();
+            $pNombre = $docente->get_pNombre();
+            $sNombre = $docente->get_sNombre();
+            $apPaterno = $docente->get_apPaterno();
+            $apMaterno = $docente->get_apMaterno();
+            $idCentroCosto = $docente->get_idCentroCosto();
+            $correo1 = $docente->get_correo1();
+            $correo2 = $docente->get_correo2();
+            $correo3 = $docente->get_correo3();
+            $fonoFijo = $docente->get_fonoFijo();
+            $fonoMovil = $docente->get_fonoMovil();
 
 
             $sql = "update docente set rut ='$rut', dv='$div',id='id',pNombre='$pNombre',sNombre='$sNombre',apPaterno='$apPaterno',apMaterno='$apMaterno',idCentroCosto='$idCentroCosto',correo1='$correo1',correo2='$correo2',correo3='$correo3',fonoFijo='$fonoFijo',fonoMovil='$fonoMovil'  where rut = $rut ";

@@ -144,7 +144,7 @@ if (isset($_SESSION['nombre_usuario'])) {
                     </div>
                     <div class="info-usuario">
                         <div class="dropdown">
-                            
+
                             <button>
                                 <span class="glyphicon glyphicon-chevron-down"></span>
                             </button>
