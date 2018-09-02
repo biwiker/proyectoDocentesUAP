@@ -22,7 +22,7 @@ class CL_Docente {
     private $_idEscuelaPrograma;
     private $_idTipoDocente;
     private $_idCentroCosto;
-    private $_gradoProfesional;
+    private $_idGradoProfesional;
 
     function __construct() {
         
@@ -92,8 +92,8 @@ class CL_Docente {
         return $this->_idCentroCosto;
     }
 
-    function get_gradoProfesional() {
-        return $this->_gradoProfesional;
+    function get_idGradoProfesional() {
+        return $this->_idGradoProfesional;
     }
 
     function set_rut($_rut) {
@@ -160,10 +160,8 @@ class CL_Docente {
         $this->_idCentroCosto = $_idCentroCosto;
     }
 
-    function set_gradoProfesional($_gradoProfesional) {
-        $this->_gradoProfesional = $_gradoProfesional;
+    function set_idGradoProfesional($_idGradoProfesional) {
+        $this->_idGradoProfesional = $_idGradoProfesional;
     }
-
-
 
 }
