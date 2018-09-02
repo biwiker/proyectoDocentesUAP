@@ -26,25 +26,28 @@
                     $('#contador-filas').val(cant)
                     nuevaFila += "<td><input class='form-control' type='text' name='Rut[" + (cant) + "]' placeholder='Rut" + (cant) + "' required /> </td>" +
                             "<td><input class='form-control' type='text' name='Dv[" + (cant) + "]' placeholder='Digito Verificador" + (cant) + "' required /> </td>" +
-                            "<td><input class='form-control' type='text' name='Id[" + (cant) + "]' placeholder='ID" + (cant) + "' required /> </td>" +
+                            "<td><input class='form-control' type='text' name='IdDuoc[" + (cant) + "]' placeholder='ID Duoc" + (cant) + "' required /> </td>" +
                             "<td><input class='form-control' type='text' name='PrimerNombre[" + (cant) + "]' placeholder='Primer Nombre" + (cant) + "' required /> </td>" +
                             "<td><input class='form-control' type='text' name='SegundoNombre[" + (cant) + "]' placeholder='Segundo Nombre" + (cant) + "' required /> </td>" +
                             "<td><input class='form-control' type='text' name='TercerNombre[" + (cant) + "]' placeholder='Tercer Nombre" + (cant) + "' required /> </td>" +
                             "<td><input class='form-control' type='text' name='ApellidoPaterno[" + (cant) + "]' placeholder='Apellido Paterno" + (cant) + "' required /> </td>" +
                             "<td><input class='form-control' type='text' name='ApellidoMaterno[" + (cant) + "]' placeholder='Apellido Materno" + (cant) + "' required /> </td>" +
-                            "<td><input class='form-control' type='text' name='IdCentroCoste[" + (cant) + "]' placeholder='Id Centro Coste" + (cant) + "' required /> </td>" +
+                            "<td><input class='form-control' type='text' name='AnioIngreso[" + (cant) + "]' placeholder='Año de Ingreso" + (cant) + "' required /> </td>" +
                             "<td><input class='form-control' type='text' name='CorreoDuoc[" + (cant) + "]' placeholder='CorreoDuoc" + (cant) + "' required /> </td>" +
                             "<td><input class='form-control' type='text' name='CorreoPersonal[" + (cant) + "]' placeholder='CorreoPersonal" + (cant) + "' required /> </td>" +
-                            "<td><input class='form-control' type='text' name='CorreoPersonalAlternativo[" + (cant) + "]' placeholder='CorreoPersonalAlternativo" + (cant) + "' required /> </td>" +
                             "<td><input class='form-control' type='text' name='TelefonoFijo[" + (cant) + "]' placeholder='TelefonoFijo" + (cant) + "' required /> </td>" +
-                            "<td><input class='form-control' type='text' name='TelefonoMovil[" + (cant) + "]' placeholder='TelefonoMovil" + (cant) + "' required /> </td>"+
-                            "<td><input type='submit' name='datos' class='btn btn-sm btn-primary' /></td>"+
+                            "<td><input class='form-control' type='text' name='TelefonoMovil[" + (cant) + "]' placeholder='TelefonoMovil" + (cant) + "' required /> </td>" +
+                            "<td><input class='form-control' type='text' name='escuelaPrograma[" + (cant) + "]' placeholder='Escuela Programa" + (cant) + "' required /> </td>" +
+                            "<td><input class='form-control' type='text' name='IdCentroCoste[" + (cant) + "]' placeholder='Id Centro Coste" + (cant) + "' required /> </td>" +
+                            "<td><input class='form-control' type='text' name='TipoDocentes[" + (cant) + "]' placeholder='Tipos de Docentes" + (cant) + "' required /> </td>" +
+                            "<td><input class='form-control' type='text' name='GradoProfesional[" + (cant) + "]' placeholder='Grado Profesional" + (cant) + "' required /> </td>" +
+                            "<td><input type='submit' name='btnGuardar' value='Guardar' class='btn btn-sm btn-primary'/></td>" +
                             "<td><input type='reset' name='borrar' class='btn btn-sm btn-warning' /></td>";
-            
+
 // Añadimos una columna con el numero total de columnas.
-                            // Añadimos uno al total, ya que cuando cargamos los valores para la
-                            // columna, todavia no esta añadida
-                            nuevaFila += "</tr>";
+                    // Añadimos uno al total, ya que cuando cargamos los valores para la
+                    // columna, todavia no esta añadida
+                    nuevaFila += "</tr>";
                     $("#tabla").append(nuevaFila);
                 });
                 /**
@@ -141,7 +144,7 @@
                             <select class="escuela"> 
                                 <option>PUENTE ALTO</option>
                             </select>
-                         
+
                             <br /><br />
                             <button id="add" class="nuevoDocente btn btn-success "><span class="glyphicon glyphicon-file"></span>Nuevo Docente</button>
                             <button id="del" class="eliminarDocente btn btn-danger "><span class="glyphicon glyphicon-remove"></span>Eliminar Docente</button>
@@ -153,20 +156,23 @@
                                         <tr class="info">
                                             <th>Rut</th>
                                             <th>DV</th>
-                                            <th>ID</th>
+                                            <th>ID DUOC</th>
                                             <th>Primer Nombre</th>
                                             <th>Segundo Nombre</th>
                                             <th>Tercer Nombre</th>
                                             <th>Apellido Paterno</th>
                                             <th>Apellido Materno</th>
-                                            <th>ID Centro Coste</th>
+                                            <th>Año de Ingreso</th>
                                             <th>Correo Duoc</th>
                                             <th>Correo Personal</th>
-                                            <th>Correo Personal Alternativo</th>
                                             <th>Telefono Fijo</th>
                                             <th>Telefono Movil</th>
-                                            <th>Herramienta</th>
-                                            <th>Herramienta</th>
+                                            <th>Escuela Programa</th>
+                                            <th>Tipo de Docente</th>
+                                            <th>Centro Coste</th>
+                                            <th>Grado Profesional</th>
+
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -174,20 +180,22 @@
                                     <input type="hidden" id="contador-filas" value="0" />
                                     <td><input class="form-control" type="text" name="Rut[0]" placeholder="Rut" required /></td>
                                     <td><input class="form-control" type="text" name="Dv[0]" placeholder="DV" required /></td>
-                                    <td><input class="form-control" type="text" name="Id[0]" placeholder="ID" required /></td>
+                                    <td><input class="form-control" type="text" name="IdDuoc[0]" placeholder="ID" required /></td>
                                     <td><input class="form-control" type="text" name="PrimerNombre[0]" placeholder="Primer Nombre" required /></td>
                                     <td><input class="form-control" type="text" name="SegundoNombre[0]" placeholder="Segundo Nombre" required /></td>
                                     <td><input class="form-control" type="text" name="TercerNombre[0]" placeholder="Tercer Nombre" required /></td>
                                     <td><input class="form-control" type="text" name="ApellidoPaterno[0]" placeholder="Apellido Paternoo" required /></td>
                                     <td><input class="form-control" type="text" name="ApellidoMaterno[0]" placeholder="Apellido Materno" required /></td>
-                                    <td><input class="form-control" type="text" name="IdCentroCoste[0]" placeholder="ID Centro Coste" required /></td>
+                                    <td><input class="form-control" type="text" name="AnioIngreso[0]" placeholder="Año de Ingreso" required /></td>
                                     <td><input class="form-control" type="text" name="CorreoDuoc[0]" placeholder="Correo Duoc" required /></td>
                                     <td><input class="form-control" type="text" name="CorreoPersonal[0]" placeholder="Correo Personal" required /></td>
-                                    <td><input class="form-control" type="text" name="CorreoPersonalAlternativo[0]" placeholder="Correo Personal Alternativo" required /></td>
                                     <td><input class="form-control" type="text" name="TelefonoFijo[0]" placeholder="Telefono Fijo" required /></td>
                                     <td><input class="form-control" type="text" name="TelefonoMovil[0]" placeholder="Telefono Movil" required /></td>
-                                    <td><input type="submit" name="datos" class="btn btn-sm btn-primary" ></input></td>
-                                    <td><input type="reset" name="borrar" class="btn btn-sm btn-warning" ></input></td>
+                                    <td><input class="form-control" type="text" name="escuelaPrograma[0]" placeholder="Escuela Programa" required /></td>     
+                                    <td><input class="form-control" type="text" name="centroCoste[0]" placeholder="Centro de Coste" required /></td>
+                                    <td><input class="form-control" type="text" name="gradoProfesional[0]" placeholder="Grado Profesional" required /></td>
+                                    <td><input type="submit" name="btnGuardar" value="Guardar" class="btn btn-sm btn-primary" ></input></td>
+                                    <td><input type="reset" name="borrar" value="Restablecer" class="btn btn-sm btn-warning" ></input></td>
 
                                     </tr>
                                     </tbody>
@@ -199,19 +207,21 @@
                     } else {
                         $Rut[] = $_POST['Rut'];
                         $Dv[] = $_POST['Dv'];
-                        $Id[] = $_POST['Id'];
+                        $Id[] = $_POST['IdDuoc'];
                         $PrimerNombre[] = $_POST['PrimerNombre'];
                         $SegundoNombre[] = $_POST['SegundoNombre'];
                         $TercerNombre[] = $_POST['TercerNombre'];
                         $ApellidoPaterno[] = $_POST['ApellidoPaterno'];
                         $ApellidoMaterno[] = $_POST['ApellidoMaterno'];
-                        $IdCentroCoste[] = $_POST['IdCentroCoste'];
+                        $AnioIngreso[] = $_POST['AnioIngreso'];
                         $CorreoDuoc[] = $_POST['CorreoDuoc'];
                         $CorreoPersonal[] = $_POST['CorreoPersonal'];
-                        $CorreoPersonalAlternativo[] = $_POST['CorreoPersonalAlternativo'];
                         $TelefonoFijo[] = $_POST['TelefonoFijo'];
                         $TelefonoMovil[] = $_POST['TelefonoMovil'];
-                        $datos[] = $_POST['datos'];
+                        $EscuelaPrograma[] = $_POST['EscuelaPrograma'];
+                        $CentroCoste[] = $_POST['CentroCoste'];
+                        $GradoProfesional[] = $_POST['GradoProfesional'];
+                        $btnGuardar[] = $_POST['btnGuardar'];
                         $borrar[] = $_POST['borrar'];
                     }
                     ?>
