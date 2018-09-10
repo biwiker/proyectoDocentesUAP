@@ -12,7 +12,7 @@ if (isset($_POST['btnVerDocente'])) {
     $DAO_Docente = new DAO_Docente();
 
     //buscar información del docente y PAD
-    $Docente    = $DAO_Docente->buscarDocentePorRut($_rut);
+    $Docente = $DAO_Docente->buscarDocentePorRut($_rut);
     $DetallePAD = $DAO_Docente->buscarIndicadorPAD($_rut);
 
     if (!is_null($Docente)) {
@@ -20,7 +20,7 @@ if (isset($_POST['btnVerDocente'])) {
         <!-- se cargarán los artículos según la información que se encuentre del docente -->
         <!-- articulo 3 | información personal -->
         <article class="articulo_3">
-            <!-- articulo 3-->
+            <!-- articulo 3 | información personal -->
             <article>
                 <section>
 
@@ -69,7 +69,7 @@ if (isset($_POST['btnVerDocente'])) {
                                     <td style="background-color: #F4F6F7"><b>Tipo Docente:</b></td>
                                     <td><?php echo $Docente->get_idTipoDocente(); ?></td>
                                     <td style="background-color: #F4F6F7"><b>Grado Acad&eacute;mico:</b></td>
-                                    <td><?php echo $Docente->get_gradoProfesional(); ?></td>
+                                    <td><?php echo $Docente->get_idGradoProfesional(); ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -177,33 +177,116 @@ if (isset($_POST['btnVerEscuela'])) {
                         <button class="btn" id="btnInfoDocente" name="btnInfoDocente" value="btnInfoDocente"><span></span></button>
                     </span>
                     <!--boton-->
-
+                    
                     <!--linea de division-->
                     <div id="linea-section"></div>
                 </section>
                 <!--esta sección contiene la información-->
                 <section id="art3-cargaDatos" class="collapse">
                     <div id="info-docente">
+                        <?php
+                        $contador = 1;
+                        $stmt->bind_result($d_rut, $d_dv, $d_nombre, $d_apaterno, $d_amaterno, $d_correo1, $d_telefonoMovil);
+                        while ($stmt->fetch()) {
+                            echo "<table class='table table-bordered'>";
+                            echo "  <tbody>";
+                            echo "            <tr>";
+                            echo "                <td style='background-color: #F4F6F7'>" . $contador . "</td>";
+                            echo "                <td style='background-color: #F4F6F7'><b>Nombre del docente:</b></td>";
+                            echo "                <td>" . $d_nombre . " " . $d_apaterno . " " . $d_amaterno . "</td>";
+                            echo "                <td style='background-color: #F4F6F7'><b>RUN:</b></td>";
+                            echo "                <td>" . $d_rut . "" . $d_dv . "</td>";
+                            echo "                <td><button type='submit' class='btn'  id='btnVerDocente'  autocomplete='off' name='btnVerDocente' value='VerDocente' onclick='buscarDocente2(\"$d_rut$d_dv\")'>Ver Docente</button></td>";
+                            echo "            </tr>";
+                            echo "  </tbody>";
+                            echo "</table>";
+                            $contador ++;
+                        }
+                        $stmt->close();
+                        ?>                           
+                    </div>
+                </section>
+            </article>
+        </article>
         <?php
-        $contador = 1;
-        $stmt->bind_result($d_rut, $d_dv, $d_nombre, $d_apaterno, $d_amaterno, $d_correo1, $d_telefonoMovil);
-        while ($stmt->fetch()) {
-            echo "<table class='table table-bordered'>";
-            echo "  <tbody>";
-            echo "            <tr>";
-            echo "                <td style='background-color: #F4F6F7'>" . $contador . "</td>";
-            echo "                <td style='background-color: #F4F6F7'><b>Nombre del docente:</b></td>";
-            echo "                <td>" . $d_nombre . " " . $d_apaterno . " " . $d_amaterno . "</td>";
-            echo "                <td style='background-color: #F4F6F7'><b>RUN:</b></td>";
-            echo "                <td>" . $d_rut . "" . $d_dv . "</td>";
-            echo "                <td><button type='submit' class='btn'  id='btnVerDocente'  autocomplete='off' name='btnVerDocente' value='VerDocente' onclick='buscarDocente2(\"$d_rut$d_dv\")'>Ver Docente</button></td>";
-            echo "            </tr>";
-            echo "  </tbody>";
-            echo "</table>";
-            $contador ++;
-        }
-        $stmt->close();
-        ?>                           
+    } else {
+        ?>
+        <article class="articulo_3">
+            <section>
+
+                <h4>Informacion Docente</h4>
+                <!--linea de division-->
+                <div id="linea-section"></div>
+            </section>
+            <section id="art3-cargaDatos" class="">
+                <div id="info-docente">
+                    <table class="">
+                        <tbody>
+                            <tr>
+                                <td>No hay datos asociados</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </article>
+        <?php
+    }
+}
+
+//------------------------------------------------------------------------------------------------------
+//Acción a realizar cuando se escribe en la caja de texto por filtro
+//------------------------------------------------------------------------------------------------------
+if (isset($_POST['consulta'])) {
+
+    $id_escuela = $_POST['ddlEscuela'];
+    $filtro = $_POST['consulta'];
+
+    $DAO_Docente = new DAO_Docente();
+
+    $stmt = $DAO_Docente->filtrarDocentePorEscuela($id_escuela, $filtro);
+
+    if (!is_null($stmt)) {
+        include_once '../capaAccesoDatos/DAO_Docente.php';
+        ?>
+        <!-- articulo 3-->
+        <article class="articulo_3">
+            <!-- articulo 3-->
+            <article>
+                <section>
+
+                    <h4>Docentes asociados a  </h4>
+                    <span data-toggle="collapse"  aria-expanded="false" href="#art3-cargaDatos">
+                        <button class="btn" id="btnInfoDocente" name="btnInfoDocente" value="btnInfoDocente"><span></span></button>
+                    </span>
+                    <!--boton-->
+                    
+                    <!--linea de division-->
+                    <div id="linea-section"></div>
+                </section>
+                <!--esta sección contiene la información-->
+                <section id="art3-cargaDatos" class="collapse in">
+                    <div id="info-docente">
+                        <?php
+                        $contador = 1;
+                        $stmt->bind_result($d_rut, $d_dv, $d_nombre, $d_apaterno, $d_amaterno, $d_correo1, $d_telefonoMovil);
+                        while ($stmt->fetch()) {
+                            echo "<table class='table table-bordered'>";
+                            echo "  <tbody>";
+                            echo "            <tr>";
+                            echo "                <td style='background-color: #F4F6F7'>" . $contador . "</td>";
+                            echo "                <td style='background-color: #F4F6F7'><b>Nombre del docente:</b></td>";
+                            echo "                <td>" . $d_nombre . " " . $d_apaterno . " " . $d_amaterno . "</td>";
+                            echo "                <td style='background-color: #F4F6F7'><b>RUN:</b></td>";
+                            echo "                <td>" . $d_rut . "" . $d_dv . "</td>";
+                            echo "                <td><button type='submit' class='btn'  id='btnVerDocente'  autocomplete='off' name='btnVerDocente' value='VerDocente' onclick='buscarDocente2(\"$d_rut$d_dv\")'>Ver Docente</button></td>";
+                            echo "            </tr>";
+                            echo "  </tbody>";
+                            echo "</table>";
+                            $contador ++;
+                        }
+                        $stmt->close();
+                        ?>                           
                     </div>
                 </section>
             </article>
