@@ -29,71 +29,109 @@ class DAO_Docente {
         }
     }
 
-    public function agregarDocente($d_rut, $d_dv, $d_id_duoc, $d_pNombre, $d_sNombre, $d_tNombre, $apPaterno, $apMaterno, $d_anio_ingreso, $d_correo1, $d_correo2, $d_telefono_fijo, $d_telefono_movil, $d_id_escuela_programa, $d_id_centro_costo, $d_id_tipo_docente, $d_id_grado_profesional) {
+    #procesos del C.R.U.D. de docentes
+    #agregar docentes a la base de datos, mediante la llamada a un procedimiento almacenado
+    public function agregarDocente(CL_Docente $docente) {
 
         try {
-            $stmt = $this->_conexion->getConexion()->prepare('CALL FN_AGREGAR_DOCENTE (?,?,?,?,?,?,?,?,?,?,?,?,?)'); //se llama a la función almacenada
-            $stmt->bind_param('iisssssssssssssss', $d_rut, $d_dv, $d_id_duoc, $d_pNombre, $d_sNombre, $d_tNombre, $apPaterno, $apMaterno, $d_anio_ingreso, $d_correo1, $d_correo2, $d_telefono_fijo, $d_telefono_movil, $d_id_escuela_programa, $d_id_centro_costo, $d_id_tipo_docente, $d_id_grado_profesional);  //se reemplazan los argumentos por parámetros de tipo entero int ('i')
-            $filasAfectadas = $stmt->execute();                     //se ejecuta la consulta  
-            $stmt->close;    //se enlaza el retorno de la función a una variable bind
+            $stmt = $this->_conexion->getConexion()->prepare('CALL PR_AGREGAR_DOCENTE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'); //se llama a la función almacenada
+            $stmt->bind_param('isisssssissssiiii', 
+                    $docente->get_rut(), 
+                    $docente->get_dv(), 
+                    $docente->get_idDuoc(), 
+                    $docente->get_pNombre(), 
+                    $docente->get_sNombre(), 
+                    $docente->get_tNombre(), 
+                    $docente->get_apPaterno(), 
+                    $docente->get_apMaterno(), 
+                    $docente->get_anioIngreso(), 
+                    $docente->get_correo1(), 
+                    $docente->get_correo2(), 
+                    $docente->get_telefonoFijo(), 
+                    $docente->get_telefonoMovil(), 
+                    $docente->get_idEscuelaPrograma(), 
+                    $docente->get_idCentroCosto(), 
+                    $docente->get_idTipoDocente(), 
+                    $docente->get_idGradoProfesional());  //se reemplazan los argumentos por parámetros de tipo entero int ('i')
+            $filasAfectadas = $stmt->execute();           //se ejecuta la consulta y se guardan las filas afectadas
+            $stmt->close;                                 //se enlaza el retorno de la función a una variable bind
             
             return $filasAfectadas > 0 ? true : false;
+            
         } catch (Exception $exc) {
-            return null;
+            return false;
         }
     }
 
+    #listar todos los docentes desde la base de datos
     public function listarDocente() {
         try {
 
-            $sql = "SELECT * FROM docente ";
-            $respuesta = $this->mysqli->query($sql);
-
-            $docentes = [];
-
-            while ($row = $respuesta->fetch_assoc()) {
-                $docente = new CL_Docente();
-                $docente->set_rut($row['rut']);
-                $docente->set_dv($row['dv']);
-                $docente->set_id($row['id']);
-                $docente->set_pNombre($row['pNombre']);
-                $docente->set_sNombre($row['sNombre']);
-                $docente->set_apPaterno($row['apPaterno']);
-                $docente->set_apMaterno($row['apMaterno']);
-                $docente->set_idCentroCosto($row['idCentroCosto']);
-                $docente->set_correo1($row['correo1']);
-                $docente->set_correo2($row['correo2']);
-                $docente->set_correo3($row['correo3']);
-                $docente->set_telefonoFijo($row['fonoFijo']);
-                $docente->set_telefonoMovil($row['fonoMovil']);
-
-                $docentes[] = $docente;
-            }
-            $this->mysqli->close();
-
-            return $personas;
+            $stmt = $this->_conexion->getConexion()->prepare("SELECT * FROM DOCENTES");
+            return  $stmt->execute();
+            
         } catch (Exception $exc) {
             echo $exc->getTraceAsString();
+            return null;
         }
     }
-
+    
+    #eliminar un docente de la base de datos
     public function eliminarDocente($rut) {
         try {
-
-            $sql = "delete from docente where rut = $rut";
-            $this->mysqli->query($sql);
-
-            if ($this->mysqli->affected_rows > 0) {
-                return true;
-            }
-
-            return false;
+            $stmt = $this->_conexion->getConexion()->prepare('CALL PR_ELIMINAR_DOCENTE(?)'); //se llama a la función almacenada
+            $stmt->bind_param('i', $rut);                 //se reemplazan los argumentos por parámetros de tipo entero int ('i')
+            $filasAfectadas = $stmt->execute();           //se ejecuta la consulta y se guardan las filas afectadas
+            $stmt->close;                                 //se enlaza el retorno de la función a una variable bind
+            
+            return $filasAfectadas > 0 ? true : false;
+            
         } catch (Exception $exc) {
-            echo $exc->getTraceAsString();
+            return false;
         }
     }
+     
+    #modificar un docente de la base de datos
+    public function modificarDocente(CL_Docente $docente) {
 
-    //metodo que realiza la busqueda de la información personal del docente
+
+            try {
+                
+                $stmt = $this->_conexion->getConexion()->prepare('CALL PR_MODIFICAR_DOCENTE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
+                $stmt->bind_param('isisssssissssiiii', 
+                    $docente->get_rut(), 
+                    $docente->get_dv(), 
+                    $docente->get_idDuoc(), 
+                    $docente->get_pNombre(), 
+                    $docente->get_sNombre(), 
+                    $docente->get_tNombre(), 
+                    $docente->get_apPaterno(), 
+                    $docente->get_apMaterno(), 
+                    $docente->get_anioIngreso(), 
+                    $docente->get_correo1(), 
+                    $docente->get_correo2(), 
+                    $docente->get_telefonoFijo(), 
+                    $docente->get_telefonoMovil(), 
+                    $docente->get_idEscuelaPrograma(), 
+                    $docente->get_idCentroCosto(), 
+                    $docente->get_idTipoDocente(), 
+                    $docente->get_idGradoProfesional());
+                
+                $filasAfectadas = $stmt->execute(); 
+                $stmt->close;
+                
+                return $filasAfectadas > 0 ? true : false;
+                
+            } catch (Exception $exc) {
+                echo $exc->getTraceAsString();
+                return false;
+            }
+        }
+
+        
+        
+    #procesos de busqueda de información de cada docente
+    #metodo que realiza la busqueda de la información personal del docente 
     public function buscarDocentePorRut($rut) {
         try {
 
@@ -183,7 +221,8 @@ class DAO_Docente {
             echo $exc->getTraceAsString();
         }
     }
-
+    
+    //metodo que busca el porcentaje que obtuvo el docente en el acompañamiento PAD de la UAP
     public function buscarIndicadorPAD($rut) {
         try {
 
@@ -215,6 +254,7 @@ class DAO_Docente {
         }
     }
 
+    //metodo que retorna un listado de docentes según la escuela que se haya escogido en la gráfica
     public function filtrarDocentePorEscuela($idEscuela, $filtro) {
         try {
 
@@ -247,40 +287,5 @@ class DAO_Docente {
         }
     }
 
-    public function modificarDocente(CL_Docente $docente) {
-
-
-        try {
-            $rut = $docente->get_rut();
-            $dv = $docente->get_dv();
-            $id = $docente->get_id();
-            $pNombre = $docente->get_pNombre();
-            $sNombre = $docente->get_sNombre();
-            $apPaterno = $docente->get_apPaterno();
-            $apMaterno = $docente->get_apMaterno();
-            $idCentroCosto = $docente->get_idCentroCosto();
-            $correo1 = $docente->get_correo1();
-            $correo2 = $docente->get_correo2();
-            $correo3 = $docente->get_correo3();
-            $fonoFijo = $docente->get_fonoFijo();
-            $fonoMovil = $docente->get_fonoMovil();
-
-
-            $sql = "update docente set rut ='$rut', dv='$div',id='id',pNombre='$pNombre',sNombre='$sNombre',apPaterno='$apPaterno',apMaterno='$apMaterno',idCentroCosto='$idCentroCosto',correo1='$correo1',correo2='$correo2',correo3='$correo3',fonoFijo='$fonoFijo',fonoMovil='$fonoMovil'  where rut = $rut ";
-
-            $this->mysqli->query($sql);
-
-            if ($this->mysqli->affected_rows > 0) {
-                $this->mysqli->close();
-                return true;
-            }
-
-            $this->mysqli->close();
-
-            return false;
-        } catch (Exception $exc) {
-            echo $exc->getTraceAsString();
-        }
-    }
-
+    
 }
