@@ -171,6 +171,7 @@
                                             <th>Tipo de Docente</th>
                                             <th>Centro Coste</th>
                                             <th>Grado Profesional</th>
+                                            <th>Herramientas</th>
 
 
                                         </tr>
@@ -192,6 +193,7 @@
                                     <td><input class="form-control" type="text" name="TelefonoFijo[0]" placeholder="Telefono Fijo" required /></td>
                                     <td><input class="form-control" type="text" name="TelefonoMovil[0]" placeholder="Telefono Movil" required /></td>
                                     <td><input class="form-control" type="text" name="escuelaPrograma[0]" placeholder="Escuela Programa" required /></td>     
+                                    <td><input class="form-control" type="text" name="tipoDocente[0]" placeholder="Tipo de Docente" required /></td>
                                     <td><input class="form-control" type="text" name="centroCoste[0]" placeholder="Centro de Coste" required /></td>
                                     <td><input class="form-control" type="text" name="gradoProfesional[0]" placeholder="Grado Profesional" required /></td>
                                     <td><input type="submit" name="btnGuardar" value="Guardar" class="btn btn-sm btn-primary" ></input></td>
@@ -219,6 +221,7 @@
                         $TelefonoFijo[] = $_POST['TelefonoFijo'];
                         $TelefonoMovil[] = $_POST['TelefonoMovil'];
                         $EscuelaPrograma[] = $_POST['EscuelaPrograma'];
+                        $TipoDocente[] = $_POST['TipoDocente'];
                         $CentroCoste[] = $_POST['CentroCoste'];
                         $GradoProfesional[] = $_POST['GradoProfesional'];
                         $btnGuardar[] = $_POST['btnGuardar'];
