@@ -172,6 +172,7 @@
                                             <th>Centro Coste</th>
                                             <th>Grado Profesional</th>
                                             <th>Herramientas</th>
+                                            <th>Herramientas</th>
 
 
                                         </tr>
