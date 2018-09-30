@@ -1,5 +1,6 @@
 <html>
     <head>
+        <!--pagina error-->
         <title>Error Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link href="bootstrap 3/css/bootstrap.css" rel="stylesheet" type="text/css">
