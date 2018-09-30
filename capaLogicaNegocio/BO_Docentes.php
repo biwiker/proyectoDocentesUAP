@@ -177,7 +177,7 @@ if (isset($_POST['btnVerEscuela'])) {
                         <button class="btn" id="btnInfoDocente" name="btnInfoDocente" value="btnInfoDocente"><span></span></button>
                     </span>
                     <!--boton-->
-                    
+
                     <!--linea de division-->
                     <div id="linea-section"></div>
                 </section>
@@ -260,7 +260,7 @@ if (isset($_POST['consulta'])) {
                         <button class="btn" id="btnInfoDocente" name="btnInfoDocente" value="btnInfoDocente"><span></span></button>
                     </span>
                     <!--boton-->
-                    
+
                     <!--linea de division-->
                     <div id="linea-section"></div>
                 </section>
@@ -313,6 +313,88 @@ if (isset($_POST['consulta'])) {
                 </div>
             </section>
         </article>
+        <?php
+    }
+}
+
+
+//------------------------------------------------------------------------------------------------------
+//Acción a realizar se carga la página de administrar docentes
+//vamos a cargar la lista completa de docentes al momento de cargar la página para administrar docentes
+//------------------------------------------------------------------------------------------------------
+if (isset($_POST['administrarDocentes'])) {
+
+    $DAO_Docente = new DAO_Docente();
+
+    //obtenemos la lista de todos los docentes que viene desde la base de datos
+    $listaDocentes = $DAO_Docente->listarDocentes();
+
+
+    if (!is_null($listaDocentes)) {
+        ?>
+        <article class="articulo_1">
+
+            <input type="button" value="agregar nuevo docente">
+            <input type="text" value="">
+            <input type="button" value="buscar">
+            <input type="button" value="Eliminar Seleccionados">
+        </article>
+        <!-- articulo 3-->
+        <article class="articulo_3">
+
+            <!--esta sección contiene la información-->
+            <section>
+                <div class="fl-listado-docentes">
+                    <?php
+                    foreach ($listaDocentes as $docente) {
+                        echo "<table class='table table-bordered'>";
+                        echo "  <input type='checkbox'/>";
+                        echo "  <tbody>";
+                        echo "            <tr>";
+                        echo "                <td style='background-color: #F4F6F7'><b>Nombre del docente:</b></td>";
+                        echo "                <td>" . $docente->get_pNombre(). " " . $docente->get_apPaterno(). " " . $docente->get_apMaterno(). "</td>";
+                        echo "                <td style='background-color: #F4F6F7'><b>RUN:</b></td>";
+                        echo "                <td>" . $docente->get_rut() . "" . $docente->get_dv() . "</td>";
+                        echo "            </tr>";
+                        echo "            <tr>";
+                        echo "                <td style='background-color: #F4F6F7'><b>Correo:</b></td>";
+                        echo "                <td>" . $docente->get_correo1() . "</td>";
+                        echo "                <td style='background-color: #F4F6F7'><b>Telefono:</b></td>";
+                        echo "                <td>" . $docente->get_telefonoMovil() . "</td>";
+                        echo "                <td><input type='button' value='Modificar'></td>";
+                        echo "            </tr>";
+                        echo "  </tbody>";
+                        echo "</table>";
+                    }
+                    $stmt->close();
+                    ?>                           
+                </div>
+            </section>
+
+        </article>
+        <?php
+    } else {
+        ?>
+
+        <article class="articulo_3">
+            <section>
+
+                <h4>Informacion Docente</h4>
+                <!--linea de division-->
+                <div id="linea-section"></div>
+            </section>
+            <section id="art3-cargaDatos" class="">
+                <div id="info-docente">
+                    <table class="">
+                        <tbody>
+                            <tr>
+                                <td>No hay datos asociados</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </article>   
         <?php
     }
 }

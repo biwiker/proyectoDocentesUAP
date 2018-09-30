@@ -64,11 +64,29 @@ class DAO_Docente {
     }
 
     #listar todos los docentes desde la base de datos
-    public function listarDocente() {
+    public function listarDocentes() {
         try {
 
-            $stmt = $this->_conexion->getConexion()->prepare("SELECT * FROM DOCENTES");
-            return  $stmt->execute();
+            $stmt = $this->_conexion->getConexion()->prepare("SELECT RUT, DV, PNOMBRE, APATERNO, AMATERNO, CORREO1, TELEFONOMOVIL FROM DOCENTES");
+            $stmt->execute();
+            $stmt->bind_result($d_rut, $d_dv, $d_nombre, $d_apaterno, $d_amaterno, $d_correo1, $d_telefonoMovil );
+            
+            $lista = array();
+            
+            while ($stmt->fetch()) {
+                $docente = new CL_Docente();
+                $docente->set_rut($d_rut);
+                $docente->set_dv($d_dv);
+                $docente->set_pNombre($d_nombre);
+                $docente->set_apPaterno($d_apaterno);
+                $docente->set_apMaterno($d_amaterno);
+                $docente->set_correo1($d_correo1);
+                $docente->set_telefonoMovil($d_telefonoMovil);
+                
+                $lista[] = $docente;
+            }
+            $stmt->close();
+            return $lista;
             
         } catch (Exception $exc) {
             echo $exc->getTraceAsString();

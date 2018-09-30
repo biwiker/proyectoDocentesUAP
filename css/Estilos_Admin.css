@@ -551,6 +551,13 @@ hr{
 }
 
 
+/*estilos para la gráfica de administrar docentes*/
+.fl-listado-docentes table tbody tr td {
+    width: 25%;
+    
+}
+
+
 
 
 /*----------------------------------------medias query para dispositivos con un ancho de 1024px y un alto de 768px----------------------------------------*/
