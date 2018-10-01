@@ -2,6 +2,44 @@
 include_once '../capaAccesoDatos/DAO_Docente.php';
 include_once '../capaEntidades/CL_Docente.php';
 
+
+//----------------------------------------------------------------------
+//Accion a realizar cuando se desee agregar a un docente
+//----------------------------------------------------------------------
+if (isset($_POST('btnAgregarDocente'))) {
+    $DAO_Docente= new DAO_Docente();
+    
+    $_rut = $_SESSION['txtRut'];
+    $_dv = $_SESSION['txtDv'];
+    $_idDuoc = $_SESSION['txtIdDuoc'];
+    $_pNombre = $_SESSION['txtPNombre'];
+    $_sNombre = $_SESSION['txtSNombre'];
+    $_tNombre = $_SESSION['txtTNombre'];
+    $_apPaterno = $_SESSION['txtApPaterno'];
+    $_apMaterno = $_SESSION['txtApMaterno'];
+    $_anioIngreso = $_SESSION['txtAnioIngreso'];
+    $_correo1 = $_SESSION['txtCorreo1'];
+    $_correo2 = $_SESSION['txtCorreo2'];
+    $_telefonoFijo = $_SESSION['txtTelefonoFijo'];
+    $_telefonoMovil = $_SESSION['txtTelefonoMovil'];
+    $_escuelaPrograma = $_SESSION['txtEscuelaPrograma'];
+    $_centroCosto = $_SESSION['txtCentroCosto'];
+    $_tipoDocente = $_SESSION['txtTipoDocente'];
+    $_gradoProfesional = $_SESSION['txtGradoProfesional'];
+    
+    if ($DAO_Docente->agregarDocente($_rut,$_dv,$_idDuoc,$_pNombre,$_sNombre,$_tNombre,$_apPaterno,$_apMaterno,$_anioIngreso,
+        $_correo1,$_correo2,$_telefonoFijo,$_telefonoMovil,$_escuelaPrograma,$_centroCosto,$_tipoDocente,$_gradoProfesional)) {
+        return true;
+    }else{
+        return false;
+    }
+    
+}
+
+
+
+
+
 //------------------------------------------------------------------------------------------------------
 //Acción a realizar cuando se busca por rut de docente
 //------------------------------------------------------------------------------------------------------
