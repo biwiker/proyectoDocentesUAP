@@ -428,7 +428,7 @@ if (isset($_POST['btnAgregarDocente'])) {
     
     if ($DAO_Docente->agregarDocente($_rut,$_dv,$_idDuoc,$_pNombre,$_sNombre,$_tNombre,$_apPaterno,$_apMaterno,$_anioIngreso,
         $_correo1,$_correo2,$_telefonoFijo,$_telefonoMovil,$_escuelaPrograma,$_centroCosto,$_tipoDocente,$_gradoProfesional)>0) {
-        include_once 'V_IngresarDocente.php';
+        include_once 'V_AgregarDocente.php';
         return true;
     }else{
         return false;
