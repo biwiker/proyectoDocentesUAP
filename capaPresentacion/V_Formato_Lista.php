@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+@session_start();
+?>
 <html>
     <head>
         <link href="../bootstrap 3/css/bootstrap.css" rel="stylesheet" type="text/css">
@@ -79,7 +82,7 @@
                 </header>
                 <hr>
                 
-                <!--este div contiene el color del sistema-->
+                <!--este div contiene el listar de los docentes-->
                 <div class="contenedor" id="contenedor">  
                    
                 </div>

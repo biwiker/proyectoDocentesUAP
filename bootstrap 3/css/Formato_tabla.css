@@ -1,0 +1,17 @@
+
+  div.container {
+    width:90%; 
+    margin:2%;
+  }
+  .formulario{
+      position: relative;
+    margin-bottom:20px;
+    background-color: #ffffff;
+    color: #999999;
+    width: 80%;
+    -webkit-box-shadow: 2px 2px 5px #999;
+    -moz-box-shadow: 2px 2px 5px #999;
+  }
+
+  
+tr,td {text-align:left;}
