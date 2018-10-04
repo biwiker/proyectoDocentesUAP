@@ -31,28 +31,29 @@ class DAO_Docente {
 
     #procesos del C.R.U.D. de docentes
     #agregar docentes a la base de datos, mediante la llamada a un procedimiento almacenado
-    public function agregarDocente(CL_Docente $docente) {
+    public function agregarDocente($_rut,$_dv,$_idDuoc,$_pNombre,$_sNombre,$_tNombre,$_apPaterno,$_apMaterno,$_anioIngreso,
+        $_correo1,$_correo2,$_telefonoFijo,$_telefonoMovil,$_escuelaPrograma,$_centroCosto,$_tipoDocente,$_gradoProfesional) {
 
         try {
             $stmt = $this->_conexion->getConexion()->prepare('CALL PR_AGREGAR_DOCENTE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'); //se llama a la función almacenada
             $stmt->bind_param('isisssssissssiiii', 
-                    $docente->get_rut(), 
-                    $docente->get_dv(), 
-                    $docente->get_idDuoc(), 
-                    $docente->get_pNombre(), 
-                    $docente->get_sNombre(), 
-                    $docente->get_tNombre(), 
-                    $docente->get_apPaterno(), 
-                    $docente->get_apMaterno(), 
-                    $docente->get_anioIngreso(), 
-                    $docente->get_correo1(), 
-                    $docente->get_correo2(), 
-                    $docente->get_telefonoFijo(), 
-                    $docente->get_telefonoMovil(), 
-                    $docente->get_idEscuelaPrograma(), 
-                    $docente->get_idCentroCosto(), 
-                    $docente->get_idTipoDocente(), 
-                    $docente->get_idGradoProfesional());  //se reemplazan los argumentos por parámetros de tipo entero int ('i')
+                    $_rut,
+                    $_dv,
+                    $_idDuoc,
+                    $_pNombre,
+                    $_sNombre,
+                    $_tNombre,
+                    $_apPaterno,
+                    $_apMaterno,
+                    $_anioIngreso,
+                    $_correo1,
+                    $_correo2,
+                    $_telefonoFijo,
+                    $_telefonoMovil,
+                    $_escuelaPrograma,
+                    $_centroCosto,
+                    $_tipoDocente,
+                    $_gradoProfesional);  //se reemplazan los argumentos por parámetros de tipo entero int ('i')
             $filasAfectadas = $stmt->execute();           //se ejecuta la consulta y se guardan las filas afectadas
             $stmt->close;                                 //se enlaza el retorno de la función a una variable bind
             
@@ -110,7 +111,8 @@ class DAO_Docente {
     }
      
     #modificar un docente de la base de datos
-    public function modificarDocente(CL_Docente $docente) {
+    public function modificarDocente($_rut,$_dv,$_idDuoc,$_pNombre,$_sNombre,$_tNombre,$_apPaterno,$_apMaterno,$_anioIngreso,
+        $_correo1,$_correo2,$_telefonoFijo,$_telefonoMovil,$_escuelaPrograma,$_centroCosto,$_tipoDocente,$_gradoProfesional) {
 
 
             try {

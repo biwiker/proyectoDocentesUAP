@@ -72,66 +72,73 @@
 
 
         <div class="container col-lg-6 " >
-            <table align="center" class="formulario" >
-                <form action="../capaLogicaNegocio/BO_Docentes.php" method="POST">
+            <form action="../capaLogicaNegocio/BO_Docentes.php" method="POST">
+            <table align="center" class="formulario"  >
                 <tbody>
                 
                     <tr>
-                        <td style="background-color: #F4F6F7"<b>Rut del docente: </b></td>
-                        <td <input type="number" name="txtRut" ></td>
-                        <td style="background-color: #F4F6F7"<b>DV del docente: </b></td>
-                        <td <input type="number" name="txtDv" ></td>
-                        <td style="background-color: #F4F6F7"<b>Id Duoc del docente: </b></td>
-                        <td <input type="number" name="txtIdDuoc" ></td>
+                        <td ><p>Rut del docente: </p></td>
+                        <td><input type="number" name="txtRut" /></td>
+                        <td ><p>DV del docente: </p></td>
+                        <td> <input type="number" name="txtDv" /></td>
+                        <td ><p>Id Duoc del docente: </p></td>
+                        <td> <input type="number" name="txtIdDuoc" ></td>
                     </tr>
                     <tr>
-                        <td style="background-color: #F4F6F7"<b>Primer Nombre del docente: </b></td>
-                        <td <input type="text" name="txtPNombre" ></td>
-                        <td style="background-color: #F4F6F7"<b>Segundo Nombre del docente: </b></td>
-                        <td <input type="text" name="txtSNombre" ></td>
+                        <td ><p>Primer Nombre del docente: </p></td>
+                        <td> <input type="text" name="txtPNombre" ></td>
+                        <td ><p>Segundo Nombre del docente: </p></td>
+                        <td> <input type="text" name="txtSNombre" ></td>
                     </tr>
                     <tr>
-                        <td style="background-color: #F4F6F7"<b>Tercer Nombre del docente: </b></td>
-                        <td <input type="text" name="txtTNombre" ></td>
-                        <td style="background-color: #F4F6F7"<b>Apellido Paterno del docente: </b></td>
-                        <td <input type="text" name="txtApPaterno" ></td>
+                        <td ><p>Tercer Nombre del docente: </p></td>
+                        <td> <input type="text" name="txtTNombre" ></td>
+                        <td ><p>Apellido Paterno del docente: </p></td>
+                        <td> <input type="text" name="txtApPaterno" ></td>
                     </tr>
                     <tr>
-                        <td style="background-color: #F4F6F7"<b>Apellido Materno del docente: </b></td>
-                        <td <input type="text" name="txtApMaterno" ></td>
-                        <td style="background-color: #F4F6F7"<b>Año de ingreso: </b></td>
-                        <td <input type="number" name="txtAnioIngreso" ></td>
+                        <td ><p>Apellido Materno del docente: </p></td>
+                        <td> <input type="text" name="txtApMaterno" ></td>
+                        <td ><p>Año de ingreso: </p></td>
+                        <td> <input type="number" name="txtAnioIngreso" ></td>
                     </tr>
                     <tr>
-                        <td style="background-color: #F4F6F7"<b>Correo 1 del docente: </b></td>
+                        <td <p>Correo 1 del docente: </p></td>
                         <td <input type="text" name="txtCorreo1" ></td>
-                        <td style="background-color: #F4F6F7"<b>Correo 2 del ingreso: </b></td>
+                        <td <p>Correo 2 del ingreso: </p></td>
                         <td <input type="number" name="txtCorreo2" ></td>
                     </tr>
                     <tr>
-                        <td style="background-color: #F4F6F7"<b>Telefono Fijo del docente: </b></td>
-                        <td <input type="text" name="txtTelefonoFijo" ></td>
-                        <td style="background-color: #F4F6F7"<b>Telefono Movil del ingreso: </b></td>
-                        <td <input type="number" name="txtTelefonoMovil" ></td>
+                        <td ><p>Telefono Fijo del docente: </p></td>
+                        <td> <input type="text" name="txtTelefonoFijo" ></td>
+                        <td ><p>Telefono Movil del ingreso: </p></td>
+                        <td> <input type="number" name="txtTelefonoMovil" ></td>
                     </tr>
                     <tr>
-                        <td style="background-color: #F4F6F7"<b>Escuela del docente: </b></td>
-                        <td <input type="text" name="txtEscuelaPrograma" ></td>
-                        <td style="background-color: #F4F6F7"<b>Centro Costo del docente: </b></td>
-                        <td <input type="number" name="txtCentroCosto" ></td>
+                        <td ><p>Escuela del docente: </p></td>
+                        <td> <input type="text" name="txtEscuelaPrograma" ></td>
+                        <td ><p>Centro Costo del docente: </p></td>
+                        <td> <input type="number" name="txtCentroCosto" ></td>
                     </tr>
                     <tr>
-                        <td style="background-color: #F4F6F7"<b>Tipo del docente: </b></td>
-                        <td <input type="text" name="txtTipoDocente" ></td>
-                        <td style="background-color: #F4F6F7"<b>Grado Profesional del ingreso: </b></td>
-                        <td <input type="number" name="txtGradoProfesional" ></td>
-                        <input type="submit" name="btnAgregarDocente" >
+                        <td ><p>correo 1: </p></td>
+                        <td> <input type="text" name="txtCorreo1" ></td>
+                        <td ><p>correo 2: </p></td>
+                        <td> <input type="number" name="txtCorreo2" ></td>
+                    </tr>
+                    <tr>
+                        <td ><p>Tipo del docente: </p></td>
+                        <td> <input type="text" name="txtTipoDocente" ></td>
+                        <td ><p>Grado Profesional del ingreso: </p></td>
+                        <td> <input type="number" name="txtGradoProfesional" ></td>
+                        <td><input type="submit" name="btnAgregarDocente" ></td>
                     </tr>
                    
                    
                 </tbody>
-                 </form>
+                 
             </table>
+           </form>
         </div>
 
     </body>

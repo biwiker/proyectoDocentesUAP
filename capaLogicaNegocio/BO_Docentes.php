@@ -408,23 +408,23 @@ if (isset($_POST['administrarDocentes'])) {
 if (isset($_POST['btnAgregarDocente'])) {
     $DAO_Docente= new DAO_Docente();
     
-    $_rut = $_SESSION['txtRut'];
-    $_dv = $_SESSION['txtDv'];
-    $_idDuoc = $_SESSION['txtIdDuoc'];
-    $_pNombre = $_SESSION['txtPNombre'];
-    $_sNombre = $_SESSION['txtSNombre'];
-    $_tNombre = $_SESSION['txtTNombre'];
-    $_apPaterno = $_SESSION['txtApPaterno'];
-    $_apMaterno = $_SESSION['txtApMaterno'];
-    $_anioIngreso = $_SESSION['txtAnioIngreso'];
-    $_correo1 = $_SESSION['txtCorreo1'];
-    $_correo2 = $_SESSION['txtCorreo2'];
-    $_telefonoFijo = $_SESSION['txtTelefonoFijo'];
-    $_telefonoMovil = $_SESSION['txtTelefonoMovil'];
-    $_escuelaPrograma = $_SESSION['txtEscuelaPrograma'];
-    $_centroCosto = $_SESSION['txtCentroCosto'];
-    $_tipoDocente = $_SESSION['txtTipoDocente'];
-    $_gradoProfesional = $_SESSION['txtGradoProfesional'];
+    $_rut = $_POST['txtRut'];
+    $_dv = $_POST['txtDv'];
+    $_idDuoc = $_POST['txtIdDuoc'];
+    $_pNombre = $_POST['txtPNombre'];
+    $_sNombre = $_POST['txtSNombre'];
+    $_tNombre = $_POST['txtTNombre'];
+    $_apPaterno = $_POST['txtApPaterno'];
+    $_apMaterno = $_POST['txtApMaterno'];
+    $_anioIngreso = $_POST['txtAnioIngreso'];
+    $_correo1 = $_POST['txtCorreo1'];
+    $_correo2 = $_POST['txtCorreo2'];
+    $_telefonoFijo = $_POST['txtTelefonoFijo'];
+    $_telefonoMovil = $_POST['txtTelefonoMovil'];
+    $_escuelaPrograma = $_POST['txtEscuelaPrograma'];
+    $_centroCosto = $_POST['txtCentroCosto'];
+    $_tipoDocente = $_POST['txtTipoDocente'];
+    $_gradoProfesional = $_POST['txtGradoProfesional'];
     
     if ($DAO_Docente->agregarDocente($_rut,$_dv,$_idDuoc,$_pNombre,$_sNombre,$_tNombre,$_apPaterno,$_apMaterno,$_anioIngreso,
         $_correo1,$_correo2,$_telefonoFijo,$_telefonoMovil,$_escuelaPrograma,$_centroCosto,$_tipoDocente,$_gradoProfesional)>0) {

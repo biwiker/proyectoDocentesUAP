@@ -1,11 +1,13 @@
 
   div.container {
-    width:80%; 
-    margin:4%;
+    width:100%; 
+    padding-left: 50px;
+    padding-top: 30px;
   }
   .formulario{
-    position: relative;
-    margin-bottom:30px;
+    
+    
+    
     background-color: #ffffff;
     color: #999999;
     width: 90%;
@@ -14,4 +16,4 @@
   }
 
   
-tr,td {text-align:left;}
+.formulario tr, td {text-align:left; padding-left: 20px; border: 1px solid #ccc;}
