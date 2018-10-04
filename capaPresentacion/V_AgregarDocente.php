@@ -71,22 +71,56 @@
         </div>
 
        
-                <div class="container">
+                <div class="container col-lg-6 " >
                     <table align="center" class="formulario" >
                         <tbody>
                             <tr>
-                                <td style="background-color: #F4F6F7"<b>Nombre del docente: </b></td>
-                                <td style="background-color: #F4F6F7"<b>Nombre del docente: </b></td>
-                                <td style="background-color: #F4F6F7"<b>Nombre del docente: </b></td>
-                                <td style="background-color: #F4F6F7"<b>Nombre del docente: </b></td>
-                                <td style="background-color: #F4F6F7"<b>Nombre del docente: </b></td>
+                                <td style="background-color: #F4F6F7"<b>Rut del docente: </b></td>
+                                <td <input type="number" name="txtRut" ></td>
+                                 <td style="background-color: #F4F6F7"<b>Id Duoc del docente: </b></td>
+                                <td <input type="number" name="txtIdDuoc" ></td>
                             </tr>
                             <tr>
-                                <td style="background-color: #F4F6F7"<b>Nombre del docente: </b></td>
-                                <td style="background-color: #F4F6F7"<b>Nombre del docente: </b></td>
-                                <td style="background-color: #F4F6F7"<b>Nombre del docente: </b></td>
-                                <td style="background-color: #F4F6F7"<b>Nombre del docente: </b></td>
-                                <td style="background-color: #F4F6F7"<b>Nombre del docente: </b></td>
+                                 <td style="background-color: #F4F6F7"<b>Primer Nombre del docente: </b></td>
+                                <td <input type="text" name="txtPNombre" ></td>
+                                 <td style="background-color: #F4F6F7"<b>Segundo Nombre del docente: </b></td>
+                                <td <input type="text" name="txtSNombre" ></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #F4F6F7"<b>Tercer Nombre del docente: </b></td>
+                                <td <input type="text" name="txtTNombre" ></td>
+                                 <td style="background-color: #F4F6F7"<b>Apellido Paterno del docente: </b></td>
+                                <td <input type="text" name="txtAPaterno" ></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #F4F6F7"<b>Apellido Materno del docente: </b></td>
+                                <td <input type="text" name="txtAMaterno" ></td>
+                                 <td style="background-color: #F4F6F7"<b>Año de ingreso: </b></td>
+                                <td <input type="int" name="txtAnioIngreso" ></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #F4F6F7"<b>Correo 1 del docente: </b></td>
+                                <td <input type="text" name="txtCorreo1" ></td>
+                                 <td style="background-color: #F4F6F7"<b>Correo 2 del ingreso: </b></td>
+                                <td <input type="int" name="txtCorreo2" ></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #F4F6F7"<b>Telefono Fijo del docente: </b></td>
+                                <td <input type="text" name="txtTelefonoF" ></td>
+                                 <td style="background-color: #F4F6F7"<b>Telefono Movil del ingreso: </b></td>
+                                <td <input type="int" name="txtTelefonoM" ></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #F4F6F7"<b>Escuela del docente: </b></td>
+                                <td <input type="text" name="txtIdEscuela" ></td>
+                                 <td style="background-color: #F4F6F7"<b>Centro Costo del docente: </b></td>
+                                <td <input type="int" name="txtCentroCosto" ></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #F4F6F7"<b>Tipo del docente: </b></td>
+                                <td <input type="text" name="txtIdTipoDocente" ></td>
+                                 <td style="background-color: #F4F6F7"<b>Grado Profesional del ingreso: </b></td>
+                                <td <input type="int" name="txtIdGradoProfesional" ></td>
                             </tr>
                         </tbody>
                     </table>

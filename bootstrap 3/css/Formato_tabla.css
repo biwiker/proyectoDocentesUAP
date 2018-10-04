@@ -1,14 +1,14 @@
 
   div.container {
-    width:90%; 
-    margin:2%;
+    width:80%; 
+    margin:4%;
   }
   .formulario{
-      position: relative;
-    margin-bottom:20px;
+    position: relative;
+    margin-bottom:30px;
     background-color: #ffffff;
     color: #999999;
-    width: 80%;
+    width: 90%;
     -webkit-box-shadow: 2px 2px 5px #999;
     -moz-box-shadow: 2px 2px 5px #999;
   }
