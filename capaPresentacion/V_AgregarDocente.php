@@ -76,37 +76,45 @@ if (isset($_SESSION['nombre_usuario'])) {
             </div>
 
 
-            <div class="container col-lg-6 " >
-                <form action="../capaLogicaNegocio/BO_Docentes.php" method="POST">
-                    <table align="center" class="formulario"  >
-                        <tbody>
+            
 
-                            <tr>
-                                <td ><p>Rut del docente: </p></td>
-                                <td><input type="number" name="txtRut" maxlength="8" /></td>
-                                <td ><p>DV del docente: </p></td>
-                                <td> <input type="number" name="txtDv" /></td>
-                                <td ><p>Id Duoc del docente: </p></td>
-                                <td> <input type="number" name="txtIdDuoc" ></td>
-                            </tr>
-                            <tr>
-                                <td ><p>Primer Nombre del docente: </p></td>
-                                <td> <input type="text" name="txtPNombre" ></td>
-                                <td ><p>Segundo Nombre del docente: </p></td>
-                                <td> <input type="text" name="txtSNombre" ></td>
-                            </tr>
-                            <tr>
-                                <td ><p>Tercer Nombre del docente: </p></td>
-                                <td> <input type="text" name="txtTNombre" ></td>
-                                <td ><p>Apellido Paterno del docente: </p></td>
-                                <td> <input type="text" name="txtApPaterno" ></td>
-                            </tr>
-                            <tr>
-                                <td ><p>Apellido Materno del docente: </p></td>
-                                <td> <input type="text" name="txtApMaterno" ></td>
-                                <td ><p>Año de ingreso: </p></td>
-                                <td> 
-                                    <select name="ddlAnioIngreso">
+        <div class="container col-lg-6 " >
+            <form action="../capaLogicaNegocio/BO_Docentes.php" method="POST">
+                <table align="center" class="formulario"  style="background-color:#F4F6F7 " >
+                    <tbody>
+
+                        <tr>
+                            <td  ><p>Rut del docente(*): </p></td>
+                            <td style="background-color: #ffffff"><input type="number" name="txtRut" /></td>
+                            <td ><p>DV del docente(*): </p></td>
+                            <td style="background-color: #ffffff"> <input type="text" name="txtDv" /></td>
+
+                        </tr>
+                        <tr>
+                            <td ><p>Id Duoc del docente(*): </p></td>
+                            <td style="background-color: #ffffff"> <input type="number" name="txtIdDuoc" ></td>
+                            <td ><p>Primer Nombre del docente(*): </p></td>
+                            <td style="background-color: #ffffff"> <input type="text" name="txtPNombre" ></td>
+
+                        </tr>
+                        <tr>
+                            <td ><p>Segundo Nombre del docente: </p></td>
+                            <td style="background-color: #ffffff"> <input type="text" name="txtSNombre" ></td>
+                            <td ><p>Tercer Nombre del docente: </p></td>
+                            <td style="background-color: #ffffff"> <input type="text" name="txtTNombre" ></td>
+
+                        </tr>
+                        <tr>
+                            <td ><p>Apellido Paterno del docente(*): </p></td>
+                            <td style="background-color: #ffffff"> <input type="text" name="txtApPaterno" ></td>
+                            <td ><p>Apellido Materno del docente(*): </p></td>
+                            <td style="background-color: #ffffff"> <input type="text" name="txtApMaterno" ></td>
+
+                        </tr>
+                        <tr>
+                            <td ><p>Año de ingreso: </p></td>
+                            <td style="background-color: #ffffff"> 
+                                    <select name="ddlAnioIngreso" >
                                         <?php
                                         //se genera una lista de años hasta el año de la fecha actual
                                         for ($x = 2000; $x <= date("Y"); $x++) {
@@ -115,23 +123,23 @@ if (isset($_SESSION['nombre_usuario'])) {
                                         ?>
                                     </select>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td> <p>Correo 1 del docente: </p></td>
-                                <td> <input type="text" name="txtCorreo1" ></td>
-                                <td> <p>Correo 2 del ingreso: </p></td>
-                                <td> <input type="number" name="txtCorreo2" ></td>
-                            </tr>
-                            <tr>
-                                <td ><p>Telefono Fijo del docente: </p></td>
-                                <td> <input type="text" name="txtTelefonoFijo" ></td>
-                                <td ><p>Telefono Movil del ingreso: </p></td>
-                                <td> <input type="number" name="txtTelefonoMovil" ></td>
-                            </tr>
-                            <tr>
-                                <td ><p>Escuela del docente: </p></td>
-                                <td>
-                                    <select name="ddlEscuela" id="ddlEscuela">
+                            <td> <p>Correo 1 del docente: </p></td>
+                            <td style="background-color: #ffffff"> <input type="text" name="txtCorreo1" ></td>
+
+                        </tr>
+                        <tr>
+                            <td> <p>Correo 2 del ingreso: </p></td>
+                            <td style="background-color: #ffffff"> <input type="text" name="txtCorreo2" ></td>
+                            <td ><p>Telefono Fijo del docente: </p></td>
+                            <td style="background-color: #ffffff"> <input type="text" name="txtTelefonoFijo" ></td>
+
+                        </tr>
+                        <tr>
+                            <td ><p>Telefono Movil del ingreso: </p></td>
+                            <td style="background-color: #ffffff"> <input type="text" name="txtTelefonoMovil" ></td>
+                            <td ><p>Escuela del docente: </p></td>
+                             <td style="background-color: #ffffff">
+                                    <select name="ddlEscuela" id="ddlEscuela" >
                                         <?php
                                         $DAO_Escuela = new DAO_Escuela();
                                         $listaEscuelas = $DAO_Escuela->buscarEscuela();
@@ -141,9 +149,12 @@ if (isset($_SESSION['nombre_usuario'])) {
                                         ?>
                                     </select>
                                 </td>
-                                <td ><p>Centro Costo del docente: </p></td>
-                                <td>
-                                    <select name="ddlCentroCosto" id="ddlCentroCosto">
+
+                        </tr>
+                        <tr>
+                            <td ><p>Centro Costo del docente: </p></td>
+                            <td style="background-color: #ffffff">
+                                    <select name="ddlCentroCosto" id="ddlCentroCosto" >
                                         <?php
                                         $DAO_CentroCosto = new DAO_CentroCosto();
                                         $listaCC = $DAO_CentroCosto->buscarCentroCosto();
@@ -153,11 +164,9 @@ if (isset($_SESSION['nombre_usuario'])) {
                                         ?>
                                     </select>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td ><p>Tipo del docente: </p></td>
-                                <td>
-                                    <select name="ddlTipodocente" id="ddlTipodocente">
+                            <td ><p>Tipo del docente: </p></td>
+                            <td style="background-color: #ffffff">
+                                    <select name="ddlTipodocente" id="ddlTipodocente" >
                                         <?php
                                         $DAO_Tipodocente = new DAO_Tipodocente();
                                         $listaTD = $DAO_Tipodocente->buscarTipoDocente();
@@ -167,9 +176,11 @@ if (isset($_SESSION['nombre_usuario'])) {
                                         ?>
                                     </select>
                                 </td>
-                                <td ><p>Grado Profesional del ingreso: </p></td>
-                                <td>
-                                    <select name="ddlGradoProfesional" id="ddlGradoProfesional">
+                        </tr>
+                        <tr>
+                            <td ><p>Grado Profesional del ingreso: </p></td>
+                              <td style="background-color: #ffffff">
+                                    <select name="ddlGradoProfesional" id="ddlGradoProfesional" >
                                         <?php
                                         $DAO_GradoProfesional = new DAO_GradoProfesional();
                                         $listaGP = $DAO_GradoProfesional->buscarGradoProfesional();
@@ -179,9 +190,17 @@ if (isset($_SESSION['nombre_usuario'])) {
                                         ?>
                                     </select>
                                 </td>
-                                <td><input type="submit" name="btnAgregarDocente" ></td>
-                            </tr>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" name="btnAgregarDocente" value="Agregar Docente" class="botonFormato" ></td>
+                        </tr>
 
+
+                    </tbody>
+
+                </table>
+            </form>
+        </div>
 
                         </tbody>
 
