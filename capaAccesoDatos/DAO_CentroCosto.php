@@ -1,12 +1,12 @@
 <?php
 
-include_once '../capaEntidades/CL_Escuela.php';
+include_once '../capaEntidades/CL_CentroCosto.php';
 include_once '../capaConexion/CL_Conexion.php';
 
-class DAO_Escuela {
-
-    //variable para almacenar el estado de la conexion
-    private $_conexion;
+class DAO_CentroCosto {
+    
+        //variable para almacenar el estado de la conexion
+        private $_conexion;
 
     function __construct() {
         //al crear una instancia de la clase, se obtiene de inmediato el estado de la conexión
@@ -16,26 +16,25 @@ class DAO_Escuela {
             echo 'error al generar la instancia de conexion ' + $exc->getTraceAsString();
         }
     }
-    
-    function buscarEscuela(){
+
+    function buscarCentroCosto() {
         try {
             $stmt = $this->_conexion->getConexion()->prepare(" SELECT 
-                                                                    ID_ESCUELA, 
-                                                                    DESCRIPCION 
-                                                               FROM ESCUELA_O_PROGRAMA
-                                                               WHERE ID_ESCUELA > 0");  
+                                                                        ID_CENTRO_COSTO, 
+                                                                        DESCRIPCION 
+                                                                FROM CENTRO_COSTO;");
             $stmt->execute();
-            $stmt->bind_result($e_idEscuela, $e_descripcion);
+            $stmt->bind_result($c_idCentroCosto, $c_descripcion);
             
             $lista = array();
             
             while ($stmt->fetch()) {
-                $escuela = new CL_Escuela();
-                $escuela->setIdEscuela($e_idEscuela);
-                $escuela->setDescripcion($e_descripcion);
+                $CentroCosto = new CL_CentroCosto();
+                $CentroCosto->setIdCentroCosto($c_idCentroCosto);
+                $CentroCosto->setDescripcion($c_descripcion);
                 
                 
-                $lista[] = $escuela;
+                $lista[] = $CentroCosto;
             }
             $stmt->close();
             return $lista;
@@ -44,7 +43,6 @@ class DAO_Escuela {
             echo $exc->getTraceAsString();
             return null;
         }
-            
     }
-}
 
+}

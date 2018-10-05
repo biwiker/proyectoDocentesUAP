@@ -80,7 +80,7 @@ if (isset($_SESSION['nombre_usuario'])) {
                     });
                 }
                 function buscarDocente2(rut) {
-                    
+
                     $.ajax({
                         type: "POST",
                         url: '../capaLogicaNegocio/BO_Docentes.php',
@@ -196,22 +196,20 @@ if (isset($_SESSION['nombre_usuario'])) {
                             <select name="ddlEscuela" id="ddlEscuela" class="form-control">
                                 <?php
                                 $DAO_Escuela = new DAO_Escuela();
-                                $stmt = $DAO_Escuela->buscarEscuela();
-                                $stmt->bind_result($e_idEscuela, $e_descripcion);
-                                while ($stmt->fetch()) {
-                                    echo "<option value='" . $e_idEscuela . "'>" . $e_descripcion . "</option>";
+                                $listaEscuelas = $DAO_Escuela->buscarEscuela();
+                                foreach ($listaEscuelas as $escuela) {
+                                    echo "<option value='" . $escuela->getIdEscuela() . "'>" . $escuela->getDescripcion() . "</option>";
                                 }
-                                $stmt->close();
                                 ?>
                             </select>
                             <button type="submit" class="btn" id="btnVerEscuela" autocomplete="off"  name="btnVerEscuela" value="VerEscuela" onclick="buscarEscuela()">Ver Escuela</button>
                         </section>
-                        
+
                         <section class="art2-sec-2">
                             <input type="text" value="" name="txt_filtrar_docente" id="txt_filtrar_docente" />
                         </section>
 
-                        
+
                     </article>
 
                     <!--aqui se carga la información del docente-->

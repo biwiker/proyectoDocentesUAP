@@ -55,7 +55,7 @@ class DAO_Docente {
                     $_tipoDocente,
                     $_gradoProfesional);  //se reemplazan los argumentos por parámetros de tipo entero int ('i')
             $filasAfectadas = $stmt->execute();           //se ejecuta la consulta y se guardan las filas afectadas
-            $stmt->close;                                 //se enlaza el retorno de la función a una variable bind
+            $stmt->close();                                 //se enlaza el retorno de la función a una variable bind
             
             return $filasAfectadas > 0 ? true : false;
             
