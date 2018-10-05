@@ -416,15 +416,15 @@ if (isset($_POST['btnAgregarDocente'])) {
     $_tNombre = $_POST['txtTNombre'];
     $_apPaterno = $_POST['txtApPaterno'];
     $_apMaterno = $_POST['txtApMaterno'];
-    $_anioIngreso = $_POST['txtAnioIngreso'];
+    $_anioIngreso = $_POST['ddlAnioIngreso'];
     $_correo1 = $_POST['txtCorreo1'];
     $_correo2 = $_POST['txtCorreo2'];
     $_telefonoFijo = $_POST['txtTelefonoFijo'];
     $_telefonoMovil = $_POST['txtTelefonoMovil'];
-    $_escuelaPrograma = $_POST['txtEscuelaPrograma'];
-    $_centroCosto = $_POST['txtCentroCosto'];
-    $_tipoDocente = $_POST['txtTipoDocente'];
-    $_gradoProfesional = $_POST['txtGradoProfesional'];
+    $_escuelaPrograma = $_POST['ddlEscuela'];
+    $_centroCosto = $_POST['ddlCentroCosto'];
+    $_tipoDocente = $_POST['ddlTipodocente'];
+    $_gradoProfesional = $_POST['ddlGradoProfesional'];
     
     if ($DAO_Docente->agregarDocente($_rut,$_dv,$_idDuoc,$_pNombre,$_sNombre,$_tNombre,$_apPaterno,$_apMaterno,$_anioIngreso,
         $_correo1,$_correo2,$_telefonoFijo,$_telefonoMovil,$_escuelaPrograma,$_centroCosto,$_tipoDocente,$_gradoProfesional)>0) {
