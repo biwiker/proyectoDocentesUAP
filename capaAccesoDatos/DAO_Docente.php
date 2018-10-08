@@ -31,8 +31,10 @@ class DAO_Docente {
 
     #procesos del C.R.U.D. de docentes
     #agregar docentes a la base de datos, mediante la llamada a un procedimiento almacenado
-    public function agregarDocente($_rut,$_dv,$_idDuoc,$_pNombre,$_sNombre,$_tNombre,$_apPaterno,$_apMaterno,$_anioIngreso,
-        $_correo1,$_correo2,$_telefonoFijo,$_telefonoMovil,$_escuelaPrograma,$_centroCosto,$_tipoDocente,$_gradoProfesional) {
+    public function agregarDocente($_rut,$_dv,$_idDuoc,$_pNombre,$_sNombre,$_tNombre,$_apPaterno,
+                                   $_apMaterno,$_anioIngreso,$_correo1,$_correo2,$_telefonoFijo,
+                                   $_telefonoMovil,$_idEscuelaPrograma,$_idCentroCosto,$_idTipoDocente,
+                                   $_idGradoProfesional) {
 
         try {
             $stmt = $this->_conexion->getConexion()->prepare('CALL PR_AGREGAR_DOCENTE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'); //se llama a la función almacenada
@@ -50,12 +52,12 @@ class DAO_Docente {
                     $_correo2,
                     $_telefonoFijo,
                     $_telefonoMovil,
-                    $_escuelaPrograma,
-                    $_centroCosto,
-                    $_tipoDocente,
-                    $_gradoProfesional);  //se reemplazan los argumentos por parámetros de tipo entero int ('i')
-            $filasAfectadas = $stmt->execute();           //se ejecuta la consulta y se guardan las filas afectadas
-            $stmt->close();                                 //se enlaza el retorno de la función a una variable bind
+                    $_idEscuelaPrograma,
+                    $_idCentroCosto,
+                    $_idTipoDocente,
+                    $_idGradoProfesional);                 
+            $filasAfectadas = $stmt->execute();           
+            $stmt->close();                               
             
             return $filasAfectadas > 0 ? true : false;
             

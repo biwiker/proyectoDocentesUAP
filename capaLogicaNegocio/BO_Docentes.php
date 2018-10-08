@@ -2,6 +2,11 @@
 include_once '../capaAccesoDatos/DAO_Docente.php';
 include_once '../capaEntidades/CL_Docente.php';
 
+    include_once '../capaAccesoDatos/DAO_Escuela.php';
+    include_once '../capaAccesoDatos/DAO_CentroCosto.php';
+    include_once '../capaAccesoDatos/DAO_GradoProfesional.php';
+    include_once '../capaAccesoDatos/DAO_TipoDocente.php';
+
 
 
 
@@ -336,10 +341,15 @@ if (isset($_POST['administrarDocentes'])) {
     if (!is_null($listaDocentes)) {
         ?>
         <article class="articulo_1"> 
-            <input type="button" name="btnAgregarDocente" value="Agregar nuevo docente" onclick=" location.href='V_AgregarDocente.php' ">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ventanaAgregarDocente">
+                    Agregar Docente
+            </button>
             <input type="text" value="">
             <input type="button" value="Buscar">
             <input type="button" value="Eliminar Seleccionados">
+            
+            <?php include_once '../capaPresentacion/V_AgregarDocente.php';?>
+            
         </article>
         <!-- articulo 3-->
         <article class="articulo_3">
@@ -354,7 +364,7 @@ if (isset($_POST['administrarDocentes'])) {
                         echo "  <tbody>";
                         echo "            <tr>";
                         echo "                <td style='background-color: #F4F6F7'><b>Nombre del docente:</b></td>";
-                        echo "                <td>" . $docente->get_pNombre(). " " . $docente->get_apPaterno(). " " . $docente->get_apMaterno(). "</td>";
+                        echo "                <td>" . $docente->get_pNombre() . " " . $docente->get_apPaterno() . " " . $docente->get_apMaterno() . "</td>";
                         echo "                <td style='background-color: #F4F6F7'><b>RUN:</b></td>";
                         echo "                <td>" . $docente->get_rut() . "" . $docente->get_dv() . "</td>";
                         echo "            </tr>";
@@ -372,8 +382,9 @@ if (isset($_POST['administrarDocentes'])) {
                     ?>                           
                 </div>
             </section>
-
         </article>
+        
+            
         <?php
     } else {
         ?>
@@ -406,34 +417,32 @@ if (isset($_POST['administrarDocentes'])) {
 //Accion a realizar cuando se desee agregar a un docente
 //----------------------------------------------------------------------
 if (isset($_POST['btnAgregarDocente'])) {
-    $DAO_Docente= new DAO_Docente();
-    
-    $_rut = $_POST['txtRut'];
-    $_dv = $_POST['txtDv'];
-    $_idDuoc = $_POST['txtIdDuoc'];
-    $_pNombre = $_POST['txtPNombre'];
-    $_sNombre = $_POST['txtSNombre'];
-    $_tNombre = $_POST['txtTNombre'];
-    $_apPaterno = $_POST['txtApPaterno'];
-    $_apMaterno = $_POST['txtApMaterno'];
-    $_anioIngreso = $_POST['ddlAnioIngreso'];
-    $_correo1 = $_POST['txtCorreo1'];
-    $_correo2 = $_POST['txtCorreo2'];
-    $_telefonoFijo = $_POST['txtTelefonoFijo'];
-    $_telefonoMovil = $_POST['txtTelefonoMovil'];
-    $_escuelaPrograma = $_POST['ddlEscuela'];
-    $_centroCosto = $_POST['ddlCentroCosto'];
-    $_tipoDocente = $_POST['ddlTipodocente'];
-    $_gradoProfesional = $_POST['ddlGradoProfesional'];
-    
-    if ($DAO_Docente->agregarDocente($_rut,$_dv,$_idDuoc,$_pNombre,$_sNombre,$_tNombre,$_apPaterno,$_apMaterno,$_anioIngreso,
-        $_correo1,$_correo2,$_telefonoFijo,$_telefonoMovil,$_escuelaPrograma,$_centroCosto,$_tipoDocente,$_gradoProfesional)>0) {
-        include_once 'V_AgregarDocente.php';
-        return true;
-    }else{
-        return false;
+    $DAO_Docente = new DAO_Docente();
+    $docente = new CL_Docente();
+    $_rut               = $_POST['txtRut'];
+    $_dv                = $_POST['txtDv'];
+    $_idDuoc            = $_POST['txtIdDuoc'];
+    $_pNombre           = $_POST['txtPNombre'];
+    $_sNombre           = $_POST['txtSNombre'];
+    $_tNombre           = $_POST['txtTNombre'];
+    $_apPaterno         = $_POST['txtApPaterno'];
+    $_apMaterno         = $_POST['txtApMaterno'];
+    $_anioIngreso       = $_POST['ddlAnioIngreso'];
+    $_correo1           = $_POST['txtCorreo1'];
+    $_correo2           = $_POST['txtCorreo2'];
+    $_telefonoFijo      = $_POST['txtTelefonoFijo'];
+    $_telefonoMovil     = $_POST['txtTelefonoMovil'];
+    $_idEscuelaPrograma = $_POST['ddlEscuela'];
+    $_idCentroCosto     = $_POST['ddlCentroCosto'];
+    $_idTipoDocente     = $_POST['ddlTipodocente'];
+    $_idGradoProfesional= $_POST['ddlGradoProfesional'];
+
+    if ($DAO_Docente->agregarDocente($_rut, $_dv, $_idDuoc, $_pNombre, $_sNombre, $_tNombre, $_apPaterno, $_apMaterno, $_anioIngreso, $_correo1, $_correo2, $_telefonoFijo, $_telefonoMovil, $_idEscuelaPrograma, $_idCentroCosto, $_idTipoDocente, $_idGradoProfesional) > 0) {
+        header('Location: ../capaPresentacion/V_Formato_Lista.php?si');
+        
+    } else {
+        header('Location: ../capaPresentacion/V_Formato_Lista.php?no');
     }
-    
 }
 
 

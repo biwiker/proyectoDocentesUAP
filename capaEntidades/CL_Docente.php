@@ -24,9 +24,10 @@ class CL_Docente {
     private $_idCentroCosto;
     private $_idGradoProfesional;
 
-    function __construct() {
+    public function __construct() {
         
     }
+    
 
     function get_rut() {
         return $this->_rut;

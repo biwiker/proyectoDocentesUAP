@@ -553,8 +553,12 @@ hr{
 
 /*estilos para la gráfica de administrar docentes*/
 .fl-listado-docentes table tbody tr td {
-    width: 25%;
-    
+    width: 25%;    
+}
+
+.tablaAgregarDocente tr{
+    position: relative;
+    width: 100%;
 }
 
 

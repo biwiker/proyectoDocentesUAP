@@ -5970,6 +5970,7 @@ button.close {
   z-index: 1050;
   width: auto;
   margin: 10px;
+  
 }
 
 .modal-content {
@@ -6024,6 +6025,7 @@ button.close {
   padding: 20px;
 }
 
+
 .modal-footer {
   padding: 19px 20px 20px;
   margin-top: 15px;
@@ -6066,9 +6068,16 @@ button.close {
 
 @media screen and (min-width: 768px) {
   .modal-dialog {
-    width: 600px;
-    margin: 30px auto;
+    width: 70%;
+    margin: 10px auto;
+    color: #999999;
+    font-size: 12px;
   }
+  
+  .modal-dialog > table{
+      width: auto;
+  }
+  
   .modal-content {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);

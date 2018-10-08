@@ -20,11 +20,17 @@
                         type: "POST",
                         url: '../capaLogicaNegocio/BO_Docentes.php',
                         data: {'administrarDocentes': 'administrarDocentes'},
+                        beforeSend: function() {
+                            $("<img src='../Imagenes/load.gif'  style='position:absolute;top:40%;\n\
+                                left:43%; width:200px; heigth:200px; z-index:2000'/>").appendTo("#contenedor");
+                            
+                         },
                         success: function (response) {
                             $('#contenedor').html(response); //se carga el contenido en el div
                         }
                     });
             }
+            
         
         </script>
         
