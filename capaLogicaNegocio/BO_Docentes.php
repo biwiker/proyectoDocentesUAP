@@ -446,3 +446,52 @@ if (isset($_POST['btnAgregarDocente'])) {
 }
 
 
+
+//----------------------------------------------------------------------
+//Accion a realizar cuando se desee modificar a un docente
+//----------------------------------------------------------------------
+if (isset($_POST['btnModificarDocente'])) {
+    
+
+    $DAO_Docente = new DAO_Docente();  
+    
+    if (empty($_POST)) {
+        
+        if (!isset($_GET['rut'])) {
+            header("location: V_Formato_Lista.php"); 
+        }
+        $_rut = $_GET['rut'];
+        $docente = $DAO_Docente->buscarDocentePorRut($_rut);
+        
+        include_once 'capaPresentacion/V_Formato_lista.php';
+        return;
+    }
+    
+    $docente=NEW CL_Docente();
+    
+    $docente->set_rut($_POST['txtRut']);
+    $docente->set_dv($_POST['txtDv']);
+    $docente->set_idDuoc($_POST['txtIdDuoc']);
+    $docente->set_pNombre($_POST['txtPNombre']);
+    $docente->set_sNombre($_POST['txtSNombre']);
+    $docente->set_tNombre($_POST['txtTNombre']);
+    $docente->set_apPaterno($_POST['txtApPaterno']);
+    $docente->set_apMaterno($_POST['txtApMaterno']);
+    $docente->set_anioIngreso($_POST['ddlAnioIngreso']);
+    $docente->set_correo1($_POST['txtCorreo1']);
+    $docente->set_correo2($_POST['txtCorreo2']);
+    $docente->set_telefonoFijo($_POST['txtTelefonoFijo']);
+    $docente->set_telefonoMovil($_POST['txtTelefonoMovil']);
+    $docente->set_idEscuelaPrograma($_POST['ddlEscuela']);
+    $docente->set_idCentroCosto($_POST['ddlCentroCosto']);
+    $docente->set_idTipoDocente($_POST['ddlTipodocente']);
+    $docente->set_idGradoProfesional($_POST['ddlGradoProfesional']);
+
+    if ($DAO_Docente->modificarDocente($_rut, $_dv, $_idDuoc, $_pNombre, $_sNombre, $_tNombre, $_apPaterno, $_apMaterno, $_anioIngreso, $_correo1, $_correo2, $_telefonoFijo, $_telefonoMovil, $_idEscuelaPrograma, $_idCentroCosto, $_idTipoDocente, $_idGradoProfesional) > 0) {
+        header('Location: ../capaPresentacion/V_Formato_Lista.php?si');
+        
+    } else {
+        header('Location: ../capaPresentacion/V_Formato_Lista.php?no');
+    }
+}
+
