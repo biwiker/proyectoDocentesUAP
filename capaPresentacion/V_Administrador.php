@@ -26,7 +26,7 @@ if (isset($_SESSION['nombre_usuario'])) {
                     var moviendo = false;
                     var escribiendo = false;
                     var contador = 0;
-                    var fin_contador = 10;
+                    var fin_contador = 600;
                     var restar=1000
 
                     document.onkeypress = function () {
@@ -50,7 +50,7 @@ if (isset($_SESSION['nombre_usuario'])) {
                             }
                             //De lo contrario,si se realiza alguna accion en el mouse o teclado,se reinciará el contador a su valor predeterminado
                         } else {
-                            fin_contador = 10;
+                            fin_contador = 600;
                             moviendo = false;
                             escribiendo = false;
                         }
