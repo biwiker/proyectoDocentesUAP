@@ -8,10 +8,10 @@ if ($_SESSION['nombre_usuario']) {
     session_write_close();
     session_destroy();
 
-    header("location: ../capaPresentacion/V_Login");
+    header("location:../capaPresentacion/V_Login.php");
 } else {
 
-    header("location: ../capaPresentacion/V_Login");
+    header("location: ../capaPresentacion/V_Login.php");
 }
 ?>
 
