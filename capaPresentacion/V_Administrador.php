@@ -26,7 +26,8 @@ if (isset($_SESSION['nombre_usuario'])) {
                     var moviendo = false;
                     var escribiendo = false;
                     var contador = 0;
-                    var fin_contador = 6000;
+                    var fin_contador = 10;
+                    var restar=1000
 
                     document.onkeypress = function () {
                         escribiendo = true;
@@ -45,15 +46,15 @@ if (isset($_SESSION['nombre_usuario'])) {
                             //Si llega a cero procede a cerrar la sesión
                             if (contador >= fin_contador) {
 
-                                location.href = "../CL_Desconectar/CL_Desconectar.php";
+                                location.href = "../capaConexion/CL_Desconectar.php";
                             }
                             //De lo contrario,si se realiza alguna accion en el mouse o teclado,se reinciará el contador a su valor predeterminado
                         } else {
-                            fin_contador = 6000;
+                            fin_contador = 10;
                             moviendo = false;
                             escribiendo = false;
                         }
-                    }, 1000); // = 1 Seg
+                    }, restar); // = 1 Seg
                 }
                 )()
             </script>
